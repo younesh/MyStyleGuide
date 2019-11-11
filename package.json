@@ -1,0 +1,29 @@
+{
+  "name": "starter-v201906",
+  "version": "1.0.0",
+  "description": "starter v201906",
+  "main": "gulpfile.js",
+  "author": "younes.C",
+  "license": "ISC",
+  "devDependencies": {
+    "autoprefixer": "^9.5.0",
+    "bootstrap": "^4.3.1",
+    "bourbon": "^5.1.0",
+    "browser-sync": "^2.26.7",
+    "cssnano": "^4.1.10",
+    "flatpickr": "^4.6.1",
+    "gulp": "^4.0.2",
+    "gulp-concat": "^2.6.1",
+    "gulp-imagemin": "^6.0.0",
+    "gulp-livereload": "^4.0.1",
+    "gulp-postcss": "^8.0.0",
+    "gulp-replace": "^1.0.0",
+    "gulp-sass": "^4.0.1",
+    "gulp-sourcemaps": "^2.6.5",
+    "gulp-twig": "^1.2.0",
+    "gulp-uglify": "^3.0.1",
+    "gulp-webpack": "^1.5.0",
+    "jquery": "^3.4.1"
+  },
+  "dependencies": {}
+}

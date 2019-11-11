@@ -1,0 +1,177 @@
+html,
+body {
+    height: 100%;
+}
+
+body {
+    font-size: $fz-default;
+    font-family: $font-family-content;
+    color: $color-black-dark;
+    background-color: white;
+}
+
+p {
+    text-align: justify;
+}
+
+strong {
+    font-family: $font-bold;
+}
+
+ul,
+li {
+    list-style: none;
+}
+
+.child-valign-middle {
+    >* {
+        vertical-align: middle;
+        display: inline-block;
+    }
+}
+
+// pointer : for all clicable element, ith effect hover transtion
+.pointer {
+    cursor: pointer;
+    transition: all .5s ease;
+    opacity: 1;
+
+    &:hover {
+        opacity: .7;
+        color: inherit;
+        text-decoration: none;
+    }
+}
+
+a {
+    @extend .pointer;
+    color: inherit;
+    text-decoration: none;
+}
+
+// title, heading 
+.title {
+    font-family: $font-family-titles;
+    font-weight: $fw-title-black;
+    color: $color-black-meduim;
+}
+
+
+.big-txt {
+    font-size: 45px;
+    @extend .title;
+
+    @media #{$bp-min-md} {
+        font-size: 90px;
+    }
+}
+
+.h0-like {
+    @extend .title;
+    font-size: 30px;
+
+    @media #{$bp-min-md} {
+        font-size: 50px;
+    }
+}
+
+@media #{$bp-min-md} {
+    input {
+        width: auto;
+    }
+
+}
+
+
+
+h1,
+.h1-like {
+    @extend .title;
+    font-size: $fz-h1;
+}
+
+h2,
+.h2-like {
+    @extend .title;
+    font-size: $fz-h2;
+}
+
+
+h3,
+.h3-like {
+    @extend .title;
+    font-size: $fz-h3;
+}
+
+
+h4,
+.h4-like {
+    @extend .title;
+    font-size: $fz-h4;
+}
+
+
+// text 
+.bold {
+    font-family: $font-bold;
+}
+
+// declare from .bold-12 to .bold-30
+@for $i from 12 through 30 {
+    .bold-#{$i} {
+        font-size: #{$i}px;
+        font-family: $font-bold;
+    }
+}
+
+
+// to barre text
+.barred {
+    text-decoration: line-through;
+}
+
+img {}
+
+pre {
+    border: solid 1px $color-gray-meduim;
+    color: blue;
+}
+
+// colors 
+.txt-red {
+    color: $color-brand-primary;
+}
+
+.txt-green {
+    color: $color-brand-secondary;
+}
+
+.txt-orange {
+    color: $color-brand-third;
+}
+
+// forms reset : 
+input {
+    border: 1px solid $color-gray-meduim;
+    width: 100%;
+}
+
+
+// LAYOUTAGE 
+.page {}
+
+
+//-----  MEDIA QUERY / RESPONSIVE ----
+@media #{$bp-min-sm} {}
+
+@media #{$bp-min-md} {
+    input {
+        width: auto;
+    }
+
+
+}
+
+@media #{$bp-min-lg} {}
+
+@media #{$bp-min-xl} {}

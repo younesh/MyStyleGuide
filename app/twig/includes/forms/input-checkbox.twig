@@ -1,0 +1,16 @@
+{# 
+
+## PARAMETRERS
+@addClass : add a class list ( a string separed by one space)
+@idRadio : add id for accessiblity , default val (@addClass)
+@label : the caption of checkbox
+
+ #}
+
+<div class="input-checkbox {{addClass}}">
+    {% set tabAddClass = addClass|split(' ') %}
+    <input id="{{idCheckbox|default(tabAddClass[0])}}" name="{{nameCheckbox|default(tabAddClass[0])}}" type="checkbox" value="">
+    <label class="input-radio_label" for="{{idCheckbox|default(tabAddClass[0])}}">
+        {{label}}
+    </label>
+</div>

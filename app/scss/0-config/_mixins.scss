@@ -1,0 +1,60 @@
+@mixin transit ($proprity : all, $delay : 1s, $timingFct : ease) {
+    transition-property: $proprity;
+    transition-duration: $delay;
+    transition-timing-function: $timingFct;
+}
+
+/*
+c'est une mixin pour mettre de bloc ( model de boite ) de text visible
+*/
+@mixin make-visible-boite ($Colr : #ccc, $padd : 5px, $bg : transparent, $disply: inline-block, $Margn : 5px 0px) {
+    border: solid 2px $Colr;
+    padding: $padd;
+    background: $bg;
+    display: $disply;
+    margin: $Margn;
+}
+
+
+@mixin Y-center () {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+@mixin firstLetter () {
+
+    *::first-letter,
+    &::first-letter {
+        text-transform: uppercase;
+    }
+}
+
+@mixin fontFace ($font-family: $font-family-default, // SourceSansProBold
+
+$font-path: $font-path-default,
+$file-font-name: $file-font-name-bold,
+$font-weight: normal,
+$font-style: normal) {
+    font-family: $font-family;
+    src: url($font-path + $file-font-name + '.woff2') format('woff2'),
+        url($font-path + $file-font-name + '.woff') format('woff'),
+        url($font-path + $file-font-name + '.svg#'+ $file-font-name) format('svg');
+    font-weight: $font-weight;
+    font-style: $font-style;
+}
+
+@mixin trancTextOneLine() {
+    /* Nécessaires pour text-overflow */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: inline-block;
+}
+
+@mixin del-X-marge {
+    margin-right: -15px;
+    margin-left: -15px;
+    border-right: none;
+    border-left: none;
+}

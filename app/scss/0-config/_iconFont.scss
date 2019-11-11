@@ -1,0 +1,112 @@
+// pour le guideline // doc 
+
+@mixin sprite-icone($posX:0, $posY:0, $withIco:40px, $hightIco: $withIco) {
+    background-image: url('img/sprite-icone.png');
+    background-repeat: no-repeat;
+    height: $hightIco; // withIco
+    width: $withIco; // hightIco
+    background-position: $posX $posY;
+    display: inline-block;
+}
+
+.icon {
+    @include sprite-icone;
+}
+
+// pos: Y X
+.icon-flech-left {
+    @include sprite-icone(0px, 0px, 50px, 38px);
+}
+
+.icon-deconnexion {
+    @include sprite-icone(-50px, 0px, 50px, 37px);
+}
+
+.icon-burger {
+    @include sprite-icone(-53px, -53px);
+}
+
+.icon-arrow-slide {
+    @include sprite-icone(-114px, -59px, 20px);
+}
+
+.icon-arrow-slide-up {
+    @include sprite-icone(-114px, -9px, 20px);
+}
+
+.icon-arrow-slide2 {
+    @include sprite-icone(-317px, -65px, 14px, 9px);
+}
+
+
+.icon-close {
+    @include sprite-icone(-411px, -4px, 25px);
+}
+
+.icon-close-white {
+    @include sprite-icone(-462px, -5px, 25px);
+}
+
+.icon-inscript {
+    @include sprite-icone(-160px, -3px, 34px, 32px);
+}
+
+// la tortue
+.icon-tortoise {
+    @include sprite-icone(-207px, -9px, 35px, 20px);
+}
+
+.icon-info {
+    @include sprite-icone(-352px, -55px, 43px, 27px);
+}
+
+
+.icon-bus {
+    @include sprite-icone(-252px, -10px, 43px, 20px);
+}
+
+// le coeur
+.icon-heart {
+    @include sprite-icone(-311px, -10px, 25px, 22px);
+}
+
+// la feuille de plante
+.icon-plant {
+    @include sprite-icone(-362px, -6px, 25px, 27px);
+}
+
+.icon-pdf {
+    @include sprite-icone(-160px, -53px, 27px, 32px);
+}
+
+.icon-location {
+    @include sprite-icone(-166px, -108px, 16px, 22px);
+}
+
+.icon-agenda {
+    @include sprite-icone(-5px, -99px, 37px, 36px);
+}
+
+.icon-arrow-right {
+    @include sprite-icone(-467px, -115px, 15px, 15px);
+}
+
+.icon-mountain {
+    @include sprite-icone(-52px, -107px, 42px, 20px);
+}
+
+.icon-budget {
+    @include sprite-icone(-112px, -102px, 20px, 32px);
+}
+
+.icon-calendar {
+    @include sprite-icone(-211px, -106px, 25px, 23px);
+}
+
+.icon-download {
+    @include sprite-icone(-112px, -153px, 30px, 29px);
+}
+
+.icon-castle {
+    @include sprite-icone(-166px, -158px, 17px, 23px);
+}

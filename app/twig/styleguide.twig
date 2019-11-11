@@ -1,0 +1,702 @@
+{# index.twig #}
+{% extends "includes/layout.base.twig" %}
+{% block pageTitle %}
+    StyleGuide                                                                                                                                                                                                                                                                                       -
+    {{siteName}}
+{% endblock %}
+{% block classPage %}
+    page-styleguide
+{% endblock %}
+{% block page %}
+    <div class="container">
+        <div
+            class="row no-gutters">
+            {# aside : begin  #}
+            <aside class="col-aside col-md-4 col-lg-3 pr-md-3 pr-lg-4">
+                <div class="filter">
+                    <div class="filter_title">
+                        <span>Guide de style
+                        </span>
+                        <a class="icon-close-white d-inline-block d-md-none"></a>
+                    </div>
+
+                    <div class="criteria">
+                        <a class="criteria_title" href="#sg-NB">
+                            <span>
+                                à noter !
+                            </span>
+                        </a>
+                    </div>
+
+                    <div class="criteria">
+                        <a class="criteria_title" href="#sg-textes">
+                            <span>
+                                Textes
+                            </span>
+                            <i class="icon-arrow-slide"></i>
+                        </a>
+                        <div class="criteria_content">
+                            <nav>
+                                <a href="#sg-titles">
+                                    les titres h1 h2 h3 ...
+                                </a>
+                                <a href="#sg-others-text">
+                                    Autres texte
+                                </a>
+                            </nav>
+                        </div>
+                    </div>
+
+                    <div class="criteria criteria--closed">
+
+
+                        <a class="criteria_title" href="#sg-btns-tags">
+                            <span>
+                                les boutons, flags
+                            </span>
+                        </a>
+                    </div>
+
+                    <div class="criteria criteria--closed criteria--Hiking-type">
+                        <a class="criteria_title" href="#sg-icones">
+                            <span>
+                                les icones
+                            </span>
+                        </a>
+                    </div>
+                    <div class="criteria criteria--closed criteria--Circuit">
+
+
+                        <a class="criteria_title" href="#sg-forms">
+                            <span>
+                                Elements du  formulaire
+                            </span>
+
+                            <i class="icon-arrow-slide"></i>
+                        </a>
+                        <div class="criteria_content">
+                            <nav>
+                                <a href="#sg-checkbox">
+                                    Checkbox
+                                </a>
+                                <a href="#sg-radio">
+                                    Button radio
+                                </a>
+                                <a href="#sg-calendar">
+                                    Calenrier
+                                </a>
+                            </nav>
+
+                        </div>
+                    </div>
+
+                    <div class="criteria criteria--closed">
+                        <a class="criteria_title" href="#sg-slider-down">
+                            <span>
+                                le Slider : ouverture en bas
+                            </span>
+                        </a>
+                    </div>
+
+                    <div class="criteria criteria--closed">
+                        <a class="criteria_title" href="#sg-datatable">
+                            <span>
+                                Tableau de données
+                            </span>
+                        </a>
+                    </div>
+
+                </div>
+            </aside>
+            {# aside : end  #}
+
+            <div class="col-md col-main-content pt-md-4">
+                <h2 id="sg-NB">
+                    à noter !
+                </h2>
+                <p>
+                    Quelques clés pour bien lire ce guide de style :
+                </p>
+                <p>
+                    -  les notations de cette forme
+                    <code>
+                        .classX</code>
+                    représente les nom de classe css à appliquer pour avoir l’effet en apperçu juste à côté (des fois au-dessus), et si en voie 2 class collé
+                    <code>
+                        .classX.classX--modifer
+                    </code>
+                    c’est qui il faut appeler en html les 2 class séparer par un espace
+                    <code>
+                        &lt;<em>BALISE
+                        </em>
+                        class="<strong>classX classX--modifer</strong>" &gt; ... &lt;/<em>BALISE</em>&gt;
+                    </code>
+                </p>
+                <p>
+                    -  en utilise
+                    <a href="https://github.com/twigjs/twig.js/wiki" target="_blank">
+                        twig-js (https://github.com/twigjs/twig.js/wiki)
+                    </a>
+                    dans nos template , dans ce guide de style vous allez voir des appelle twig a des template
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    paramétrable , il faut savoir dans ces notation
+                    <code>
+                        { % include PathToTemplate  with { param01: ‘Value01’, param02 : 'Value02' , ….  } % }
+                    </code>
+                    il y a un espace
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    ajouté exprès entre
+                    <code>
+                        { }
+                    </code>
+                    et
+                    <code>
+                        %
+                    </code>
+                    , pour que le code en notation ne soit pas interprété, du
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    coup si vous copié ce bout de code twig il faut pensé a suprimer ces espaces entre
+                    <code>
+                        { }
+                    </code>
+                    et
+                    <code>
+                        %
+                    </code>.<br/>
+                    Bien sur si on a envie de prendre directement le resultat HTML, en peut aussi avec l’aide d’un inspecteur de code ( de
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    chrome , firebug ... ) en peut copier la structure html et l’utiliser
+                </p>
+
+                <h2 id="sg-textes">
+                    Textes
+                </h2>
+                <h3 id="sg-titles">
+                    Titres
+                </h3>
+                <section class="sg-content">
+                    <h1>
+                        H1 (.h1-like): title1
+                    </h1>
+                    <h2>
+                        H2 (.h2-like): title2
+
+                    </h2>
+                    <h3>
+                        H3 (.h3-like): title3
+                    </h3>
+                    <h4>
+                        H4 (.h4-like): title4
+                    </h4>
+                </section>
+
+
+                <h3 id="sg-others-text">
+
+                    Autres texte
+                </h3>
+                <section class="sg-content">
+                    <p>
+                        de bold-13 jusqu'à bold-30</p>
+                    <span class="bold-13">
+                        bold-13
+                    </span>
+                    <code class="mr-3">.bold-13</code>
+
+
+                    <span class="bold-15">
+                        bold-15
+                    </span>
+                    <code class="mr-3">.bold-15</code>
+
+
+                    <span class="bold-20">
+                        bold-13
+                    </span>
+                    <code class="mr-3">
+
+                        .bold-15</code>
+
+
+                    <span class="bold-27">
+                        bold-17
+                    </span>
+                    <code class="mr-3">
+                        .bold-17</code>
+
+                    <hr>
+                    {# les tatus  #}
+                    <p class="bold-14 mt-4">
+                        les status :
+                    </p>
+                    <span class="status status--update">
+                        modifié
+                    </span>
+                    <code class="mr-3">
+                        .status.status--update</code>
+
+
+                    <span class="status status--cancel">
+
+                        Annulée
+                    </span>
+                    <code class="mr-3">
+                        .status.status--cancel</code>
+
+
+                    <span class="status status--publish">
+                        Publiée
+                    </span>
+                    <code class="mr-3">
+                        .status.status--publish</code>
+
+
+                </section>
+
+                <h2 id="sg-btns-tags">
+                    les boutons, flags
+                </h2>
+                <section class="sg-content">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h3>
+                                bouttons :
+                            </h3>
+
+                            <button class="button">
+                                default bouton
+                            </button>
+
+                            <code>
+                                .button</code>
+
+                        </div>
+                        <div class="col-md-6">
+                            <h3>
+                                flag
+                            </h3>
+                            <p>
+                                <span class="flag flag--L">
+                                    L
+                                </span>
+                                <code>.flag.flag--L</code>
+                            </p>
+                            <p>
+                                <span class="flag flag--M">
+                                    M
+                                </span>
+                                <code>.flag.flag--M</code>
+                            </p>
+                            <p>
+                                <span class="flag flag--S">
+                                    S
+                                </span>
+                                <code>.flag.flag--S</code>
+                            </p>
+                            <p>
+                                <span class="flag flag--R">
+                                    R
+                                </span>
+                                <code>.flag.flag--R</code>
+                            </p>
+
+
+                        </div>
+
+                    </div>
+                </section>
+
+                <h2 id="sg-icones">Icones</h2>
+                <section class="sg-content">
+                    <div class="doc-icones">
+                        <i class="icon-flech-left"></i>
+                        <code>
+                            .icon-flech-left
+                        </code>
+                    </div>
+
+                    <div class="doc-icones">
+                        <i class="icon-deconnexion"></i>
+                        <code>
+                            .icon-deconnexion
+                        </code>
+                    </div>
+
+                    <div class="doc-icones">
+                        <i class="icon-burger"></i>
+
+                        <code>
+                            .icon-burger
+
+                        </code>
+                    </div>
+
+                    <div class="doc-icones dark">
+                        <i class="icon-arrow-slide"></i>
+                        <code>
+                            .icon-arrow-slide
+                        </code>
+                    </div>
+
+
+                    <div class="doc-icones dark">
+                        <i class="icon-arrow-slide-up"></i>
+                        <code>
+                            .icon-arrow-slide-up
+                        </code>
+                    </div>
+
+                    <div class="doc-icones">
+                        <i class="icon-arrow-slide2"></i>
+                        <code>
+                            .icon-arrow-slide2
+                        </code>
+                    </div>
+
+                    <div class="doc-icones">
+                        <i class="icon-close"></i>
+                        <code>
+                            .icon-close
+                        </code>
+                    </div>
+                    <div class="doc-icones dark">
+                        <i class="icon-close-white"></i>
+
+                        <code>
+                            .icon-close-white
+
+                        </code>
+                    </div>
+                    <div class="doc-icones">
+                        <i class="icon-inscript"></i>
+
+
+                        <code>
+                            .icon-inscript
+                        </code>
+                    </div>
+                    <div class="doc-icones">
+                        <i class="icon-tortoise"></i>
+                        <code>
+                            .icon-tortoise
+                        </code>
+                    </div>
+
+                    <div class="doc-icones">
+                        <i class="icon-info"></i>
+                        <code>
+                            .icon-info
+                        </code>
+                    </div>
+
+                    <div class="doc-icones">
+                        <i class="icon-bus"></i>
+
+                        <code>
+                            .icon-bus
+                        </code>
+                    </div>
+
+                    <div class="doc-icones">
+                        <i class="icon-heart"></i>
+                        <code>
+                            .icon-heart
+                        </code>
+                    </div>
+
+                    <div class="doc-icones">
+                        <i class="icon-plant"></i>
+                        <code>
+                            .icon-plant
+                        </code>
+                    </div>
+
+                    <div class="doc-icones">
+                        <i class="icon-pdf"></i>
+                        <code>
+                            .icon-pdf
+                        </code>
+                    </div>
+
+                    <div class="doc-icones">
+                        <i class="icon-location"></i>
+                        <code>
+                            .icon-location
+                        </code>
+                    </div>
+
+
+                    <div class="doc-icones">
+                        <i class="icon-agenda"></i>
+                        <code>
+                            .icon-agenda
+                        </code>
+                    </div>
+
+                    <div class="doc-icones">
+                        <i class="icon-arrow-right"></i>
+
+                        <code>
+                            .icon-arrow-right
+                        </code>
+                    </div>
+
+
+                    <div class="doc-icones">
+                        <i class="icon-mountain"></i>
+                        <code>
+                            .icon-mountain
+                        </code>
+                    </div>
+
+                    <div class="doc-icones">
+                        <i class="icon-budget"></i>
+
+                        <code>
+                            .icon-budget
+                        </code>
+                    </div>
+
+                    <div class="doc-icones">
+                        <i class="icon-calendar"></i>
+                        <code>
+                            .icon-calendar
+
+                        </code>
+                    </div>
+
+
+                    <div class="doc-icones">
+                        <i class="icon-download"></i>
+                        <code>
+                            .icon-download
+                        </code>
+                    </div>
+                    <div class="doc-icones">
+                        <i class="icon-castle"></i>
+                        <code>
+                            .icon-castle
+                        </code>
+                    </div>
+
+
+                </section>
+
+
+                <h2 id="sg-forms">
+                    Elements du formulaire
+                </h2>
+                <section class="sg-content">
+
+                    <h3 id="sg-checkbox">
+                        checkbox :
+                    </h3>
+                    {% include TplInputCheckbox with { addClass: 'type-hiking',label : 'Randonnée' } %}
+                    <span>
+                        code en twig  :
+                    </span>
+                    <code>
+                        { % include TplInputCheckbox with { addClass: 'type-hiking',label : 'Randonnée' } % }
+                    </code>
+                    <br>
+                    pour plus d'info sur le doc, les parametres de cette template twig :
+                    <code>
+                        "app/twig/includes/forms/input-checkbox.twig"
+                    </code>
+
+                    <hr>
+                    <h3 id="sg-radio">
+                        button radio
+                    </h3>
+                    {%  include TplInputRadio with { addClass : 'is-inscription d-flex', nameRadio : 'is-inscription', options : [{label : 'oui', value : 'yes' }, {label : 'Non', value :'no' }]} %}
+
+                    <span>
+                        code twig :
+                    </span>
+                    <code>
+                        { %  include TplInputRadio with { addClass : 'is-inscription d-flex', nameRadio : 'is-inscription', options : [{label : 'oui', value : 'yes' }, {label : 'Non', value :'no' }]} % }
+                    </code>
+                    <br>
+                    pour plus d'info sur le doc, les parametres de cette template twig :
+                    <code>
+                        "app/twig/includes/forms/input-radio.twig"
+                    </code>
+
+                    <hr>
+
+                    <h3 id="sg-calendar">
+                        Calendrier
+                    </h3>
+                    <p>
+                        <i class="icon-calendar"></i>
+                        <input class="calendar mb-0" id="" name="" type="text">
+                        <span>
+                            le calendrier se base sur ce plugin js :
+                            <a href="https://flatpickr.js.org/" target="blank">
+                                https://flatpickr.js.org/
+                            </a>, pour appliquer le calendrier ( la popin calendrier qui se lance au click du champs text ) il suffit d'ajouter la class
+                            <code>.calendar</code>
+                            à un input[type=text] :</span>
+                    </p>
+                    <p>
+                        <code>
+                            &lt;input class="<strong>calendar</strong>"  name="" type="text"&gt;
+                        </code>
+                    </p>
+
+
+                </section>
+
+                <h2 id="sg-slider-down">
+                    le slider : ouverture en bas
+                </h2>
+                <section class="sg-content">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="wrapper-sliders">
+                                <div class="slider-down">
+                                    <div class="slider-down_title">
+                                        <span>title silder 01</span>
+                                        <i class="icon-slide"></i>
+                                    </div>
+                                    <div class="slider-down_content">
+                                        <p class="py-2 px-2">
+                                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum voluptatem non error, omnis numquam voluptas labore repudiandae illo magnam molestiae, ipsum sed laudantium neque maxime qui dolorem odio asperiores velit?
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="slider-down slider-down--close">
+                                    <div class="slider-down_title">
+                                        <span>
+                                            title slide 02
+                                        </span>
+                                        <i class="icon-slide"></i>
+
+                                    </div>
+                                    <div class="slider-down_content">
+                                        <a class="slider-down_row">
+                                            <span>
+                                                link row 01
+                                            </span>
+                                            <i class="icon-download"></i>
+
+                                        </a>
+                                        <a class="slider-down_row">
+                                            <span>link row 02</span>
+                                            <i class="icon-download"></i>
+                                        </a>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <code>
+                                <em>/* architecture DOM du slider  */</em>
+                                <br>
+                                .wrapper-sliders
+                                <em>/* ce conteneur est optionnel  */</em><br>
+                                &nbsp; &nbsp;	.slider-down
+                                <em>/* le 1er slider , pour le fermer en ajoute la class (.slider-down--close)   */</em><br>
+
+
+                                &nbsp;&nbsp;  &nbsp;&nbsp; 	.slider-down_title
+                                <em>/* titre clicable  */</em><br>
+
+
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  	span { ... title ...}<br>
+                                &nbsp;&nbsp;&nbsp;  &nbsp;&nbsp;&nbsp;	i.icon-slide<br>
+                                &nbsp;&nbsp; &nbsp;&nbsp;	.slider-down_content
+                                <em>/*le contenu du slider*/</em><br>
+                                &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;	p.py-2.px-2 { ...content... }<br>
+                                &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; a.slider-down_row
+                                <em>/* une Ligne clicable */</em><br>
+                                &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;  span {... link text ... }<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;	i.icon-XX<br>
+
+
+                            </code>
+
+                        </div>
+                    </div>
+                </section>
+
+                <h2 id="sg-datatable">
+                    Tableau de données
+                </h2>
+
+                <section class="sg-content">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="data-table">
+                                <table class="">
+                                    <thead>
+                                        <tr>
+                                            <th class="">
+                                                Col 01
+                                                <a class="btn-sort"></a>
+                                            </th>
+                                            <th class="">Col 02</th>
+                                            <th class="">
+                                                Col 03</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td class="">
+                                                Val 01
+                                            </td>
+                                            <td class="">
+                                                Val 02
+                                            </td>
+                                            <td>
+                                                Val 03
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="">
+                                                Val 01
+                                            </td>
+                                            <td class="">
+                                                Val 02
+                                            </td>
+                                            <td>
+                                                Val 03
+                                            </td>
+                                        </tr>
+
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <code>
+                                <em>
+                                    /* architecture DOM du tableau de données  */
+                                    <br>
+                                </em>
+                                div.data-table
+                                <br>
+                                &nbsp;&nbsp; table<br>
+                                &nbsp;&nbsp; &nbsp;&nbsp; thead<br>
+                                &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; th {... title col 1 ..}<br>
+                                &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; a.btn-sort
+                                <em>
+                                    /* bouton pour lancer des tri par colonne ( pas de script fait en front )  */
+                                </em><br>
+
+                                &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; ...<br>
+                                &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; th {... title col n ..}<br>
+                                &nbsp;&nbsp; &nbsp;&nbsp; tbody<br>
+                                &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; tr<br>
+                                &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; td { ... value col 1.1 }<br>
+                                &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; ...<br>
+                                &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; td { ... value col 1.n }<br>
+                                &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; ...<br>
+
+
+                            </code>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

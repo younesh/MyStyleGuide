@@ -1,0 +1,73 @@
+.slider-down {
+    margin-bottom: 5px;
+
+    // .slider-down--close
+    &--close {
+        .slider-down_title {
+            i {
+                transform: rotate(180deg);
+            }
+        }
+
+        .slider-down_content {
+            @extend .d-none;
+        }
+    }
+
+    &:nth-last-of-type(1) {
+        margin-bottom: 0px;
+    }
+
+    .slider-down_title {
+        @extend .bold-17;
+        text-transform: uppercase;
+        border: $border-default;
+        display: flex;
+        align-items: center;
+        width: 100%;
+        padding: 10px;
+        cursor: pointer;
+        background-color: $color-blue-dark;
+        color: white;
+
+        >span {
+            flex: 1;
+        }
+
+        .icon-slide {
+            @extend .icon-arrow-slide;
+            margin-right: 5px;
+        }
+    }
+
+    .slider-down_content {}
+
+    // when we want make a text + icone
+    .slider-down_row {
+        display: block;
+        border-bottom: $border-default;
+        padding: 8px 10px;
+        display: flex;
+        align-items: center;
+
+        &:nth-last-of-type(1) {
+            border-bottom: none;
+        }
+
+        span {
+            @extend .bold-14;
+            flex: 1;
+        }
+    }
+}
+
+
+
+// when we want englobe all .slider-down
+.wrapper-sliders {
+    border: $border-blue-dark;
+    padding: 5px;
+}
+
+//-----  MEDIA QUERY / RESPONSIVE ----
+@media #{$bp-max-sm} {}

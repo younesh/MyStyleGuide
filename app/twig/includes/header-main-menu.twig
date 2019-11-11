@@ -1,0 +1,34 @@
+{% if _context._target.relative == "list-des-journees.html" %}
+    {% set listDaysClassItem = "active" %}
+{% endif %}
+
+{% if _context._target.relative == "list-des-sejours.html" %}
+    {% set listStayClassItem = "active" %}
+{% endif %}
+
+
+{% if _context._target.relative == "programmation.html" %}
+    {% set programsClassItem = "active" %}
+{% endif %}
+
+
+<nav>
+    <a class="{{listDaysClassItem}}" href="index.html">
+        home
+    </a>
+
+    <a class="{{listStayClassItem}}" href="styleguide.html">
+        StyleGuide 
+    </a>
+
+    <a href="#">
+        page content test
+    </a>
+
+
+    {# (!) hide for mobile   #}
+    <a class="deconnextion d-block d-md-none" href="#">
+        Déconnexion
+    </a>
+
+</nav>

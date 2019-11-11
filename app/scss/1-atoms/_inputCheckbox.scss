@@ -1,0 +1,25 @@
+// 
+.input-checkbox {
+    display: flex;
+    align-items: center;
+    input[type="checkbox"] {
+        @include prefixer(appearance, none, ("webkit", "moz", "ms"));
+        width: $gutter-half;
+        height: $gutter-half;
+        outline-style: none;
+        background-color: white;
+        position: relative;
+        &:checked:before {
+            background-color: $color-orange-meduim;
+            display: block;
+            content: " ";
+            width: $gutter-half;
+            height: $gutter-half;
+            position: absolute;
+        }
+    }
+    label {
+        margin: 0;
+        margin-left: $gutter-half;
+    }
+}

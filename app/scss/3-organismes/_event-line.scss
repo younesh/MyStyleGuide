@@ -1,0 +1,248 @@
+.event-line {
+    padding: 5px 10px;
+    border: $border-default;
+    border-bottom: none;
+    align-items: center;
+
+    &:nth-last-of-type(1) {
+        border-bottom: $border-default;
+    }
+
+    // footer event ( only on mobile ) 
+    .col-foot-mob {
+        .event-line_status {
+            flex: 1;
+            text-align: right;
+        }
+    }
+
+    .event-line_title {
+        @extend .small-title;
+
+        .icons-notif {
+            flex: 1;
+            text-align: right;
+        }
+    }
+
+    .event-line_description {
+
+        &--barred {
+
+            // .event-line_description--barred 
+            >span {
+                text-decoration: line-through;
+            }
+        }
+
+        >span {
+            display: block;
+        }
+
+        .speed {
+            font-family: $font-bold;
+            font-size: 16px;
+            margin-right: $gutter-half;
+        }
+
+        .animator {
+            font-family: $font-bold;
+            margin-right: $gutter-half;
+        }
+
+    }
+
+
+    .event-line_status {
+        @extend .status;
+    }
+
+
+    /* CASE MODIFIER >  des journees : .event-line--days  */
+    &--days {
+
+        /* .event-line--days */
+
+        .distance {
+            @extend .bold-15;
+        }
+
+        .animator {
+            display: block;
+            @extend .bold-15;
+        }
+
+        .gare-info {
+            font-size: 13px;
+            display: flex;
+            flex-wrap: wrap;
+
+            .departure-gare,
+            .arrival-gare {
+                @include trancTextOneLine;
+                width: 150px;
+                min-height: 18px;
+            }
+
+            .departure-houre,
+            .arrival-houre {
+                @extend .bold-13;
+                @include margin(null 5px);
+            }
+
+            .gare-arrow {
+                .rdv {
+                    color: $color-green-meduim;
+                    @extend .bold;
+                    margin-right: 5px;
+                    position: relative;
+                    top: -1px;
+                }
+
+                i {
+                    position: relative;
+                    top: 2px;
+                }
+            }
+        }
+    }
+
+    /*CASE MODIFIER  > des séjour : event-line--stay   */
+    &--stay {
+        /* event-line--stay */
+
+        .event-line_description {
+            h2 {
+                margin-bottom: 0;
+            }
+
+            >span {
+                margin-right: $gutter-half;
+                @extend .bold-13;
+            }
+
+            .budget {
+                margin-right: 0;
+            }
+        }
+    }
+}
+
+.events-group {
+    >h2 {
+        // margin-top: $gutter-half;
+        @include margin(8px null);
+    }
+}
+
+/*  .event-line */
+
+
+//-----  MEDIA QUERY / RESPONSIVE ----
+@media #{$bp-max-sm} {
+
+    .event-line {
+        border: $border-blue-dark;
+        border-bottom: none;
+        border-right: none;
+        border-left: none;
+        @include margin(null -15px);
+        @include padding(null 15px);
+
+        &:nth-last-of-type(1) {
+            border-bottom: $border-blue-dark;
+        }
+
+        .event-line_description {
+            padding-bottom: 5px;
+        }
+
+        .h2-like,
+        h2 {
+            font-size: 19px;
+        }
+
+        /* CASE MODIFIER >  des journees : .event-line--days  */
+        &--days {
+
+            /* .event-line--days */
+            .distance {
+                font-size: 19px;
+                margin-right: 5px;
+            }
+
+        }
+    }
+
+}
+
+@media #{$bp-min-md} {
+    .event-line {
+
+        //overload grid ! 
+
+        .col-flag {
+            max-width: 28px;
+            margin-right: $gutter-half;
+        }
+
+        .col-title-distance {
+            max-width: 92px;
+        }
+
+        .col-notif {
+
+            @include Y-center;
+            justify-content: flex-end;
+
+            >* {
+                margin-left: 9px;
+            }
+
+            .event-line_status {
+                margin-left: 0;
+            }
+        }
+
+        .event-line_description {
+            >span {
+                display: inline-block;
+            }
+        }
+
+
+        /* CASE MODIFIER >  des journees : .event-line--days  */
+        &--days {
+
+            /* .event-line--days */
+            .gare-info {
+
+                .departure-gare,
+                .arrival-gare {
+                    width: 125px;
+                    // background-color: violet;
+                }
+            }
+        }
+    }
+
+}
+
+@media #{$bp-min-lg} {
+    .event-line {
+
+        /* CASE MODIFIER >  des journees : .event-line--days  */
+        &--days {
+
+            /* .event-line--days */
+            .gare-info {
+
+                .departure-gare,
+                .arrival-gare {
+                    width: 137px;
+                    // background-color: greenyellow;
+                }
+            }
+        }
+    }
+}

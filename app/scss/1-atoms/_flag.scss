@@ -1,0 +1,27 @@
+.flag {
+    width: 28px;
+    height: 28px;
+    line-height: 28px;
+    font-size: 22px;
+    display: inline-block;
+    background-color: $color-gray-meduim;
+    color: white;
+    font-family: $font-regular;
+    text-align: center;
+
+    &.flag--L {
+        background-color: $color-blue-meduim;
+    }
+
+    &.flag--M {
+        background-color: $color-green-light;
+    }
+
+    &.flag--S {
+        background-color: $color-orange-light;
+    }
+
+    &.flag--R {
+        background-color: $color-red-dark;
+    }
+}

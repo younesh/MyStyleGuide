@@ -1,0 +1,63 @@
+.page-styleguide {
+
+    code {
+        em {
+            color: $color-green-meduim;
+        }
+    }
+
+    .filter {
+        position: fixed;
+
+        nav {
+            a {
+                display: block;
+                position: relative;
+
+                &:before {
+                    content: "";
+                    display: inline-block;
+                    width: 6px;
+                    height: 6px;
+                    background-color: white;
+                    margin-right: 5px;
+                    position: relative;
+                    top: -2px;
+                    @include border-radius(50%);
+                }
+            }
+        }
+    }
+
+    section {
+        border: $border-default;
+        padding: $gutter-half;
+        margin-bottom: $gutter-half;
+    }
+
+    // icones 
+    .doc-icones {
+        width: 160px;
+        display: inline-block !important;
+        border: 1px solid $color-gray-meduim;
+        padding: $gutter-half;
+        margin: $gutter-half;
+        text-align: center;
+        @include Y-center;
+
+        &.dark {
+            background-color: $color-blue-dark;
+        }
+
+        .doc-icones_display {}
+
+        i {
+            font-size: 70px;
+        }
+
+        code {
+            display: block;
+
+        }
+    }
+}

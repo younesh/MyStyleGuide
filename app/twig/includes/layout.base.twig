@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8"/>
+        <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport"/>
+        <meta content="ie=edge" http-equiv="X-UA-Compatible"/>
+        <title>
+            {% block pageTitle %}{% endblock %}
+        </title>
+        <!-- CSS File -->
+        <link href="style.css?cb=1560431403150YnS" rel="stylesheet"/>
+    </head>
+
+    <body class="layout page {% block classPage %}{% endblock %}">
+
+        {% include "header.twig" with { 'addClass': 'header-main'} %}
+        <main class="main"> {% block page %}{% endblock %}
+            </main>
+            {% include "footer.twig" %}
+            <!-- JavaScript File-->
+            <script src="all.js?cb=1560431403150YnS"></script>
+        </body>
+    </html>

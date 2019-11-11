@@ -1,0 +1,22 @@
+/* DOC 
+permet dafficher un status : modifé , ou annulé 
+*/
+
+.status {
+    font-family: $font-bold;
+    font-size: 18px;
+    text-transform: uppercase;
+    text-align: right;
+
+    &.status--update {
+        color: $color-orange-meduim;
+    }
+
+    &.status--cancel {
+        color: $color-red-meduim;
+    }
+
+    &.status--publish {
+        color: $color-green-meduim;
+    }
+}

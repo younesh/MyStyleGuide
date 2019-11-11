@@ -1,0 +1,122 @@
+.filter {
+    background-color: $color-gray-dark;
+    color: white;
+    background-color: $color-black-meduim;
+
+    .filter_title {
+        padding: $gutter-half;
+        font-size: 16px;
+        font-family: $font-regular;
+        text-transform: uppercase;
+        background-color: $color-gray-dark;
+        display: flex;
+
+        >span {
+            flex: 1;
+        }
+
+        a {
+            cursor: poiner
+        }
+    }
+
+    // 
+    .type-is-inscript {
+        margin-top: $gutter-half;
+        @include padding(10px null 0);
+        border-top: $border-white;
+
+
+        .input-radio {
+            padding-top: 10px;
+        }
+    }
+
+
+
+}
+
+
+
+// criteria
+.criteria {
+    border-bottom: $border-default;
+
+    .criteria_title {
+        padding: $gutter-half;
+        display: block;
+        font-size: 15px;
+        @include Y-center;
+
+        span {
+            flex: 1;
+        }
+    }
+
+    .criteria_content {
+        padding: $gutter-half;
+        transition: all 0.3 ease;
+        overflow: hidden;
+
+        #{$all-text-inputs} {
+            min-width: 130px;
+        }
+
+        .input-checkbox {
+            margin-bottom: $gutter-half;
+            margin-left: $gutter-half;
+        }
+
+        .calendar {}
+    }
+
+    &.criteria--closed {
+        .criteria_content {
+            padding: 0;
+            height: 0;
+        }
+
+        .icon-arrow-slide {
+            @extend .icon-arrow-slide-up;
+        }
+    }
+
+    // forms controlers 
+    #{$all-text-inputs},
+    select {
+        height: 25px;
+        width: 80%;
+        margin-bottom: $gutter-half;
+        width: calc(100% - 50px);
+    }
+}
+
+//-----  MEDIA QUERY / RESPONSIVE ----
+@media #{$bp-max-sm} {
+    .filter {
+        position: absolute;
+        left: -200%;
+        top: 55px;
+        width: 100%;
+        z-index: 5;
+        transition: $transition;
+
+        &.filter--show {
+            left: 0;
+        }
+    }
+
+}
+
+//$bp-only-tablet 
+@media #{$bp-only-tablet} {
+    .criteria {
+        .criteria_content {
+            #{$all-text-inputs} {
+                min-width: 105px;
+            }
+        }
+    }
+}
+
+@media #{$bp-min-md} {}

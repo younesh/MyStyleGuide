@@ -1,0 +1,59 @@
+.layout {
+    main.main {
+        min-height: 600px;
+        // @include padding($gutter-half null);
+        padding-bottom: $gutter-half;
+
+        .container {}
+    }
+}
+
+
+
+
+//-----  MEDIA QUERY / RESPONSIVE ----
+// only mobile : from 0 to 767
+@media #{$bp-max-sm} {
+    .container {
+        max-width: 100%;
+    }
+}
+
+@media #{$bp-only-tablet} {
+    .container {
+        max-width: 96%;
+    }
+
+    .layout {
+        aside.col-aside {
+            max-width: 200px;
+        }
+
+        /* special case page-programmation */
+        &.page-programmation {
+            .col-main-content {
+                width: calc(100% - 200px);
+            }
+        }
+    }
+}
+
+@media #{$bp-min-md} {
+    .layout {
+        main.main {
+            .container {
+                // @@container overload
+                padding-left: 0px;
+                padding-right: 0px;
+            }
+        }
+
+        // cas specifique des page en liste : 
+        &.page-liste-journees {
+            .btn-group {
+                margin-bottom: -32px;
+            }
+        }
+    }
+
+}

@@ -1,0 +1,10 @@
+.footer {
+    .container {
+        border-top: $border-default;
+    }
+
+    nav {
+        padding: $gutter-half $gutter-base;
+        text-align: center;
+    }
+}

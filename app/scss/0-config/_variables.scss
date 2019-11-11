@@ -1,0 +1,109 @@
+// FONTS
+$font-regular : 'OpenSans-Regular';
+$font-semibold : 'OpenSans-SemiBold';
+$font-bold : 'OpenSans-Bold';
+$font-extrabold : 'OpenSans-ExtraBold';
+$font-family-titles: $font-bold;
+$font-family-content: $font-semibold;
+$fw-title-light: 300;
+$fw-title-regular: 400;
+$fw-title-bold: 700;
+$fw-title-black: 900;
+
+$font-secondary-regular : 'FugazOne-Regular';
+
+// COLORS 
+$color-black-meduim: #333;
+$color-black-dark: #000;
+$color-gray-light: #eee;
+$color-gray-meduim: #999;
+$color-gray-dark: #666;
+$color-green-light:#7fc84e;
+$color-green-meduim:#5dae35;
+$color-blue-light: #15b7eb;
+$color-blue-meduim: #4372c4;
+$color-blue-dark: #0a435e;
+$color-orange-light: #e1ca57;
+$color-orange-meduim: #ff8800;
+$color-red-light: #e05871;
+$color-red-meduim: #db3b3e;
+$color-red-dark: #972821;
+
+$color-brand-primary: $color-green-meduim;
+$color-brand-secondary : $color-blue-dark;
+$color-brand-third : $color-orange-meduim;
+
+
+
+// borders : 
+$border-default : 1px solid $color-gray-meduim;
+$border-blue-dark : 1px solid $color-blue-dark;
+$border-white : 1px solid white;
+
+// transition 
+$transition : left .3s ease;
+// border shadow :
+
+
+/*----- RESPONSIVE ------*/
+$grid-breakpoints: (xs: 0,
+sm: 576px,
+md: 768px,
+lg: 992px,
+xl: 1200px);
+
+// Grid containers
+$container-max-widths: (sm: 540px,
+md: 720px,
+lg: 991px,
+xl: 1200px);
+
+// MEDIA QUERY
+$bp-min-sm : "only screen and (min-width: #{map-get($grid-breakpoints, "sm")})"; // min 576px
+$bp-min-md : "only screen and (min-width: #{map-get($grid-breakpoints, "md")})"; // min 768px
+$bp-min-lg : "only screen and (min-width: #{map-get($grid-breakpoints, "lg")})"; // min 992px
+$bp-min-xl : "only screen and (min-width: #{map-get($grid-breakpoints, "xl")})"; // min 1200px
+
+$bp-max-sm : "only screen and (max-width: #{map-get($grid-breakpoints, "md")-1})"; // max 767px
+$bp-max-md : "only screen and (max-width: #{map-get($grid-breakpoints, "lg")-1})"; // max 991px
+$bp-max-lg : "only screen and (max-width: #{map-get($grid-breakpoints, "xl")-1})"; // max 1199px
+
+// only small tablet : from 768 to 991
+$bp-only-tablet : "only screen and (min-width: #{map-get($grid-breakpoints, "md")}) and (max-width: #{map-get($grid-breakpoints, "lg")-1})";
+
+
+// conditional variable by media query, in this case only css variable are possible not sass variable !! 
+
+// step 01 : make conditional varibale by css variable mecanisme 
+/* :root {
+    --fz-default: 14px;
+    --fz-h1: 30px;
+    --fz-h2: 20px;
+    --fz-h3: 17px;
+    --fz-h4: 15px;
+    --gutter-base: calc(30px * .8);
+    --gutter-half: calc(15px * .8);
+}
+
+@media #{$bp-min-md} {
+    :root {
+        --fz-default: 14px;
+        --fz-h1: 30px;
+        --fz-h2: 20px;
+        --fz-h3: 17px;
+        --fz-h4: 15px;
+        --gutter-base: 30px;
+        --gutter-half: 15px;
+    }
+} */
+
+// step 03 : affect css variable on scss varaible
+// spacing 
+$gutter-base: 30px; // var(--gutter-base)
+$gutter-half: 15px; // var(--gutter-half)
+//  taille font
+$fz-default : 14px; // var(--fz-default)
+$fz-h1: 30px; // var(--fz-h1)
+$fz-h2: 20px; // var(--fz-h2)
+$fz-h3: 17px; // var(--fz-h3)
+$fz-h4: 15px; // var(--fz-h4)

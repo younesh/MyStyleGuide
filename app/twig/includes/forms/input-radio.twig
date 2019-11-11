@@ -1,0 +1,23 @@
+{# DOC : input-radio
+
+## PARAMETRERS
+@addClass : add a list of class to contoller separate by space ( on string format)
+@nameRadio : add the radio name attribute, gona be the same on all radio options
+@options [] : a list of option that contain (value, idRadio,label)
+    @options.value : the radio value attribute
+    @options.idRadio :  add id for accessiblity
+    @options.label : the caption of radio
+ #}
+
+<div class="input-radio {{addClass}}">
+    {% set tabAddClass = addClass|split(' ') %}
+
+    {% for option in options %}
+        <div class="option-{{option.value}}">
+            <input id="{{option.idRadio|default(nameRadio)}}-{{loop.index}}" name="{{nameRadio|default(tabAddClass[0])}}" type="radio" value="{{option.value|default(option.label)}}">
+            <label class="input-radio_label" for="{{option.idRadio|default(nameRadio)}}-{{loop.index}}">
+                {{option.label}}
+            </label>
+        </div>
+    {% endfor %}
+</div>

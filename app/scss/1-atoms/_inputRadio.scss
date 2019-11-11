@@ -1,0 +1,36 @@
+// 
+.input-radio {
+
+    >[class*="option-"] {
+        @include Y-center;
+        margin-left: $gutter-half;
+        margin-bottom: $gutter-half;
+    }
+
+    input[type="radio"] {
+        @include prefixer(appearance, none, ("webkit", "moz", "ms"));
+        width: $gutter-half;
+        height: $gutter-half;
+        outline-style: none;
+        background-color: white;
+        position: relative;
+        border-radius: 100%;
+
+        &:checked:before {
+            background-color: $color-orange-meduim;
+            display: block;
+            content: " ";
+            width: $gutter-half;
+            height: $gutter-half;
+            position: absolute;
+            border-radius: 100%;
+            left: -1px;
+            top: -1px;
+        }
+    }
+
+    label {
+        margin: 0;
+        margin-left: $gutter-half;
+    }
+}
