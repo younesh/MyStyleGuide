@@ -42,6 +42,9 @@
     color: white;
     font-family: $font-semibold;
     text-transform: uppercase;
+    >* {
+        height: 100%;
+    }
     nav {
         @include Y-center;
         width: 100%;
@@ -49,7 +52,7 @@
     }
     //md-display
     &.md-display {
-        padding-left: 70px;
+        // padding-left: 70px;
         a {
             margin: 0px $gutter-half;
             position: relative;
@@ -141,6 +144,13 @@
 
 @media #{$bp-min-md} {
     .header {
+        .header-banner {
+            background-image: url("img/bg-header.jpg");
+            background-repeat: no-repeat;
+            background-position: 0 -265px;
+            background-size: cover;
+            height: 268px;
+        }
         .header_wrapper {
             padding: 0px 0px;
         }

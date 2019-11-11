@@ -35,7 +35,6 @@ li {
     cursor: pointer;
     transition: all .5s ease;
     opacity: 1;
-
     &:hover {
         opacity: .7;
         color: inherit;
@@ -56,11 +55,9 @@ a {
     color: $color-black-meduim;
 }
 
-
 .big-txt {
     font-size: 45px;
     @extend .title;
-
     @media #{$bp-min-md} {
         font-size: 90px;
     }
@@ -69,7 +66,6 @@ a {
 .h0-like {
     @extend .title;
     font-size: 30px;
-
     @media #{$bp-min-md} {
         font-size: 50px;
     }
@@ -79,10 +75,7 @@ a {
     input {
         width: auto;
     }
-
 }
-
-
 
 h1,
 .h1-like {
@@ -96,20 +89,17 @@ h2,
     font-size: $fz-h2;
 }
 
-
 h3,
 .h3-like {
     @extend .title;
     font-size: $fz-h3;
 }
 
-
 h4,
 .h4-like {
     @extend .title;
     font-size: $fz-h4;
 }
-
 
 // text 
 .bold {
@@ -123,7 +113,6 @@ h4,
         font-family: $font-bold;
     }
 }
-
 
 // to barre text
 .barred {
@@ -150,16 +139,27 @@ pre {
     color: $color-brand-third;
 }
 
+// colors 
+.bg-red {
+    background-color: $color-brand-primary;
+}
+
+.bg-green {
+    background-color: $color-brand-secondary;
+}
+
+.bg-orange {
+    background-color: $color-brand-third;
+}
+
 // forms reset : 
 input {
     border: 1px solid $color-gray-meduim;
     width: 100%;
 }
 
-
 // LAYOUTAGE 
 .page {}
-
 
 //-----  MEDIA QUERY / RESPONSIVE ----
 @media #{$bp-min-sm} {}
@@ -168,8 +168,6 @@ input {
     input {
         width: auto;
     }
-
-
 }
 
 @media #{$bp-min-lg} {}

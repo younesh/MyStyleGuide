@@ -11,18 +11,14 @@
 }
 
 .btn-group {
-
     width: 100%;
     @include padding(10px null);
-
     &--left {
         justify-content: left;
     }
-
     &--xspace {
         display: flex;
         justify-content: space-between;
-
         .btn-group_col {
             &:nth-last-of-type(1) {
                 flex: 1;
@@ -32,6 +28,10 @@
     }
 }
 
+.button-action {
+    @extend .button;
+    @extend .bg-orange;
+}
 
 //-----  MEDIA QUERY / RESPONSIVE ----
 @media #{$bp-max-sm} {
