@@ -102,11 +102,9 @@ app.global = {
     /* component jauge  */
     jaugeCpt: function() {
         $(".jauge").each(function() {
-            //alert("date-rotate = " + $(evt.currentTarget).attr('data-rotate'));
+
+            // convertir le pourcentage en degree           
             var degRotate = $(this).data('pourcent') * 180 / 100;
-            //var degRotate = 50;
-            //var degRotate = $(evt.currentTarget).data('rotate');
-            // alert("date-rotate = " + degRotate);
             $(this).find(".jauge__cache-rotate").css("transform", "rotate(" + degRotate + "deg)");
         });
     }
