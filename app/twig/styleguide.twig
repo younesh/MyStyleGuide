@@ -672,9 +672,11 @@
             </section>
 
             <h2 id="sg-jauge">Jauge </h2>
-            <section class="sg-content">
+            <section class="sg-content d-flex">
 
-            {% include TplInputRadio with { addClass : 'is-inscription d-flex', nameRadio : 'is-inscription', options : [{label : 'oui', value : 'yes' }, {label : 'Non', value :'no' }]} %}
+            {% include TplCptJauge with { addClass : 'jauge-html', pourcentage: '30'} %}
+            {% include TplCptJauge with { addClass : 'jauge-html', pourcentage: '70'} %}
+            {% include TplCptJauge with { addClass : 'jauge-html', pourcentage: '100'} %}
             </section>
             <!-- h2#sg-XXX+section.sg-content-->
         </div>
