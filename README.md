@@ -1,14 +1,5 @@
-# un styleguide / kit-starter basé sur du twig-js / SCSS / ES5 / Atomic
- une architecture atomic design, ou tous les lélement de la page sont des élement indépendent du context et sont réutilisable comme décrit sur le doc du styleguide, la demo du résultat est consultable sur ce lien [link] https://younesh.github.io/MyStyleGuide/dist/styleguide.html [link]
-
-# Front-end Boilerplate using Sass and Gulp 4
-Using a set of boilerplate files when you're starting a website project can be a huge time-saver. Instead of having to start from scratch or copy and paste from previous projects, you can get up and running in just a minute or two.
-
-I wanted to share my own boilerplate that I use for simple front-end websites that use HTML, SCSS, and JavaScript. And I'm using Gulp 4 to compile, prefix, and minify my files.
-
-I also wrote a rather detailed walkthrough on how to get up and running with Gulp 4, as well as migration tips from Gulp 3. 
-
-You can read that on my blog [here](https://coder-coder.com/gulp-4-walk-through).
+# Un kit-starter Front basé sur du  twig-js / SCSS / ES5 / Atomic design organisation
+ une architecture atomic design, ou tous les élements de la page sont des élements indépendent du context et sont réutilisable comme décrit sur la doc du styleguide, la demo du résultat est consultable sur ce lien https://younesh.github.io/MyStyleGuide/dist/styleguide.html 
 
 ## Quickstart guide
 
