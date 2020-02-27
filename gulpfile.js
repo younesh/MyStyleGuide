@@ -13,6 +13,8 @@ const autoprefixer = require("autoprefixer");
 const cssnano = require("cssnano");
 const imagemin = require("gulp-imagemin");
 const twig = require("gulp-twig");
+const tsProject = require("gulp-typescript"); //@ ts 
+// const tsProject = ts.createProject('tsconfig.json');
 const server = require("browser-sync").create();
 
 var replace = require("gulp-replace");
@@ -22,6 +24,7 @@ var replace = require("gulp-replace");
 const source = {
     scssPath: "app/scss/**/*.scss",
     jsPath: "app/js/**/*.js", // "app/js/**/*.js" |  "app/js/script.js"
+    tsPath: "app/ts/**/*.ts",
     imgPath: "app/img/**/*.*",
     fontPath: "app/fonts/**/*.*",
     tplPath: "app/twig/**/*.*",
@@ -32,6 +35,7 @@ const source = {
 const dist = {
     scssPath: "dist",
     jsPath: "dist",
+    tsPath: "dist",
     imgPath: "dist/img",
     fontPath: "dist/fonts",
     tplPath: "dist",
@@ -82,6 +86,8 @@ function fontTask() {
 function dataTask() {
     return src(source.dataPath).pipe(dest(dist.dataPath));
 }
+
+
 // JS task: concatenates and uglifies JS files to script.js
 function jsTask() {
     return src([
@@ -93,6 +99,22 @@ function jsTask() {
         .pipe(uglify())
         .pipe(dest(dist.jsPath));
 }
+
+// TS task: typescript ...
+function tsTask() {
+    return src(source.tsPath)
+        .pipe(tsProject({
+            "files": [
+                "app/ts/tsScript.ts"
+            ],
+            "compilerOptions": {
+                "noImplicitAny": true,
+                "target": "es5"
+            }
+        }))
+        .js.pipe(dest(dist.tsPath));
+}
+
 
 // Templating task: TWIG
 function tplTask() {
@@ -144,7 +166,16 @@ function watchTask() {
             source.dataPath,
             source.tplPath
         ],
-        parallel(scssTask, jsTask, imgTask, fontTask, dataTask, tplTask, reload)
+        parallel(
+            scssTask,
+            jsTask,
+            tsTask,
+            imgTask,
+            fontTask,
+            dataTask,
+            tplTask,
+            reload
+        )
     );
 }
 
@@ -153,7 +184,16 @@ function watchTask() {
 // Runs the scss and js tasks simultaneously
 // then runs cacheBust, then watch task
 exports.default = series(
-    parallel(serve, jsTask, imgTask, fontTask, dataTask, tplTask, scssTask),
+    parallel(
+        serve,
+        jsTask,
+        tsTask,
+        imgTask,
+        fontTask,
+        dataTask,
+        tplTask,
+        scssTask
+    ),
     cacheBustTask,
     watchTask
 );

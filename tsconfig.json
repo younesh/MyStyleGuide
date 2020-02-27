@@ -1,0 +1,9 @@
+{
+    "files": [
+        "app/ts/tsScript.ts"
+    ],
+    "compilerOptions": {
+        "noImplicitAny": true,
+        "target": "es5"
+    }
+}
