@@ -530,9 +530,9 @@
             </section>
 
             <h2 id="sg-jauge">Jauge de progression </h2>
-            <section class="sg-content d-flex">
-
-                
+            <section class="sg-content">
+                <div class="d-flex">
+                 
 
 <div class="jauge tst jauge-vueJS" data-pourcent="45">
     <div class="jauge__wrapper">
@@ -545,7 +545,7 @@
     </div>
 </div>
  
-                
+                 
 
 <div class="jauge tst jauge-html" data-pourcent="75">
     <div class="jauge__wrapper">
@@ -558,7 +558,7 @@
     </div>
 </div>
  
-                
+                 
 
 <div class="jauge tst jauge-html" data-pourcent="100">
     <div class="jauge__wrapper">
@@ -571,11 +571,12 @@
     </div>
 </div>
 
-
-                <hr>
-
-                progress <br> 
-               <progress value="50" max="100">50%</progress>
+                </div>
+                <div class="mt-3">
+                  <code>
+                  { % include TplCptJauge with { addClass : 'jauge-vueJS', pourcentage: '45', metrix: 'VueJS'} % } 
+                 </code>
+                </div>
             </section>
 
 

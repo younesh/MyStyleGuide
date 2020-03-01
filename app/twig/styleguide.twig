@@ -380,16 +380,17 @@
             </section>
 
             <h2 id="sg-jauge">Jauge de progression </h2>
-            <section class="sg-content d-flex">
-
-                {% include TplCptJauge with { addClass : 'jauge-vueJS', pourcentage: '45', metrix: 'VueJS'} %} 
-                {% include TplCptJauge with { addClass : 'jauge-html', pourcentage: '75', metrix: 'CSS3'} %} 
-                {% include TplCptJauge with { addClass : 'jauge-html', pourcentage: '100', metrix: 'html5'} %}
-
-                <hr>
-
-                progress <br> 
-               <progress value="50" max="100">50%</progress>
+            <section class="sg-content">
+                <div class="d-flex">
+                 {% include TplCptJauge with { addClass : 'jauge-vueJS', pourcentage: '45', metrix: 'VueJS'} %} 
+                 {% include TplCptJauge with { addClass : 'jauge-html', pourcentage: '75', metrix: 'CSS3'} %} 
+                 {% include TplCptJauge with { addClass : 'jauge-html', pourcentage: '100', metrix: 'html5'} %}
+                </div>
+                <div class="mt-3">
+                  <code>
+                  { % include TplCptJauge with { addClass : 'jauge-vueJS', pourcentage: '45', metrix: 'VueJS'} % } 
+                 </code>
+                </div>
             </section>
 
 
