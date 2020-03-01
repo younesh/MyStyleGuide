@@ -114,7 +114,7 @@ app.global = {
 
     flipCard: function() {
         var wrapperFC = document.querySelector('.flip-card__wrapper');
-        wrapperFC.addEventListener('mouseover', function() {
+        wrapperFC.addEventListener('click', function() {
             wrapperFC.classList.toggle('is-flipped');
         });
     }

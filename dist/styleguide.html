@@ -741,12 +741,41 @@
              
              <h2 id="sg-XXX"> les card flip </h2>
              <section class="sg-content">
+             <div class="flipCard-list">
               <div class="flip-card">
   <div class="flip-card__wrapper">
-    <div class="flip-card__face flip-card__face--front">front</div>
-    <div class="flip-card__face flip-card__face--back">back</div>
+    <div class="flip-card__face flip-card__face--front">
+       <figure>
+          <img src=img/myAvatar.png>
+       </figure>
+    </div>
+    <div class="flip-card__face flip-card__face--back">
+     <div>
+         <h3>YounesH</h3>
+         <span>Frontend DEV, UI/UX </span>
+     </div>
+    </div>
   </div>
 </div>
+              <div class="flip-card">
+  <div class="flip-card__wrapper">
+    <div class="flip-card__face flip-card__face--front">
+       <figure>
+          <img src=img/ryu-hagane.jpg>
+       </figure>
+    </div>
+    <div class="flip-card__face flip-card__face--back">
+     <div>
+         <h3>Ryu H</h3>
+         <span>stagiaire </span>
+     </div>
+    </div>
+  </div>
+</div>
+             </div>
+             <code>
+                { % include TplCptFlipCard   with {imgPath : 'img/myAvatar.png' , name : 'YounesH', Funcion : 'Frontend DEV, UI/UX '  } % }
+             </code>
              </section>
             <h2 id="sg-icones">Icones</h2>
             <section class="sg-content">

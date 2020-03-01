@@ -534,7 +534,13 @@
             {# les card flip !!  #} 
              <h2 id="sg-XXX"> les card flip </h2>
              <section class="sg-content">
-              {% include TplCptFlipCard %}
+             <div class="flipCard-list">
+              {% include TplCptFlipCard   with {imgPath : 'img/myAvatar.png' , name : 'YounesH', Funcion : 'Frontend DEV, UI/UX '  }%}
+              {% include TplCptFlipCard   with {imgPath : 'img/ryu-hagane.jpg' , name : 'Ryu H', Funcion : 'stagiaire '  }%}
+             </div>
+             <code>
+                { % include TplCptFlipCard   with {imgPath : 'img/myAvatar.png' , name : 'YounesH', Funcion : 'Frontend DEV, UI/UX '  } % }
+             </code>
              </section>
             <h2 id="sg-icones">Icones</h2>
             <section class="sg-content">
