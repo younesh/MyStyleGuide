@@ -159,7 +159,8 @@ function tplTask() {
                     TplEventLineDays: "includes/event-line-days.twig",
                     TplMainTopBtns: "includes/main-top-btns.twig",
                     TplCptJauge: "includes/components/jauge/jauge.twig",
-                    TplCptSteps: "includes/components/validSteps.twig"
+                    TplCptSteps: "includes/components/validSteps.twig",
+                    TplCptFlipCard: "includes/components/flipCard.twig"
                 },
                 errorLogToConsole: true,
                 cache: false

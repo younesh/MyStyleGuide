@@ -10,6 +10,7 @@ app.global = {
         app.global.switchBtnStort();
         app.global.sliderDown();
         app.global.jaugeCpt();
+        app.global.flipCard();
     },
     /* allows to see the main menu in mobile  */
     slideMainMenuMobile: function() {
@@ -106,6 +107,15 @@ app.global = {
             // convertir le pourcentage en degree           
             var degRotate = $(this).data('pourcent') * 180 / 100;
             $(this).find(".jauge__cache-rotate").css("transform", "rotate(" + degRotate + "deg)");
+        });
+    },
+
+    /* cpt flipCard  */
+
+    flipCard: function() {
+        var wrapperFC = document.querySelector('.flip-card__wrapper');
+        wrapperFC.addEventListener('mouseover', function() {
+            wrapperFC.classList.toggle('is-flipped');
         });
     }
 
