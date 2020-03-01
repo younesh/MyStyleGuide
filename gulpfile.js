@@ -3,7 +3,7 @@
 
 //@@STEP--00 : import/declare dependance in const
 const { src, dest, watch, series, parallel } = require("gulp");
-// Importing all the Gulp-related packages we want to
+// Importing all the Gulp-related packages we want to use
 const sourcemaps = require("gulp-sourcemaps");
 const sass = require("gulp-sass");
 const concat = require("gulp-concat");
@@ -13,8 +13,9 @@ const autoprefixer = require("autoprefixer");
 const cssnano = require("cssnano");
 const imagemin = require("gulp-imagemin");
 const twig = require("gulp-twig");
-const tsProject = require("gulp-typescript"); //@ ts 
-// const tsProject = ts.createProject('tsconfig.json');
+const tsProject = require("gulp-typescript");
+const log = require('fancy-log');
+
 const server = require("browser-sync").create();
 
 var replace = require("gulp-replace");
@@ -67,24 +68,30 @@ function scssTask() {
         .pipe(sass()) // compile SCSS to CSS
         .pipe(postcss([autoprefixer(), cssnano()])) // PostCSS plugins
         .pipe(sourcemaps.write(".")) // write sourcemaps file in current directory
-        .pipe(dest(dist.scssPath)); // put final CSS in dist folder
+        .pipe(dest(dist.scssPath)) // put final CSS in dist folder
+        .on('end', function() { console.log('scssTask finished ! (scss > css) '); });
 }
 
 // images task : compile img task
 function imgTask() {
     return src(source.imgPath)
         .pipe(imagemin({ verbose: true })) // verbose: true > display in console image mimification journal
-        .pipe(dest(dist.imgPath));
+        .pipe(dest(dist.imgPath))
+        .on('end', function() { console.log('imgTask finished ! (images) '); });
 }
 
 // fonts task : compile fonts task
 function fontTask() {
-    return src(source.fontPath).pipe(dest(dist.fontPath));
+    return src(source.fontPath)
+        .pipe(dest(dist.fontPath))
+        .on('end', function() { console.log('fontTask finished ! (fonts) '); });
 }
 
 // fonts task : compile fonts task
 function dataTask() {
-    return src(source.dataPath).pipe(dest(dist.dataPath));
+    return src(source.dataPath)
+        .pipe(dest(dist.dataPath))
+        .on('end', function() { console.log('dataTask finished ! (data json, db ...) '); });
 }
 
 
@@ -97,28 +104,48 @@ function jsTask() {
         ])
         .pipe(concat("all.js"))
         .pipe(uglify())
-        .pipe(dest(dist.jsPath));
+        .pipe(dest(dist.jsPath))
+        .on('end', function() { console.log('jsTask finished ! (javascript) '); });
 }
 
 // TS task: typescript ...
 function tsTask() {
     return src(source.tsPath)
         .pipe(tsProject({
+            "compilerOptions": {
+                "emitDecoratorMetadata": true,
+                "experimentalDecorators": true,
+                "noImplicitAny": true,
+                "target": "es5",
+                "module": "commonjs"
+            }
+        }))
+        .js.pipe(dest(dist.tsPath))
+        .on('end', function() { console.log('tsTask finished ! (typescript) '); });
+
+    /*
+        "compilerOptions": {
+            "emitDecoratorMetadata": true,
+            "experimentalDecorators": true,
+            "target": "es5",
+            "module": "system",
+            "outFile": "main.js"
+        }
+
+*******************
             "files": [
-                "app/ts/tsScript.ts"
+                "app/ts/main.ts"
             ],
             "compilerOptions": {
                 "noImplicitAny": true,
                 "target": "es5"
             }
-        }))
-        .js.pipe(dest(dist.tsPath));
-}
 
+        */
+}
 
 // Templating task: TWIG
 function tplTask() {
-    console.log("tplTask : OK !!");
     return src([source.tplPath]) // ["app/twig/5-page/*.*", "app/twig/**/*.*"]  ||  source.tplPath
         .pipe(
             twig({
@@ -139,7 +166,8 @@ function tplTask() {
                     // cacheBustTask: false
             })
         )
-        .pipe(dest(dist.tplPath));
+        .pipe(dest(dist.tplPath))
+        .on('end', function() { console.log('tplTask finished ! '); });
 }
 
 // Cachebust : add param version to called files ( js ,css ..) in html page, to remove persistance browser cache
