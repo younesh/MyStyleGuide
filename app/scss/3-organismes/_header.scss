@@ -149,7 +149,20 @@
             background-repeat: no-repeat;
             background-position: 0 -1px;
             background-size: cover;
-            height: 390px;
+            height: 522px;
+            position: relative;
+            &::after {
+                content: " ";
+                display: block;
+                width: 100%;
+                height: 275px;
+                position: absolute;
+                bottom: -7px;
+                background-image: url("img/header-waves.png");
+                background-repeat: no-repeat;
+                // background-position: 0 -1px;
+                // background-size: cover;
+            }
         }
         .header_wrapper {
             padding: 0px 0px;

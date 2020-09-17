@@ -1,19 +1,16 @@
 .page-styleguide {
-
     code {
         em {
             color: $color-green-meduim;
         }
     }
-
     .filter {
         position: fixed;
-
+        bottom: 0px;
         nav {
             a {
                 display: block;
                 position: relative;
-
                 &:before {
                     content: "";
                     display: inline-block;
@@ -28,13 +25,11 @@
             }
         }
     }
-
     section {
         border: $border-default;
         padding: $gutter-half;
         margin-bottom: $gutter-half;
     }
-
     // icones 
     .doc-icones {
         width: 160px;
@@ -44,20 +39,15 @@
         margin: $gutter-half;
         text-align: center;
         @include Y-center;
-
         &.dark {
             background-color: $color-blue-dark;
         }
-
         .doc-icones_display {}
-
         i {
             font-size: 70px;
         }
-
         code {
             display: block;
-
         }
     }
 }
