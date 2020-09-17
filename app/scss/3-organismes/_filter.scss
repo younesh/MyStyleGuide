@@ -2,7 +2,7 @@
     background-color: $color-gray-dark;
     color: white;
     background-color: $color-black-meduim;
-
+    @include border-top-right-radius($gutter-base);
     .filter_title {
         padding: $gutter-half;
         font-size: 16px;
@@ -10,77 +10,59 @@
         text-transform: uppercase;
         background-color: $color-gray-dark;
         display: flex;
-
+        @include border-top-right-radius($gutter-base);
         >span {
             flex: 1;
         }
-
         a {
             cursor: poiner
         }
     }
-
     // 
     .type-is-inscript {
         margin-top: $gutter-half;
         @include padding(10px null 0);
         border-top: $border-white;
-
-
         .input-radio {
             padding-top: 10px;
         }
     }
-
-
-
 }
-
-
 
 // criteria
 .criteria {
     border-bottom: $border-default;
-
     .criteria_title {
         padding: $gutter-half;
         display: block;
         font-size: 15px;
         @include Y-center;
-
         span {
             flex: 1;
         }
     }
-
     .criteria_content {
         padding: $gutter-half;
         transition: all 0.3 ease;
         overflow: hidden;
-
         #{$all-text-inputs} {
             min-width: 130px;
         }
-
         .input-checkbox {
             margin-bottom: $gutter-half;
             margin-left: $gutter-half;
         }
-
         .calendar {}
     }
-
     &.criteria--closed {
         .criteria_content {
             padding: 0;
             height: 0;
         }
-
         .icon-arrow-slide {
             @extend .icon-arrow-slide-up;
         }
     }
-
     // forms controlers 
     #{$all-text-inputs},
     select {
@@ -100,12 +82,10 @@
         width: 100%;
         z-index: 5;
         transition: $transition;
-
         &.filter--show {
             left: 0;
         }
     }
-
 }
 
 //$bp-only-tablet 
