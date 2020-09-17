@@ -1,6 +1,7 @@
 html,
 body {
     height: 100%;
+    font-size: 62.5%
 }
 
 body {
@@ -68,18 +69,18 @@ a {
 }
 
 .big-txt {
-    font-size: 45px;
+    font-size: 4.5rem;
     @extend .title;
     @media #{$bp-min-md} {
-        font-size: 90px;
+        font-size: 9rem;
     }
 }
 
 .h0-like {
     @extend .title;
-    font-size: 30px;
+    font-size: 3rem;
     @media #{$bp-min-md} {
-        font-size: 50px;
+        font-size: 5rem;
     }
 }
 
@@ -118,11 +119,14 @@ h4,
     font-family: $font-bold;
 }
 
-// declare from .bold-12 to .bold-30
-@for $i from 12 through 30 {
+// declare from .bold-12 to .bold-50
+@for $i from 12 through 50 {
     .bold-#{$i} {
-        font-size: #{$i}px;
+        font-size: #{$i/10}rem;
         font-family: $font-bold;
+    }
+    .fz-#{$i} {
+        font-size: #{$i/10}rem;
     }
 }
 

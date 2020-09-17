@@ -3,13 +3,9 @@
         min-height: 600px;
         // @include padding($gutter-half null);
         padding-bottom: $gutter-half;
-
         .container {}
     }
 }
-
-
-
 
 //-----  MEDIA QUERY / RESPONSIVE ----
 // only mobile : from 0 to 767
@@ -23,12 +19,10 @@
     .container {
         max-width: 96%;
     }
-
     .layout {
         aside.col-aside {
             max-width: 200px;
         }
-
         /* special case page-programmation */
         &.page-programmation {
             .col-main-content {
@@ -47,7 +41,6 @@
                 padding-right: 0px;
             }
         }
-
         // cas specifique des page en liste : 
         &.page-liste-journees {
             .btn-group {
@@ -55,5 +48,6 @@
             }
         }
     }
-
 }
+
+@media #{$bp-min-lg} {}

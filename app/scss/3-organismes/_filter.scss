@@ -75,7 +75,7 @@
 }
 
 //-----  MEDIA QUERY / RESPONSIVE ----
-@media #{$bp-max-sm} {
+@media #{$bp-max-md} {
     .filter {
         position: absolute;
         left: -200%;
