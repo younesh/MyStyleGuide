@@ -28,7 +28,7 @@
     <header class="header header-main container-fluid">
 
     <div class="row">
-        <div class="header_main-menu md-display col-12 d-none d-md-block">
+        <div id="totop" class="header_main-menu md-display col-12 d-none d-md-block">
             <div class="container"> 
 
 
@@ -106,7 +106,7 @@
                 <nav class="header_btn header_btn-burger  d-block d-md-none">
                     <a class=" ">
                         <!--  <i class="icon-burger"></i> -->
-                        <i class="material-icons fz-45">menu</i>
+                        <i class="material-icons fz-45 pt-1">menu</i>
                         <span>
                     </span>
                     </a>
@@ -121,10 +121,11 @@
                         Développeur Frontend / intégrateur web
                     </p>
                     <div class="header_message-notice">
-                        <i class="material-icons warning fz-45">warning</i> NB : la partie CV Web est en refonte actuellement, elle sera disponible dans quelques jours prochainement, en attendant vous pouvez consulter ces liens en dessus pour plus de
-                        détail su mon profil :
-                        <span class="Y-center fz-17 pt-3"> <i class="material-icons fz-25"> link </i> &nbsp;  <a href="https://www.linkedin.com/in/younesc/" target="_blank" title="linkedin younes CHRAK">   mon linkedin</a> </span>
+                        <i class="material-icons warning fz-45">warning</i> NB : la partie CV Web est en refonte actuellement avec VueJS, elle sera disponible dans quelques jours prochainement, en attendant vous pouvez consulter ces liens en dessus pour
+                        plus de détail su mon profil :
+                        <span class="Y-center fz-17 pt-3"> <i class="material-icons fz-25"> link </i> &nbsp;  <a href="https://www.linkedin.com/in/younesc/" target="_blank" title="linkedin younes CHRAK">   Mon linkedin</a> </span>
                         <span class="Y-center  fz-17"> <i class="material-icons fz-25">link</i> &nbsp;    <a href="data/CV-Younes-C.pdf" target="_blank" title="CV pdf de younes CHRAK">     Mon CV pdf</a> </span>
+                        <span class="Y-center  fz-17"> <i class="material-icons fz-25">link</i> &nbsp;    <a href="https://github.com/younesh/MyStyleGuide" target="_blank" title="Github de ce styleGuide de younes CHRAK">     Github de ce styleguide </a> </span>
                     </div>
                 </div>
                 
@@ -138,9 +139,10 @@
     <div class="row no-gutters">
         
         <aside class="col-aside col-md-4 col-lg-3 pr-md-3 pr-lg-4">
+             <button class="button--filter button button--style02 d-lg-none d-inline-block"> <span> FILTRER </span>     </button>
             <div class="filter">
                 <div class="filter_title">
-                    <span>Guide de style
+                    <span> <a href="#totop"> Guide de style </a> 
                         </span>
                     <a class="icon-close-white d-inline-block d-md-none"></a>
                 </div>
@@ -994,9 +996,7 @@
 
     <!-- JavaScript File-->
 
-    <script>
-        var exports = {};
-    </script>
+
     <script src="all.js?cb=1560431403150YnS"></script>
     
     <!-- type="module" -->

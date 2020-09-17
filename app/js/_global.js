@@ -11,6 +11,7 @@ app.global = {
         app.global.sliderDown();
         app.global.jaugeCpt();
         app.global.flipCard();
+        app.global.animeInternalLink('a[href^="#"]');
     },
     /* allows to see the main menu in mobile  */
     slideMainMenuMobile: function() {
@@ -71,6 +72,10 @@ app.global = {
         btnCloseFilter.click(function() {
             filter.toggleClass("filter--show");
         });
+
+        filter.click(function() {
+            filter.toggleClass("filter--show");
+        });
     },
 
     /* initialize a calendar in the date fields that contain the '.calendar' class  */
@@ -116,6 +121,34 @@ app.global = {
         var wrapperFC = document.querySelector('.flip-card__wrapper');
         wrapperFC.addEventListener('click', function() {
             wrapperFC.classList.toggle('is-flipped');
+        });
+    },
+    /* pour apppliquer des animation quand en fait lien interne ....  */
+    animeInternalLink: function(element) {
+        $(element).click(function() {
+            var goscroll = false;
+            var the_hash = $(this).attr("href");
+            var regex = new RegExp("\#(.*)", "gi");
+            var the_element = '';
+
+            if (the_hash.match("\#(.+)")) {
+                the_hash = the_hash.replace(regex, "$1");
+
+                if ($("#" + the_hash).length > 0) {
+                    the_element = "#" + the_hash;
+                    goscroll = true;
+                } else if ($("a[name=" + the_hash + "]").length > 0) {
+                    the_element = "a[name=" + the_hash + "]";
+                    goscroll = true;
+                }
+
+                if (goscroll) {
+                    $('html, body').animate({
+                        scrollTop: $(the_element).offset().top
+                    }, 'slow');
+                    // return false;
+                }
+            }
         });
     }
 

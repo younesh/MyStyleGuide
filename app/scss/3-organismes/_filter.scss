@@ -3,6 +3,7 @@
     color: white;
     background-color: $color-black-meduim;
     border: 3px solid white;
+    z-index: 1000;
     @include border-top-right-radius($gutter-base);
     .filter_title {
         padding: $gutter-half;
@@ -74,6 +75,19 @@
     }
 }
 
+.button--filter {
+    position: fixed;
+    font-size: 2rem;
+    transform: rotate(90deg);
+    top: calc(60vh - 27px);
+    left: -57px;
+    z-index: 1000;
+    transition: $transition;
+    &:hover {
+        left: -37px;
+    }
+}
+
 //-----  MEDIA QUERY / RESPONSIVE ----
 @media #{$bp-max-md} {
     .filter {
@@ -81,7 +95,6 @@
         left: -200%;
         top: 55px;
         width: 100%;
-        z-index: 5;
         transition: $transition;
         &.filter--show {
             left: 0;
