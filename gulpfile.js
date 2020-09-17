@@ -3,7 +3,7 @@
 
 //@@STEP--00 : import/declare dependance in const
 const { src, dest, watch, series, parallel } = require("gulp");
-// Importing all the Gulp-related packages we want to use
+// Importing all the Gulp-related packages we want to
 const sourcemaps = require("gulp-sourcemaps");
 const sass = require("gulp-sass");
 const concat = require("gulp-concat");
@@ -13,9 +13,6 @@ const autoprefixer = require("autoprefixer");
 const cssnano = require("cssnano");
 const imagemin = require("gulp-imagemin");
 const twig = require("gulp-twig");
-const tsProject = require("gulp-typescript");
-const log = require('fancy-log');
-
 const server = require("browser-sync").create();
 
 var replace = require("gulp-replace");
@@ -25,7 +22,6 @@ var replace = require("gulp-replace");
 const source = {
     scssPath: "app/scss/**/*.scss",
     jsPath: "app/js/**/*.js", // "app/js/**/*.js" |  "app/js/script.js"
-    tsPath: "app/ts/**/*.ts",
     imgPath: "app/img/**/*.*",
     fontPath: "app/fonts/**/*.*",
     tplPath: "app/twig/**/*.*",
@@ -36,7 +32,6 @@ const source = {
 const dist = {
     scssPath: "dist",
     jsPath: "dist",
-    tsPath: "dist",
     imgPath: "dist/img",
     fontPath: "dist/fonts",
     tplPath: "dist",
@@ -68,33 +63,29 @@ function scssTask() {
         .pipe(sass()) // compile SCSS to CSS
         .pipe(postcss([autoprefixer(), cssnano()])) // PostCSS plugins
         .pipe(sourcemaps.write(".")) // write sourcemaps file in current directory
-        .pipe(dest(dist.scssPath)) // put final CSS in dist folder
-        .on('end', function() { console.log('scssTask finished ! (scss > css) '); });
+        .pipe(dest(dist.scssPath))
+        .pipe(server.reload({
+            stream: true
+        }));
+    // put final CSS in dist folder
 }
 
 // images task : compile img task
 function imgTask() {
     return src(source.imgPath)
         .pipe(imagemin({ verbose: true })) // verbose: true > display in console image mimification journal
-        .pipe(dest(dist.imgPath))
-        .on('end', function() { console.log('imgTask finished ! (images) '); });
+        .pipe(dest(dist.imgPath));
 }
 
 // fonts task : compile fonts task
 function fontTask() {
-    return src(source.fontPath)
-        .pipe(dest(dist.fontPath))
-        .on('end', function() { console.log('fontTask finished ! (fonts) '); });
+    return src(source.fontPath).pipe(dest(dist.fontPath));
 }
 
 // fonts task : compile fonts task
 function dataTask() {
-    return src(source.dataPath)
-        .pipe(dest(dist.dataPath))
-        .on('end', function() { console.log('dataTask finished ! (data json, db ...) '); });
+    return src(source.dataPath).pipe(dest(dist.dataPath));
 }
-
-
 // JS task: concatenates and uglifies JS files to script.js
 function jsTask() {
     return src([
@@ -104,53 +95,16 @@ function jsTask() {
         ])
         .pipe(concat("all.js"))
         .pipe(uglify())
-        .pipe(dest(dist.jsPath))
-        .on('end', function() { console.log('jsTask finished ! (javascript) '); });
-}
-
-// TS task: typescript ...
-function tsTask() {
-    return src(source.tsPath)
-        .pipe(tsProject({
-            "compilerOptions": {
-                "emitDecoratorMetadata": true,
-                "experimentalDecorators": true,
-                "noImplicitAny": true,
-                "target": "es5",
-                "module": "commonjs"
-            }
-        }))
-        .js.pipe(dest(dist.tsPath))
-        .on('end', function() { console.log('tsTask finished ! (typescript) '); });
-
-    /*
-        "compilerOptions": {
-            "emitDecoratorMetadata": true,
-            "experimentalDecorators": true,
-            "target": "es5",
-            "module": "system",
-            "outFile": "main.js"
-        }
-
-*******************
-            "files": [
-                "app/ts/main.ts"
-            ],
-            "compilerOptions": {
-                "noImplicitAny": true,
-                "target": "es5"
-            }
-
-        */
+        .pipe(dest(dist.jsPath));
 }
 
 // Templating task: TWIG
 function tplTask() {
+    console.log("tplTask : OK !!");
     return src([source.tplPath]) // ["app/twig/5-page/*.*", "app/twig/**/*.*"]  ||  source.tplPath
         .pipe(
             twig({
                 data: {
-                    // here define a global variable for all site
                     siteName: "Kit-starter for web template 201910 v 1.0",
                     // config specifique au projet: c'est des variable global dans le twig
                     TplInputCheckbox: "includes/forms/input-checkbox.twig",
@@ -167,8 +121,7 @@ function tplTask() {
                     // cacheBustTask: false
             })
         )
-        .pipe(dest(dist.tplPath))
-        .on('end', function() { console.log('tplTask finished ! '); });
+        .pipe(dest(dist.tplPath));
 }
 
 // Cachebust : add param version to called files ( js ,css ..) in html page, to remove persistance browser cache
@@ -188,23 +141,14 @@ function watchTask() {
     // livereload.listen();
     watch(
         [
-            source.scssPath,
             source.jsPath,
             source.imgPath,
             source.fontPath,
             source.dataPath,
-            source.tplPath
+            source.tplPath,
+            source.scssPath
         ],
-        parallel(
-            scssTask,
-            jsTask,
-            tsTask,
-            imgTask,
-            fontTask,
-            dataTask,
-            tplTask,
-            reload
-        )
+        parallel(jsTask, imgTask, fontTask, dataTask, tplTask, scssTask, reload)
     );
 }
 
@@ -213,16 +157,7 @@ function watchTask() {
 // Runs the scss and js tasks simultaneously
 // then runs cacheBust, then watch task
 exports.default = series(
-    parallel(
-        serve,
-        jsTask,
-        tsTask,
-        imgTask,
-        fontTask,
-        dataTask,
-        tplTask,
-        scssTask
-    ),
+    parallel(serve, jsTask, imgTask, fontTask, dataTask, tplTask, scssTask),
     cacheBustTask,
     watchTask
 );

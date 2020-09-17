@@ -1,5 +1,19 @@
 <header class="header {{addClass}} container-fluid">
-    <div class="row header-banner">
+
+    <div class="row">
+        <div class="header_main-menu md-display col-12 d-none d-md-block">
+            <div class="container"> {% include "header-main-menu.twig" %}</div>
+        </div>
+        <div class="header_main-menu mobile-display col-12 d-block d-md-none">
+
+            <div class="header_btn-close">
+                <span class="icon-close-white"></span>
+            </div>
+            {% include "header-main-menu.twig" %}
+        </div>
+    </div>
+
+        <div class="row header-banner">
         <div class="container">
             <div class="header_wrapper row">
                 <a class="header_btn header_btn-burger col-3 d-block d-md-none">
@@ -8,10 +22,10 @@
                     Menu
                 </span>
                 </a>
-                <div class="header_logo col-6 col-md-9">
+                {# <div class="header_logo col-6 col-md-9">
                     <h1> logo to set her</h1>
-                    <a href="./"><img alt="Logo" src=""></a> {# img/logo.png #}
-                </div>
+                    <a href="./"><img alt="Logo" src=""></a>
+                </div> 
                 <div class="header_second-menu col-3 pr-md-0">
                     <a class="header_btn header_btn-logout mr-lg-4 d-none d-md-block" href="">
                         <i class="icon-deconnexion"></i>
@@ -22,24 +36,9 @@
                     <a class="header_btn header_btn-rif" href="">
                         <i class="icon-flech-left"></i>
                     </a>
-                </div>
+                </div> #}
             </div>
         </div>
-    </div>
-    <div class="row">
-        <div class="header_main-menu md-display col-12 d-none d-md-block">
-            <div class="container"> {% include "header-main-menu.twig" %}</div>
-
-        </div>
-
-        <div class="header_main-menu mobile-display col-12 d-block d-md-none">
-
-            <div class="header_btn-close">
-                <span class="icon-close-white"></span>
-            </div>
-            {% include "header-main-menu.twig" %}
-        </div>
-
     </div>
 
 </header>
