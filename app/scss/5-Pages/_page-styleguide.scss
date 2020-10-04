@@ -20,7 +20,7 @@
                     margin-right: 5px;
                     position: relative;
                     top: -2px;
-                    @include border-radius(50%);
+                    border-radius: 50%;
                 }
             }
         }

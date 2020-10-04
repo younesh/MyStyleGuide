@@ -17,6 +17,10 @@ const server = require("browser-sync").create();
 
 var replace = require("gulp-replace");
 
+/** babel  */
+var babel = require('gulp-babel'); // gulp-babel | babel-core
+var connect = require("gulp-connect");
+
 //@@STEP--01 : source/dist const path define
 // source File paths
 const source = {
@@ -93,9 +97,13 @@ function jsTask() {
             "node_modules/flatpickr/dist/flatpickr.js", // lib pour les calendrier
             source.jsPath
         ])
+        .pipe(babel())
+        //.pipe(uglify()) // pour tafer en es6 en chrome en desactif uglify le temps de resoudre babel/gulp
         .pipe(concat("all.js"))
-        .pipe(uglify())
-        .pipe(dest(dist.jsPath));
+        .pipe(dest(dist.jsPath))
+        .pipe(server.reload({
+            stream: true
+        }));
 }
 
 // Templating task: TWIG

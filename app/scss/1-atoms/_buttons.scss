@@ -11,7 +11,6 @@
     font-family: $font-regular;
     text-transform: uppercase;
     display: inline-block;
-    //  @include border-radius(5px);
     cursor: pointer;
     span {
         z-index: 100;
@@ -90,8 +89,9 @@
             transition: all .5s ease;
             width: 0%;
             height: 0%;
-            @include border-radius(100%);
-            @extend .centerXY;
+            border-radius: 100%;
+            //  @include Y-center;
+            @include centerXY;
         }
         &:hover {
             &:before {

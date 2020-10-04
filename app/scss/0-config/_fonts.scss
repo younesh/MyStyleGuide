@@ -1,4 +1,5 @@
 // FONTS
+
 /* @font-face {
     font-family: 'OpenSans-Regular';
     src: url('../fonts/OpenSans/OpenSans-Regular.ttf') format('truetype');
@@ -6,6 +7,13 @@
     font-style: normal;
 } */
 
+
+/* search font : 
+ + roboto ... 
+ + 
+*/
+
+// ---------------- OpenSans ------------------ //
 @font-face {
     font-family: 'OpenSans-Regular';
     src: url('fonts/OpenSans/OpenSans-Regular.ttf') format('truetype');
@@ -34,23 +42,47 @@
     font-style: normal;
 }
 
+// ---------------- Roboto  ------------------ //
 @font-face {
-    font-family: 'AmaticSC-Regular';
-    src: url('fonts/AmaticSC/AmaticSC-Regular.ttf') format('truetype');
+    font-family: 'Roboto-Black';
+    src: url('fonts/Roboto/Roboto-Black.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
-    font-family: 'AmaticSC-Bold';
-    src: url('fonts/AmaticSC/AmaticSC-Bold.ttf') format('truetype');
+    font-family: 'Roboto-Bold';
+    src: url('fonts/Roboto/Roboto-Bold.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
-    font-family: 'FugazOne-Regular';
-    src: url('fonts/FugazOne/FugazOne-Regular.ttf') format('truetype');
+    font-family: 'Roboto-Light';
+    src: url('fonts/Roboto/Roboto-Light.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
+
+@font-face {
+    font-family: 'Roboto-Medium';
+    src: url('fonts/Roboto/Roboto-Medium.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Roboto-Regular';
+    src: url('fonts/Roboto/Roboto-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Roboto-Thin';
+    src: url('fonts/Roboto/Roboto-Thin.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+// ---------------- FONT ------------------ // {  from Y*O*U*N*E*S  C*H*R*A*K  } //

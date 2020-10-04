@@ -7,17 +7,28 @@
 {% endblock %}
 
 {% block classPage %}
-    page-home
+    Home 
 {% endblock %}
-
+{#   ... B.Y  Y,O,U,N,E,S  C,H,R,A,K  ... #}
 {% block page %}
     <div class="container">
-        <div class="jumbotron">
-            <H1> Kit starter twig-Js </H1> 
-            <p> c'est un kit starter basé sur du twig js , avec une architecture front déja préconfigurer et construite a base de gulp, sass, twig-js, et plusieurs extentions et package npm ..., et surtout un systeme atomic de composant twig ( bouttons ,element de formulaire, slaiders ....... , regarder la doc de ce kit dans ce styleGuide </p>
-            <div>
-             <a href="styleguide.html" class="button-action"> styleguide.html </a>
-            </div>
+        <div class="row">
+              <div class=" col-md-6 col-lg-4">
+                {% include "includes/card.twig" %} 
+              </div>
+                            <div class=" col-md-6 col-lg-4">
+                {% include "includes/card.twig" %} 
+              </div>
+                            <div class=" col-md-6 col-lg-4">
+                {% include "includes/card.twig" %} 
+              </div>
+                            <div class=" col-md-6 col-lg-4">
+                {% include "includes/card.twig" %} 
+              </div>
+                            <div class=" col-md-6 col-lg-4">
+                {% include "includes/card.twig" %} 
+              </div>
         </div>
     </div>
 {% endblock %}
+

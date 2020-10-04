@@ -1,46 +1,25 @@
 <!DOCTYPE html>
 <html lang="fr">
+    <head>
+        <meta charset="UTF-8"/>
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport"/> -->
+        <!-- <meta content="ie=edge" http-equiv="X-UA-Compatible"/> -->
+        <title>
+            {% block pageTitle %}{% endblock %}
+        </title>
+        <!-- CSS File -->
+        {% include "materialIconLinks.twig" %}
+        {# ~~ B'y  Y'O'U'N'E'S  C'H'R'A'K ~~ #}
+        <link href="style.css?cb=1560431403150YnS" rel="stylesheet"/>
+    </head>
 
-<head>
-    <meta charset="UTF-8" />
-    <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport" />
-    <meta content="ie=edge" http-equiv="X-UA-Compatible" />
-    <title>
-        {% block pageTitle %}{% endblock %}
-    </title>
-    {# Icon google material : begin #}
-    <link href="https://fonts.googleapis.com/css2?family=Material+Icons" rel="stylesheet">
-
-    <!-- https://material.io/resources/icons/?style=outline -->
-    <link href="https://fonts.googleapis.com/css2?family=Material+Icons+Outlined" rel="stylesheet">
-
-    <!-- https://material.io/resources/icons/?style=round -->
-    <link href="https://fonts.googleapis.com/css2?family=Material+Icons+Round" rel="stylesheet">
-
-    <!-- https://material.io/resources/icons/?style=sharp -->
-    <link href="https://fonts.googleapis.com/css2?family=Material+Icons+Sharp" rel="stylesheet"> {# Icon google material : end #}
-    <!-- CSS File -->
-    <link href="style.css?cb=1560431403150YnS" rel="stylesheet" />
-</head>
-
-<body class="layout page {% block classPage %}{% endblock %}">
-
-    {% include "header.twig" with { 'addClass': 'header-main'} %}
-    <main class="main pt-3"> {% block page %}{% endblock %}
-    </main>
-    {% include "footer.twig" %}
-    <!-- JavaScript File-->
-
-
-    <script src="all.js?cb=1560431403150YnS"></script>
-    {#
-    <script type="module" src="main.js"></script> #}
-    <!-- type="module" -->
-
-    {#
-    <script src="main.js"></script>
-    <!-- type="module" -->#}
-
-</body>
-
-</html>
+    <body class="layout page {% block classPage %}{% endblock %}">
+        {% include "header.twig" %} {# with { 'addClass': 'header-main'}  #}
+        <main class="main"> {% block page %}{% endblock %}
+            </main>
+            {% include "footer.twig" %}
+            <!-- JavaScript File-->
+            <script type="module" src="all.js?cb=1560431403150YnS"></script>
+        </body>
+    </html>

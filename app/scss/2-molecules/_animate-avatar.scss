@@ -1,0 +1,105 @@
+.animate-avatar {
+    width: 260px;
+    height: 260px;
+    position: relative;
+    margin: 0 auto;
+    cursor: url('img/rocket.png'), auto;
+    //  .animate-avatar__photo
+    &__photo {
+        height: 176px;
+        width: 176px;
+        border-radius: 50%;
+        overflow: hidden;
+        position: absolute;
+        left: 43px;
+        top: 37px;
+    }
+    &__html,
+    &__css,
+    &__js {
+        border-radius: 50%;
+        transform-origin: center;
+        position: absolute;
+        // pointer-events: none;
+        span {
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            line-height: 40px;
+            text-align: center;
+            position: absolute;
+            display: block;
+            font-size: 1.2rem;
+        }
+    }
+    // animate-avatar__html
+    &__html {
+        width: 200px;
+        height: 200px;
+        z-index: 4;
+        border: 3px solid $color-blue-meduim;
+        left: 31px;
+        top: 27px;
+        animation: rotating 2s linear infinite;
+        span {
+            background-color: $color-blue-meduim;
+            left: -16px;
+            top: 51px;
+            animation: rotating-reverse 2s linear infinite;
+        }
+    }
+    // .animate-avatar__css
+    &__css {
+        width: 230px;
+        height: 230px;
+        z-index: 3;
+        border: 3px solid $color-red-meduim;
+        top: 12px;
+        left: 17px;
+        animation: rotating 4s linear infinite;
+        span {
+            background-color: $color-red-meduim;
+            left: -1px;
+            top: 27px;
+            animation: rotating-reverse 4s linear infinite;
+        }
+    }
+    // .animate-avatar__js
+    &__js {
+        color: black;
+        width: 260px;
+        height: 260px;
+        z-index: 20;
+        border: 3px solid yellow;
+        left: 2px;
+        top: -6px;
+        animation: rotating 6s linear infinite;
+        span {
+            background-color: yellow;
+            left: 24px;
+            top: 8px;
+            animation: rotating-reverse 6s linear infinite;
+        }
+    }
+}
+
+
+/*****  animation **********/
+
+@keyframes rotating {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes rotating-reverse {
+    from {
+        transform: rotate(360deg);
+    }
+    to {
+        transform: rotate(0deg);
+    }
+}

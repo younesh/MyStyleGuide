@@ -23,8 +23,22 @@ c'est une mixin pour mettre de bloc ( model de boite ) de text visible
     flex-wrap: wrap;
 }
 
-.Y-center {
-    @include Y-center;
+@mixin YX-center-pa {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+@mixin centerXY() {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+}
+
+.centerXY {
+    @include centerXY;
 }
 
 @mixin firstLetter () {
@@ -42,6 +56,7 @@ $font-path: $font-path-default, $file-font-name: $file-font-name-bold, $font-wei
     font-style: $font-style;
 }
 
+// ---------------------------- //  << B.Y  Y\O\U\N\E\S  C\H\R\A\K  >>
 @mixin trancTextOneLine() {
     /* Nécessaires pour text-overflow */
     white-space: nowrap;

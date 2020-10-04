@@ -2,7 +2,8 @@
 
 /*LIB : BOOTSTRAP 4 */
 
-@import "../../node_modules/bootstrap/scss/bootstrap.scss";
+//@import "../../node_modules/bootstrap/scss/bootstrap.scss";
+@import "0-config/customBootstrap";
 
 /*LIB : SASS/BOURBON */
 
@@ -28,31 +29,30 @@
 @import '1-atoms/inputCheckbox';
 @import '1-atoms/inputRadio';
 @import '1-atoms/inputText';
-@import '1-atoms/flag';
-@import '1-atoms/status';
-@import '1-atoms/avatar.scss';
 
 /* 2- molecules */
 
 @import '2-molecules/small-title';
+@import '2-molecules/main-top-menu';
+@import '2-molecules/animate-avatar';
 @import '2-molecules/bloc-info';
 @import '2-molecules/dataTable';
-@import '2-molecules/slider-down';
-@import '2-molecules/jauge';
-@import '2-molecules/validSteps';
 @import '2-molecules/flipCard';
+@import '2-molecules/jauge';
+@import '2-molecules/slider-down';
+@import '2-molecules/small-title';
+@import '2-molecules/validSteps';
 
 /* 3- organisms */
 
 @import '3-organismes/header';
 @import '3-organismes/footer';
+@import '3-organismes/card';
 @import '3-organismes/filter';
-@import '3-organismes/event-line';
 
 /* 4- Templates */
 
 @import '4-Templates/layout';
-@import '4-Templates/detail';
 
 /* 5- Pages */
 

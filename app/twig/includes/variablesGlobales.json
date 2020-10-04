@@ -1,5 +1,5 @@
 {
-  "siteName": "( gulpfiles ) kit v201906",
-  "TplInputCheckbox": "includes/forms/input-checkbox.twig",
-  "TplInputRadio": "includes/forms/input-radio.twig"
+    "siteName": "( gulpfiles ) kit v201906",
+    "TplInputCheckbox": "includes/forms/input-checkbox.twig",
+    "TplInputRadio": "includes/forms/input-radio.twig"
 }

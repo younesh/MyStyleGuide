@@ -1,0 +1,71 @@
+.card {
+    border-radius: 0px $gutter-half 0px 0px;
+    overflow: hidden;
+    box-shadow: $shadow-light;
+    @include margin( $gutter-half null);
+    // .card__banner
+    &__banner {}
+    // .card__content
+    &__content {
+        padding: $gutter-half;
+        background-color: white;
+        transition: transform $transition-style;
+        position: relative;
+        overflow: hidden;
+        &:before {
+            content: "";
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0%;
+            height: 5px;
+            background-color: $color-red-light;
+            transition: width $transition-style;
+        }
+    }
+    // .card__footer
+    &__footer {
+        height: 60px;
+        width: 100%;
+        @include Y-center;
+        justify-content: flex-end;
+    }
+    .cart__link {
+        height: 100%;
+        color: white;
+        transition: all $transition-style;
+        @include padding( null $gutter-half);
+        @include Y-center;
+        z-index: 0;
+        // .cart__link--github
+        &--github {
+            background-color: $color-brand-primary;
+            &:hover {
+                transform: translateX($gutter-base);
+                transform-origin: right;
+                z-index: 1;
+                @include padding( null $gutter-base);
+            }
+        }
+        // .cart__link--demo
+        &--demo {
+            background-color: $color-brand-secondary;
+            &:hover {
+                transform: translateX(0);
+                @include padding( null $gutter-base);
+                z-index: 1;
+            }
+        }
+    }
+    // Hover/pointer on .card
+    &:hover,
+    &:focus {
+        .card__content {
+            transform: translateY(-1 * $gutter-base);
+            &:before {
+                width: 100%;
+            }
+        }
+    }
+}

@@ -2,10 +2,6 @@
     {% set home = "active" %}
 {% endif %}
 
-{% if _context._target.relative == "styleguide.html" %}
-    {% set styleGuide = "active" %}
-{% endif %}
-
 
 {% if _context._target.relative == "content-test.html" %}
     {% set contentTest = "active" %}
@@ -16,16 +12,12 @@
     <a class="{{home}}" href="index.html">
         home
     </a>
-
-    <a class="{{styleGuide}}" href="styleguide.html">
-        StyleGuide 
+    <a class="{{contentTest}}" href="styleguide.html">
+        StyleGuide
     </a>
-
-    <a class="{{contentTest}}" href="content-test.html">
-        page content test
+    <a class="{{home}}" href="index.html">
+        home
     </a>
-
-
     {# (!) hide for mobile   #}
     <a class="deconnextion d-block d-md-none" href="#">
         Déconnexion

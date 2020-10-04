@@ -3,13 +3,13 @@ $font-regular: 'OpenSans-Regular';
 $font-semibold: 'OpenSans-SemiBold';
 $font-bold: 'OpenSans-Bold';
 $font-extrabold: 'OpenSans-ExtraBold';
-$font-family-titles: $font-bold;
+$font-family-titles: 'Roboto-Bold'; // Roboto-Bold
 $font-family-content: $font-semibold;
 $fw-title-light: 300;
 $fw-title-regular: 400;
 $fw-title-bold: 700;
 $fw-title-black: 900;
-$font-secondary-regular: 'FugazOne-Regular';
+$font-secondary-regular: 'Roboto-Regular';
 // COLORS 
 $color-black-meduim: #333;
 $color-black-dark: #000;
@@ -22,27 +22,30 @@ $color-blue-light: #15b7eb;
 $color-blue-meduim: #4372c4;
 $color-blue-dark: #0a435e;
 $color-orange-light: #e1ca57;
-$color-orange-meduim: #ff8800;
+$color-orange-meduim: goldenrod; // goldenrod | #ff8800
 $color-red-light: #e05871;
 $color-red-meduim: #db3b3e;
 $color-red-dark: #972821;
-$color-brand-primary: $color-green-meduim;
+$color-brand-primary: $color-orange-meduim;
 $color-brand-secondary: $color-blue-dark;
-$color-brand-third: $color-orange-meduim;
+$color-brand-third:$color-red-dark; // $color-red-dark | $color-orange-meduim
 // borders : 
 $border-default: 1px solid $color-gray-meduim;
 $border-blue-dark: 1px solid $color-blue-dark;
 $border-white: 1px solid white;
 // transition 
-$transition: left .3s ease;
-// border shadow :
+$transition-style :.3s ease;
+$transition-all: all $transition-style;
+$transition-width: width $transition-style;
+$transition-default: $transition-all;
+// shadow :
 $shadow: 0 0 15px black;
-$shadow-light: 0 0 7px #202020;
+$shadow-light: 0 0 7px rgba($color-black-meduim, 0.2);
 
 /*----- RESPONSIVE ------*/
 
 $grid-breakpoints: (xs: 0, sm: 576px, md: 768px, lg: 992px, xl: 1200px);
-// Grid containers
+// Grid containers  \\ ©  Y;O;U;N;E;S  C;H;R;A;K  //
 $container-max-widths: (sm: 540px, md: 720px, lg: 991px, xl: 1200px);
 // MEDIA QUERY
 $bp-min-sm: "only screen and (min-width: #{map-get($grid-breakpoints, "sm")})"; // min 576px
