@@ -1,15 +1,16 @@
 <!DOCTYPE html>
 <html lang="fr">
-    <head>
-        <meta charset="UTF-8"/>
-            <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <!-- <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport"/> -->
-        <!-- <meta content="ie=edge" http-equiv="X-UA-Compatible"/> -->
-        <title>
-             StyleGuide - Kit-starter for web template 201910 v 1.0 
-        </title>
-        <!-- CSS File -->
-        <link href="https://fonts.googleapis.com/css2?family=Material+Icons"
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport"/> -->
+    <!-- <meta content="ie=edge" http-equiv="X-UA-Compatible"/> -->
+    <title>
+         StyleGuide - Kit-starter for web template 201910 v 1.0 
+    </title>
+    <!-- CSS File -->
+    <link href="https://fonts.googleapis.com/css2?family=Material+Icons"
 rel="stylesheet">
 
 <!-- https://material.io/resources/icons/?style=outline -->
@@ -22,13 +23,15 @@ rel="stylesheet">
 
 <!-- https://material.io/resources/icons/?style=sharp -->
 <link href="https://fonts.googleapis.com/css2?family=Material+Icons+Sharp"
-rel="stylesheet">
-        
-        <link href="style.css?cb=1560431403150YnS" rel="stylesheet"/>
-    </head>
+rel="stylesheet"> 
+    <link href="style.css?cb=1560431403150YnS" rel="stylesheet" />
+</head>
 
-    <body class="layout page  page-styleguide ">
-        <header class="header"> 
+<body class="layout page  page-styleguide ">
+ 
+ 
+
+ <header class="header"> 
     <div class="maintopmenu">
     <div class="container maintopmenu__wrapper">
         <nav class="maintopmenu__navigation">
@@ -68,33 +71,33 @@ rel="stylesheet">
         </div>
     </div>
 </header> 
-        <main class="main"> 
+  <main class="main">
 <div class="container">
     <div class="row no-gutters">
         
         <aside class="col-aside col-md-4 col-lg-3 pr-md-3 pr-lg-4">
              <button class="button--filter button button--style02 d-lg-none d-inline-block"> <span> FILTRER </span>     </button>
             <div class="filter">
-                <div class="filter_title">
+                <div class="filter__title">
                     <span> <a href="#totop"> Guide de style </a> 
                         </span>
                     <a class="icon-close-white d-inline-block d-md-none"></a>
                 </div>
 
                 <div class="criteria">
-                    <a class="criteria_title" href="#sg-NB">
+                    <a class="criteria__title" href="#sg-NB">
                         <span> à noter ! </span>
                     </a>
                 </div>
 
                 <div class="criteria">
-                    <a class="criteria_title" href="#sg-textes">
+                    <a class="criteria__title" href="#sg-textes">
                         <span>
                                 Textes
                             </span>
                         <i class="icon-arrow-slide"></i>
                     </a>
-                    <div class="criteria_content">
+                    <div class="criteria__content">
                         <nav>
                             <a href="#sg-titles">
                                     les titres h1 h2 h3 ...
@@ -109,16 +112,14 @@ rel="stylesheet">
  
  
                 <div class="criteria criteria--closed criteria--Circuit">
-
-
-                    <a class="criteria_title" href="#sg-forms">
+                    <a class="criteria__title" href="#sg-forms">
                         <span>
                                 Elements du  formulaire
                             </span>
 
                         <i class="icon-arrow-slide"></i>
                     </a>
-                    <div class="criteria_content">
+                    <div class="criteria__content">
                         <nav>
                             <a href="#sg-checkbox">
                                     Checkbox
@@ -133,9 +134,15 @@ rel="stylesheet">
 
                     </div>
                 </div>
-
                 <div class="criteria criteria--closed">
-                    <a class="criteria_title" href="#sg-slider-down">
+                    <a class="criteria__title" href="#sg-boutons">
+                        <span>
+                               bouttons avec hover animé
+                            </span>
+                    </a>
+                </div>
+                <div class="criteria criteria--closed">
+                    <a class="criteria__title" href="#sg-slider-down">
                         <span>
                                 le Slider : ouverture en bas
                             </span>
@@ -143,7 +150,7 @@ rel="stylesheet">
                 </div>
 
                 <div class="criteria criteria--closed">
-                    <a class="criteria_title" href="#sg-datatable">
+                    <a class="criteria__title" href="#sg-datatable">
                         <span>
                                 Tableau de données
                             </span>
@@ -153,6 +160,7 @@ rel="stylesheet">
             </div>
         </aside>
         
+
         <div class="col-md col-main-content pt-md-4">
             <h2 id="sg-NB">
                 à noter !
@@ -216,6 +224,8 @@ rel="stylesheet">
                     H4 (.h4-like): title4
                 </h4>
             </section>
+
+
 
             <h2 id="sg-forms">
                 Elements du formulaire
@@ -307,6 +317,26 @@ rel="stylesheet">
                 </p>
 
 
+            </section>
+
+              <h2 id="sg-boutons">
+            bouttons hover animée
+            </h2>
+            <section class="sg-content sg-buttons">
+                <button class="button button--style01">
+                <span> btn &--style01  </span>  
+                </button> 
+                <code> .button.button--style01</code>
+                    <hr>
+                <button class="button button--style02">
+                <span> btn &--style01  </span>  
+                </button>
+                <code> .button.button--style02</code>
+                        <hr>
+                <button class="button button--style03">
+                <span> btn &--style01  </span>  
+                </button>
+                <code> .button.button--style03</code>
             </section>
 
             <h2 id="sg-slider-down">
@@ -514,51 +544,9 @@ rel="stylesheet">
 
 
 
-            <h2 id="sg-steps"> steps : les etapes de validation ...999 </h2>
-            <section class="sg-content">
-                <div class="valid-steps">
-    <div class="valid-steps__item">
-        <div class="valid-steps__item__nbr">
-            01
-        </div>
-        <div class="valid-steps__item__text"> etape de 111 </div>
-    </div>
+           
 
-    <div class="valid-steps__item">
-        <div class="valid-steps__item__nbr">
-            02
-        </div>
-        <div class="valid-steps__item__text"> etape de 111 </div>
-    </div>
 
-    <div class="valid-steps__item">
-        <div class="valid-steps__item__nbr">
-            03
-        </div>
-        <div class="valid-steps__item__text"> etape de 4546 </div>
-    </div>
-</div>
-            </section>
-
-            <h2 id="sg-XXX">
-            bouttons hover animée
-            </h2>
-            <section class="sg-content sg-buttons">
-                <button class="button button--style01">
-                <span> btn &--style01  </span>  
-                </button> 
-                <code> .button.button--style01</code>
-                    <hr>
-                <button class="button button--style02">
-                <span> btn &--style01  </span>  
-                </button>
-                <code> .button.button--style02</code>
-                        <hr>
-                <button class="button button--style03">
-                <span> btn &--style01  </span>  
-                </button>
-                <code> .button.button--style03</code>
-            </section>
 
 
             <h3 id="sg-others-text">
@@ -622,58 +610,7 @@ rel="stylesheet">
 
             </section>
 
-            <h2 id="sg-btns-tags">
-                les boutons, flags
-            </h2>   
-            <section class="sg-content">
-                <div class="row">
-                    <div class="col-md-6">
-                        <h3>
-                            bouttons :
-                        </h3>
-
-                        <button class="button">
-                                default bouton
-                            </button>
-
-                        <code>
-                                .button</code>
-
-                    </div>
-                    <div class="col-md-6">
-                        <h3>
-                            flag
-                        </h3>
-                        <p>
-                            <span class="flag flag--L">
-                                    L
-                                </span>
-                            <code>.flag.flag--L</code>
-                        </p>
-                        <p>
-                            <span class="flag flag--M">
-                                    M
-                                </span>
-                            <code>.flag.flag--M</code>
-                        </p>
-                        <p>
-                            <span class="flag flag--S">
-                                    S
-                                </span>
-                            <code>.flag.flag--S</code>
-                        </p>
-                        <p>
-                            <span class="flag flag--R">
-                                    R
-                                </span>
-                            <code>.flag.flag--R</code>
-                        </p>
-
-
-                    </div>
-
-                </div>
-            </section>
+ 
 
              
              <h2 id="sg-XXX"> les card flip </h2>
@@ -721,10 +658,14 @@ rel="stylesheet">
 
     </div>
 </div>
+  </main>
 
 
-            </main>
-            <footer class="footer" id="footerSite">
+
+
+
+    
+    <footer class="footer" id="footerSite">
     <div class="container">
         <nav>
             <a href="#">
@@ -737,7 +678,8 @@ rel="stylesheet">
     </div>
 </footer>
 
-            <!-- JavaScript File-->
-            <script type="module" src="all.js?cb=1560431403150YnS"></script>
-        </body>
-    </html>
+    <!-- JavaScript File-->
+    <script type="module" src="all.js?cb=1560431403150YnS"></script>
+</body>
+
+</html>

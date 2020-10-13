@@ -1,30 +1,38 @@
-{# index.twig #} {% extends "includes/layout.base.twig" %} {% block pageTitle %} StyleGuide - {{siteName}} {% endblock %} {% block classPage %} page-styleguide {% endblock %} {% block page %}
+{# index.twig #} 
+{% extends "includes/layout.base.twig" %} 
+{% block pageTitle %} StyleGuide - {{siteName}} {% endblock %} 
+{% block classPage %} page-styleguide {% endblock %}
+{#   ... B.Y  Y,O,U,N,E,S  C,H,R,A,K  ... #}
+{% block page %}
+
+ {% include "./includes/header.twig" %} 
+  <main class="main">
 <div class="container">
     <div class="row no-gutters">
         {# aside : begin #}
         <aside class="col-aside col-md-4 col-lg-3 pr-md-3 pr-lg-4">
              <button class="button--filter button button--style02 d-lg-none d-inline-block"> <span> FILTRER </span>     </button>
             <div class="filter">
-                <div class="filter_title">
+                <div class="filter__title">
                     <span> <a href="#totop"> Guide de style </a> 
                         </span>
                     <a class="icon-close-white d-inline-block d-md-none"></a>
                 </div>
 
                 <div class="criteria">
-                    <a class="criteria_title" href="#sg-NB">
+                    <a class="criteria__title" href="#sg-NB">
                         <span> à noter ! </span>
                     </a>
                 </div>
 
                 <div class="criteria">
-                    <a class="criteria_title" href="#sg-textes">
+                    <a class="criteria__title" href="#sg-textes">
                         <span>
                                 Textes
                             </span>
                         <i class="icon-arrow-slide"></i>
                     </a>
-                    <div class="criteria_content">
+                    <div class="criteria__content">
                         <nav>
                             <a href="#sg-titles">
                                     les titres h1 h2 h3 ...
@@ -39,16 +47,14 @@
  
  
                 <div class="criteria criteria--closed criteria--Circuit">
-
-
-                    <a class="criteria_title" href="#sg-forms">
+                    <a class="criteria__title" href="#sg-forms">
                         <span>
                                 Elements du  formulaire
                             </span>
 
                         <i class="icon-arrow-slide"></i>
                     </a>
-                    <div class="criteria_content">
+                    <div class="criteria__content">
                         <nav>
                             <a href="#sg-checkbox">
                                     Checkbox
@@ -63,9 +69,15 @@
 
                     </div>
                 </div>
-
                 <div class="criteria criteria--closed">
-                    <a class="criteria_title" href="#sg-slider-down">
+                    <a class="criteria__title" href="#sg-boutons">
+                        <span>
+                               bouttons avec hover animé
+                            </span>
+                    </a>
+                </div>
+                <div class="criteria criteria--closed">
+                    <a class="criteria__title" href="#sg-slider-down">
                         <span>
                                 le Slider : ouverture en bas
                             </span>
@@ -73,7 +85,7 @@
                 </div>
 
                 <div class="criteria criteria--closed">
-                    <a class="criteria_title" href="#sg-datatable">
+                    <a class="criteria__title" href="#sg-datatable">
                         <span>
                                 Tableau de données
                             </span>
@@ -83,6 +95,7 @@
             </div>
         </aside>
         {# aside : end #}
+
         <div class="col-md col-main-content pt-md-4">
             <h2 id="sg-NB">
                 à noter !
@@ -147,6 +160,8 @@
                 </h4>
             </section>
 
+
+
             <h2 id="sg-forms">
                 Elements du formulaire
             </h2>
@@ -207,6 +222,26 @@
                 </p>
 
 
+            </section>
+
+              <h2 id="sg-boutons">
+            bouttons hover animée
+            </h2>
+            <section class="sg-content sg-buttons">
+                <button class="button button--style01">
+                <span> btn &--style01  </span>  
+                </button> 
+                <code> .button.button--style01</code>
+                    <hr>
+                <button class="button button--style02">
+                <span> btn &--style01  </span>  
+                </button>
+                <code> .button.button--style02</code>
+                        <hr>
+                <button class="button button--style03">
+                <span> btn &--style01  </span>  
+                </button>
+                <code> .button.button--style03</code>
             </section>
 
             <h2 id="sg-slider-down">
@@ -378,30 +413,12 @@
 
 
 
-            <h2 id="sg-steps"> steps : les etapes de validation ...999 </h2>
+           {# <h2 id="sg-steps"> steps : les etapes de validation ...999 </h2>
             <section class="sg-content">
                 {% include TplCptSteps %}
-            </section>
+            </section> #}
 
-            <h2 id="sg-XXX">
-            bouttons hover animée
-            </h2>
-            <section class="sg-content sg-buttons">
-                <button class="button button--style01">
-                <span> btn &--style01  </span>  
-                </button> 
-                <code> .button.button--style01</code>
-                    <hr>
-                <button class="button button--style02">
-                <span> btn &--style01  </span>  
-                </button>
-                <code> .button.button--style02</code>
-                        <hr>
-                <button class="button button--style03">
-                <span> btn &--style01  </span>  
-                </button>
-                <code> .button.button--style03</code>
-            </section>
+
 
 
             <h3 id="sg-others-text">
@@ -465,58 +482,7 @@
 
             </section>
 
-            <h2 id="sg-btns-tags">
-                les boutons, flags
-            </h2>   
-            <section class="sg-content">
-                <div class="row">
-                    <div class="col-md-6">
-                        <h3>
-                            bouttons :
-                        </h3>
-
-                        <button class="button">
-                                default bouton
-                            </button>
-
-                        <code>
-                                .button</code>
-
-                    </div>
-                    <div class="col-md-6">
-                        <h3>
-                            flag
-                        </h3>
-                        <p>
-                            <span class="flag flag--L">
-                                    L
-                                </span>
-                            <code>.flag.flag--L</code>
-                        </p>
-                        <p>
-                            <span class="flag flag--M">
-                                    M
-                                </span>
-                            <code>.flag.flag--M</code>
-                        </p>
-                        <p>
-                            <span class="flag flag--S">
-                                    S
-                                </span>
-                            <code>.flag.flag--S</code>
-                        </p>
-                        <p>
-                            <span class="flag flag--R">
-                                    R
-                                </span>
-                            <code>.flag.flag--R</code>
-                        </p>
-
-
-                    </div>
-
-                </div>
-            </section>
+ 
 
             {# les card flip !!  #} 
              <h2 id="sg-XXX"> les card flip </h2>
@@ -536,5 +502,5 @@
 
     </div>
 </div>
-
+  </main>
 {% endblock %}

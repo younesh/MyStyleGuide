@@ -1,20 +1,37 @@
-{# index.twig #} {% extends "includes/layout.base.twig" %} {% block pageTitle %} content test - {{siteName}} {% endblock %} {% block classPage %} page-content-test {% endblock %} {% block page %}
-<div class="container">
-    <h2> page content test</h2>
-    <p> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Animi accusantium unde, perspiciatis itaque eos libero sapiente obcaecati ut similique, iure, qui fugit. Ducimus aperiam officia quibusdam reprehenderit quas consequuntur accusantium? </p>
 
-    <hr/>
-    <h1> bootstrap grid test </h1>
-    <div class="row">
-        <div class="col-md-6">
-            <div class="box bg-red my-3"> ... </div>
-        </div>
-        <div class="col">
-            <div class="box bg-green pb-5"> ... </div>
-        </div>
-        <div class="col">
-            <div class="box bg-orange mt-5"> ... </div>
+{% extends "includes/layout.base.twig" %}
+
+{% block pageTitle %}
+    home -
+    {{siteName}}
+{% endblock %}
+
+{% block classPage %}
+    Home 
+{% endblock %}
+{#   ... B.Y  Y,O,U,N,E,S  C,H,R,A,K  ... #}
+{% block page %}
+
+ {% include "./includes/header.twig" %} 
+  <main class="main">
+    <div class="container">
+        <h2> page content test</h2>
+        <p> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Animi accusantium unde, perspiciatis itaque eos libero sapiente obcaecati ut similique, iure, qui fugit. Ducimus aperiam officia quibusdam reprehenderit quas consequuntur accusantium? </p>
+
+        <hr/>
+        <h1> bootstrap grid test </h1>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="box bg-red my-3"> ... </div>
+            </div>
+            <div class="col">
+                <div class="box bg-green pb-5"> ... </div>
+            </div>
+            <div class="col">
+                <div class="box bg-orange mt-5"> ... </div>
+            </div>
         </div>
     </div>
-</div>
+    </div>
+  </main>
 {% endblock %}

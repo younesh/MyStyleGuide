@@ -6,7 +6,8 @@
     z-index: 1000;
     //  @include border-top-right-radius($gutter-base);
     border-radius: 0px $gutter-base 0px 0px;
-    .filter_title {
+    // .filter__title
+    &__title {
         padding: $gutter-half;
         font-size: 16px;
         font-family: $font-regular;
@@ -36,7 +37,8 @@
 // criteria
 .criteria {
     border-bottom: $border-default;
-    .criteria_title {
+    // .criteria__title 
+    &__title {
         padding: $gutter-half;
         display: block;
         font-size: 15px;
@@ -45,7 +47,8 @@
             flex: 1;
         }
     }
-    .criteria_content {
+    // .criteria__content
+    &__content {
         padding: $gutter-half;
         transition: all 0.3 ease;
         overflow: hidden;

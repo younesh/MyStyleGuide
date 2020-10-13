@@ -4,8 +4,8 @@
     align-items: center;
     input[type="checkbox"] {
         @include prefixer(appearance, none, ("webkit", "moz", "ms"));
-        width: $gutter-half;
-        height: $gutter-half;
+        width: 18px;
+        height: 18px;
         outline-style: none;
         background-color: white;
         position: relative;
@@ -13,9 +13,11 @@
             background-color: $color-orange-meduim;
             display: block;
             content: " ";
-            width: $gutter-half;
-            height: $gutter-half;
+            width: 12px;
+            height: 12px;
             position: absolute;
+            left: 2px;
+            top: 2px;
         }
     }
     label {

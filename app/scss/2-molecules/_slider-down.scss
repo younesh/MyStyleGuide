@@ -1,19 +1,6 @@
 .slider-down {
     margin-bottom: 5px;
     // .slider-down--close
-    &--close {
-        .slider-down_title {
-            i {
-                transform: rotate(180deg);
-            }
-        }
-        .slider-down_content {
-            @extend .d-none;
-        }
-    }
-    &:nth-last-of-type(1) {
-        margin-bottom: 0px;
-    }
     .slider-down_title {
         @extend .bold-17;
         text-transform: uppercase;
@@ -33,7 +20,11 @@
             margin-right: 5px;
         }
     }
-    .slider-down_content {}
+    .slider-down_content {
+        overflow: hidden;
+        height: auto;
+        transition: $transition-all;
+    }
     // when we want make a text + icone
     .slider-down_row {
         display: block;
@@ -48,6 +39,20 @@
             @extend .bold-14;
             flex: 1;
         }
+    }
+    &--close {
+        .slider-down_title {
+            i {
+                transform: rotate(180deg);
+            }
+        }
+        .slider-down_content {
+            // @extend .d-none;
+            height: 0px;
+        }
+    }
+    &:nth-last-of-type(1) {
+        margin-bottom: 0px;
     }
 }
 
