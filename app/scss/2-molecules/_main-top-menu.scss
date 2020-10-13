@@ -42,6 +42,26 @@
             }
         }
     }
+    // .maintopmenu__mobile
+    &__mobile {
+        flex: 1 0 auto;
+        position: relative;
+    }
+    &__slide-mobile {
+        position: absolute;
+        display: block;
+        background-color: $black;
+        width: 100vw;
+        left: -100vw;
+        transition: $transition-all;
+        a {
+            display: block;
+            padding: $gutter-half;
+        }
+    }
+    &__slide-mobile--open {
+        left: 0vw;
+    }
     // .maintopmenu__tag-mode
     &__tag-mode {
         flex: 0 0 auto;

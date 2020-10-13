@@ -12094,7 +12094,7 @@ app.global = {
   init: function init() {
     app.global.hellowWord();
     app.global.hoverAnimateAvatard();
-    app.global.slideMainMenuMobile();
+    app.global.mainTopMenuMobileSlide();
     app.global.SlideFilters();
     app.global.showFilter();
     app.global.initCalendar();
@@ -12276,6 +12276,18 @@ app.global = {
             scrollTop: $(the_element).offset().top
           }, 'slow'); // return false;
         }
+      }
+    });
+  },
+  mainTopMenuMobileSlide: function mainTopMenuMobileSlide() {
+    var btnMenuMobile = document.querySelector(".maintopmenu__mobile");
+    var menuMobileContainer = document.querySelector(".maintopmenu__slide-mobile");
+    btnMenuMobile.addEventListener('click', function () {
+      menuMobileContainer.classList.toggle('maintopmenu__slide-mobile--open');
+    });
+    document.addEventListener('click', function () {
+      //   alert("click document ");
+      if (document.querySelector(".maintopmenu__slide-mobile--open")) {//   menuMobileContainer.classList.remove('maintopmenu__slide-mobile--open');
       }
     });
   },

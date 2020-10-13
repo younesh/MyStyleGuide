@@ -4,7 +4,7 @@ app.global = {
     init: () => {
         app.global.hellowWord();
         app.global.hoverAnimateAvatard();
-        app.global.slideMainMenuMobile();
+        app.global.mainTopMenuMobileSlide();
         app.global.SlideFilters();
         app.global.showFilter();
         app.global.initCalendar();
@@ -101,7 +101,7 @@ app.global = {
     },
 
     /*  to display the filter block in mobile mode */
-    showFilter: function() {
+    showFilter: () => {
         var btnFilter = $(".button--filter");
         var btnCloseFilter = $(".filter_title > a");
         var filter = $(".filter");
@@ -124,13 +124,13 @@ app.global = {
     },
 
     /* initialize a calendar in the date fields that contain the '.calendar' class  */
-    initCalendar: function() {
+    initCalendar: () => {
         var optional_config = {};
         $(".calendar").flatpickr(optional_config);
     },
 
     /* (in .data-table) :allows to change the direction of the sort btn either up or down */
-    switchBtnStort: function() {
+    switchBtnStort: () => {
         var btnSort = $(".btn-sort");
         btnSort.click(function(evt) {
             $(evt.currentTarget).toggleClass("btn-sort--up");
@@ -138,7 +138,7 @@ app.global = {
     },
 
     /* slider-down : component to slid down content  */
-    sliderDown: function() {
+    sliderDown: () => {
         var sliderDownTitle = $(".slider-down_title");
         if (!sliderDownTitle.length) {
             return;
@@ -151,7 +151,7 @@ app.global = {
     },
 
     /* component jauge  */
-    jaugeCpt: function() {
+    jaugeCpt: () => {
         $(".jauge").each(function() {
 
             // convertir le pourcentage en degree           
@@ -161,14 +161,14 @@ app.global = {
     },
 
     /* cpt flipCard  */
-    flipCard: function() {
+    flipCard: () => {
         var wrapperFC = document.querySelector('.flip-card__wrapper');
         wrapperFC.addEventListener('click', function() {
             wrapperFC.classList.toggle('is-flipped');
         });
     },
     /* pour apppliquer des animation quand en fait lien interne ....  */
-    animeInternalLink: function(element) {
+    animeInternalLink: (element) => {
         $(element).click(function() {
             var goscroll = false;
             var the_hash = $(this).attr("href");
@@ -194,6 +194,22 @@ app.global = {
                 }
             }
         });
+    },
+    mainTopMenuMobileSlide: () => {
+        const btnMenuMobile = document.querySelector(".maintopmenu__mobile");
+        const menuMobileContainer = document.querySelector(".maintopmenu__slide-mobile");
+        btnMenuMobile.addEventListener('click', function() {
+            menuMobileContainer.classList.toggle('maintopmenu__slide-mobile--open');
+        });
+
+        document.addEventListener('click', function() {
+            //   alert("click document ");
+            if (document.querySelector(".maintopmenu__slide-mobile--open")) {
+                //   menuMobileContainer.classList.remove('maintopmenu__slide-mobile--open');
+            }
+        });
+
+
     },
     /*----------------------------- FIX GULP/A11P18-19 ---------------------------------*/
     gulp_fix_encoding: () => {
