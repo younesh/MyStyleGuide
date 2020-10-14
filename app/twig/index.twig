@@ -12,25 +12,25 @@
 {#   ... B.Y  Y,O,U,N,E,S  C,H,R,A,K  ... #}
 {% block page %}
 
- {% include "./includes/header.twig" %} 
+ {% include "./includes/header.twig" with { Titre : 'Home '} %} 
   <main class="main">
     <div class="container">
     <h2> test 00003 </h2> 
         <div class="row">
               <div class=" col-md-6 col-lg-4">
-                {% include "includes/card.twig" %} 
+                {% include "includes/components/card.twig" %} 
               </div>
                             <div class=" col-md-6 col-lg-4">
-                {% include "includes/card.twig" %} 
+                {% include "includes/components/card.twig" %} 
               </div>
                             <div class=" col-md-6 col-lg-4">
-                {% include "includes/card.twig" %} 
+                {% include "includes/components/card.twig" %} 
               </div>
                             <div class=" col-md-6 col-lg-4">
-                {% include "includes/card.twig" %} 
+                {% include "includes/components/card.twig" %} 
               </div>
                             <div class=" col-md-6 col-lg-4">
-                {% include "includes/card.twig" %} 
+                {% include "includes/components/card.twig" %} 
               </div>
         </div>
     </div>

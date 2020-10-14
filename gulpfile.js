@@ -122,7 +122,8 @@ function tplTask() {
                     TplMainTopBtns: "includes/main-top-btns.twig",
                     TplCptJauge: "includes/components/jauge/jauge.twig",
                     TplCptSteps: "includes/components/validSteps.twig",
-                    TplCptFlipCard: "includes/components/flipCard.twig"
+                    TplCptFlipCard: "includes/components/flipCard.twig",
+                    TplCards: "includes/components/card.twig"
                 },
                 errorLogToConsole: true,
                 cache: false
