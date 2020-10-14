@@ -235,8 +235,14 @@
                 </h2>
                 <section class="sg-content sg-buttons">
                     <div class="row">
-                        <div class="col"> {% include TplCards %} {# with { addClass : 'is-inscription d-flex' } #} </div>
-                        <div class="col"> {% include TplCards %} {# with { addClass : 'is-inscription d-flex' } #} </div>
+                        <div class="col-md-8"> {% include TplCards with {Image : 'img/building.jpg', Title : 'card title 01 ', Description : ' elit. Aperiam nisi, necessitatibus, sit porro cupiditate consequatur repudiandae iure tempora facilis natus mollitia ratione voluptatum alias dignissimos dolore omnis aspernatur labore? Eveniet!', linkGitub : 'https://github.com/younesh/MyStyleGuide', linkDemo : 'https://younesh.github.io/MyStyleGuide/dist/styleguide.html#sg-cards' } %} {# with { addClass : 'is-inscription d-flex' } #} </div>
+                        <div class="col-md-4"> {% include TplCards with {Image : 'img/photo-profil.jpg', Title : 'card title 01 ', Description : ' elit. Aperiam nisi, necessitatibus, sit porro cupiditate consequatur repudiandae iure tempora facilis natus mollitia ratione voluptatum alias dignissimos dolore omnis aspernatur labore? Eveniet!', linkGitub : 'https://github.com/younesh/MyStyleGuide', linkDemo : 'https://younesh.github.io/MyStyleGuide/dist/styleguide.html#sg-cards' } %} {# with { addClass : 'is-inscription d-flex' } #} </div>
+                        <div class="col-12">
+                         <code> 
+                             { % include TplCards with {Image : 'img/photo-profil.jpg', Title : 'card title 01 ', Description : 'Description de la carte 01 ...... ', linkGitub : 'https://github.com/younesh/MyStyleGuide', linkDemo : 'https://younesh.github.io/MyStyleGuide/dist/styleguide.html#sg-cards' } % }
+                         </code>
+                        </div>
+                
                     </div>
                     {# {% include TplCards with { addClass : 'is-inscription d-flex' } %} #}
 

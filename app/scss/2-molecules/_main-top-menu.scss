@@ -54,9 +54,11 @@
         width: 100vw;
         left: -100vw;
         transition: $transition-all;
+        min-height: 33vh;
         a {
             display: block;
-            padding: $gutter-half;
+            padding: $gutter-half $gutter-base;
+            font-size: 2rem;
         }
     }
     &__slide-mobile--open {

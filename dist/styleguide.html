@@ -34,10 +34,9 @@ rel="stylesheet">
     <div class="maintopmenu">
     <div class="container maintopmenu__wrapper">
         <nav class="maintopmenu__navigation d-none d-md-flex">
-            <a href="#" id="/index.html"> <span>Home</span> </a>
-            <a href="#" id=""> <span> Références / travaux </span> </a>
+            <a href="index.html"> <span>Home</span> </a>
             <a href="styleguide.html"> <span> StyleGuide</span> </a>
-            <a href="#" id=""> <span> contact </span> </a>
+        <a href="#" id=""> <span> Références / travaux ( WIP ) </span> </a>
         </nav>
         <a class="maintopmenu__mobile  d-flex d-md-none"><i class="material-icons fz-40">menu</i></a>
         <div class="maintopmenu__tag-mode">
@@ -45,10 +44,9 @@ rel="stylesheet">
         </div>
     </div>
     <div class="maintopmenu__slide-mobile">
-        <a href="#" id="/index.html"> <span>Home</span> </a>
-        <a href="#" id=""> <span> Références / travaux </span> </a>
+        <a href="index.html"> <span>Home</span> </a>
         <a href="styleguide.html"> <span> StyleGuide</span> </a>
-        <a href="#" id=""> <span> contact </span> </a>
+        <a href="#"> <span> Références / travaux ( WIP ) </span> </a>
     </div>
 </div>
     <div class="header__hero">
@@ -335,48 +333,58 @@ rel="stylesheet">
                 </h2>
                 <section class="sg-content sg-buttons">
                     <div class="row">
-                        <div class="col"> <div class="card">
+                        <div class="col-md-8"> <div class="card">
     <div class="card__banner">
-        <figure> <img src="img/building.jpg" alt=""></figure>
+        <figure> <img src=img/building.jpg alt=""></figure>
+        
     </div>
     <div class="card__content">
-        <h2 class="card__titre"> card title </h2>
+        <h2 class="card__titre"> card title 01  </h2>
         <div class="card__resume">
-            card resume Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aperiam nisi, necessitatibus, sit porro cupiditate consequatur repudiandae iure tempora facilis natus mollitia ratione voluptatum alias dignissimos dolore omnis aspernatur labore? Eveniet!
+             elit. Aperiam nisi, necessitatibus, sit porro cupiditate consequatur repudiandae iure tempora facilis natus mollitia ratione voluptatum alias dignissimos dolore omnis aspernatur labore? Eveniet!
+            
         </div>
     </div>
     <div class="card__footer">
-        <a href="" class="cart__link cart__link--github">
+        <a href=https://github.com/younesh/MyStyleGuide class="cart__link cart__link--github">
             <i></i>
             <span> Github</span>
         </a>
-        <a href="" class="cart__link cart__link--demo">
+        <a href=https://younesh.github.io/MyStyleGuide/dist/styleguide.html#sg-cards class="cart__link cart__link--demo">
             <i></i>
             <span> Démo </span>
         </a>
     </div>
 </div>  </div>
-                        <div class="col"> <div class="card">
+                        <div class="col-md-4"> <div class="card">
     <div class="card__banner">
-        <figure> <img src="img/building.jpg" alt=""></figure>
+        <figure> <img src=img/photo-profil.jpg alt=""></figure>
+        
     </div>
     <div class="card__content">
-        <h2 class="card__titre"> card title </h2>
+        <h2 class="card__titre"> card title 01  </h2>
         <div class="card__resume">
-            card resume Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aperiam nisi, necessitatibus, sit porro cupiditate consequatur repudiandae iure tempora facilis natus mollitia ratione voluptatum alias dignissimos dolore omnis aspernatur labore? Eveniet!
+             elit. Aperiam nisi, necessitatibus, sit porro cupiditate consequatur repudiandae iure tempora facilis natus mollitia ratione voluptatum alias dignissimos dolore omnis aspernatur labore? Eveniet!
+            
         </div>
     </div>
     <div class="card__footer">
-        <a href="" class="cart__link cart__link--github">
+        <a href=https://github.com/younesh/MyStyleGuide class="cart__link cart__link--github">
             <i></i>
             <span> Github</span>
         </a>
-        <a href="" class="cart__link cart__link--demo">
+        <a href=https://younesh.github.io/MyStyleGuide/dist/styleguide.html#sg-cards class="cart__link cart__link--demo">
             <i></i>
             <span> Démo </span>
         </a>
     </div>
 </div>  </div>
+                        <div class="col-12">
+                         <code> 
+                             { % include TplCards with {Image : 'img/photo-profil.jpg', Title : 'card title 01 ', Description : 'Description de la carte 01 ...... ', linkGitub : 'https://github.com/younesh/MyStyleGuide', linkDemo : 'https://younesh.github.io/MyStyleGuide/dist/styleguide.html#sg-cards' } % }
+                         </code>
+                        </div>
+                
                     </div>
                     
 
