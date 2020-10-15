@@ -19,11 +19,13 @@
             // @extend .icon-arrow-slide;
             margin-right: 5px;
         }
+        i {
+            transition: $transition-all;
+        }
     }
     .slider-down_content {
-        overflow: hidden;
-        height: auto;
         transition: $transition-all;
+        overflow: hidden;
     }
     // when we want make a text + icone
     .slider-down_row {
@@ -48,6 +50,7 @@
         }
         .slider-down_content {
             // @extend .d-none;
+            // overflow: hidden;
             height: 0px;
         }
     }

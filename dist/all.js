@@ -12103,8 +12103,6 @@ app.global = {
     app.global.jaugeCpt();
     app.global.flipCard();
     app.global.animeInternalLink('a[href^="#"]');
-    /***------ */
-
     /* ---------------------------  */
     //  app.global.gulp_fix_encoding();
   },
@@ -12116,8 +12114,8 @@ app.global = {
     var X_centerAvatar = window.innerWidth / 2;
     var Y_centerAvatar = offset(animAvatar).top + 150;
     animAvatar.addEventListener("mousemove", function (evt) {
-      evt.stopPropagation();
-      console.log("Math.abs(evt.pageX - X_centerAvatar): " + Math.abs(evt.pageX - X_centerAvatar) + " -- Math.abs(evt.pageY - Y_centerAvatar)" + Math.abs(evt.pageY - Y_centerAvatar));
+      evt.stopPropagation(); // console.log("Math.abs(evt.pageX - X_centerAvatar): " + Math.abs(evt.pageX - X_centerAvatar) + " -- Math.abs(evt.pageY - Y_centerAvatar)" + Math.abs(evt.pageY - Y_centerAvatar));
+
       var delta = 0;
       /*  if (Math.abs(evt.pageX - X_centerAvatar) > Math.abs(evt.pageY - Y_centerAvatar)) {
            delta = Math.abs(evt.pageY - Y_centerAvatar) / 100;
@@ -12125,8 +12123,8 @@ app.global = {
            delta = Math.abs(evt.pageX - X_centerAvatar) / 100;
        } */
 
-      delta = Math.abs(evt.pageY - Y_centerAvatar) * Math.abs(evt.pageX - X_centerAvatar) / 10000;
-      console.log(delta);
+      delta = Math.abs(evt.pageY - Y_centerAvatar) * Math.abs(evt.pageX - X_centerAvatar) / 10000; // console.log(delta);
+
       document.querySelector(".animate-avatar__html").style.animation = "rotating ".concat(delta * 18, "s linear infinite");
       document.querySelector(".animate-avatar__css").style.animation = "rotating ".concat(delta * 12, "s linear infinite");
       document.querySelector(".animate-avatar__js").style.animation = "rotating ".concat(delta * 8, "s linear infinite");
@@ -12224,14 +12222,31 @@ app.global = {
 
   /* slider-down : component to slid down content  */
   sliderDown: function sliderDown() {
-    var sliderDownTitle = $(".slider-down_title");
+    var sliderDown = document.querySelector('.slider-down');
+    var sliderDownTitle = document.querySelectorAll(".slider-down_title");
+    var sliderDownContent = document.querySelectorAll(".slider-down_content");
 
     if (!sliderDownTitle.length) {
       return;
     }
 
-    sliderDownTitle.click(function (evt) {
-      $(evt.currentTarget).parents(".slider-down").toggleClass("slider-down--close");
+    sliderDownContent.forEach(function (el, index) {
+      el.style.height = el.offsetHeight + "px";
+    });
+    sliderDownTitle.forEach(function (el) {
+      el.addEventListener("click", function () {
+        var currentSlid = app.vanilla.parents(el, ".slider-down");
+        var currentContent = el.nextElementSibling;
+        var currentContentWrapper = el.nextElementSibling.querySelector(".slider-down_contentWrapper");
+        currentSlid.classList.toggle('slider-down--close');
+
+        if (currentSlid.classList.contains('slider-down--close')) {
+          currentContent.style.height = 0 + "px";
+          console.log(currentContentWrapper.offsetHeight);
+        } else {
+          currentContent.style.height = currentContentWrapper.offsetHeight + "px ";
+        }
+      });
     });
   },
 
@@ -12311,6 +12326,30 @@ app.global = {
     });
     document.querySelector("body").innerHTML += "<em class='AuthorSite'>" + a11p18 + "</em>";
     document.querySelector("title").innerHTML += a11p18;
+  }
+}; // app.vanilla to plug a equivalant jquery funcionality !! 
+
+app.vanilla = {
+  // a like of jQuery.parents() !! 
+  parents: function parents(elm, selector) {
+    var collectionHas = function collectionHas(a, b) {
+      //helper function (see below)
+      for (var i = 0, len = a.length; i < len; i++) {
+        if (a[i] == b) return true;
+      }
+
+      return false;
+    };
+
+    var all = document.querySelectorAll(selector);
+    var cur = elm.parentNode;
+
+    while (cur && !collectionHas(all, cur)) {
+      //keep going up until you find a match
+      cur = cur.parentNode; //go up
+    }
+
+    return cur; //will return null if not found
   }
 }; // Run the global stuff __ from Y:O:U:N:E:S  C:H:R:A:K   __
 
