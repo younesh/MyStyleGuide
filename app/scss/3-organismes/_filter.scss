@@ -50,7 +50,7 @@
     // .criteria__content
     &__content {
         padding: $gutter-half;
-        transition: all 0.3 ease;
+        transition: $transition-all;
         overflow: hidden;
         #{$all-text-inputs} {
             min-width: 130px;
@@ -61,8 +61,9 @@
         }
         .calendar {}
     }
+    // .criteria--closed  
     &.criteria--closed {
-        .criteria_content {
+        .criteria__content {
             padding: 0;
             height: 0;
         }
@@ -111,7 +112,7 @@
 //$bp-only-tablet 
 @media #{$bp-only-tablet} {
     .criteria {
-        .criteria_content {
+        .criteria__content {
             #{$all-text-inputs} {
                 min-width: 105px;
             }
