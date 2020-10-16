@@ -96,7 +96,7 @@ app.global = {
             return;
         }
         titleCriterea.click(function(evt) {
-            alert("hi test ");
+            //  alert("hi test ");
             $(evt.currentTarget)
                 .parents(".criteria")
                 .toggleClass("criteria--closed");
