@@ -90,11 +90,13 @@ app.global = {
 
     // in the FILTER block, open / close the clicked criterion
     SlideFilters: function() {
-        var titleCriterea = $(".criteria .criteria_title");
+        var titleCriterea = $(".criteria .criteria__title");
+        console.log(" titleCriterea.length >> ", titleCriterea.length);
         if (!titleCriterea.length) {
             return;
         }
         titleCriterea.click(function(evt) {
+            // alert("hi test ");
             $(evt.currentTarget)
                 .parents(".criteria")
                 .toggleClass("criteria--closed");
@@ -147,9 +149,13 @@ app.global = {
         if (!sliderDownTitle.length) {
             return;
         }
+
+        // initializ a hight sliderDownContent in DOM by style attribute
         sliderDownContent.forEach(function(el, index) {
             el.style.height = el.offsetHeight + "px";
         });
+
+        //
         sliderDownTitle.forEach(function(el) {
             el.addEventListener("click", () => {
                 const currentSlid = app.vanilla.parents(el, ".slider-down");
@@ -158,7 +164,6 @@ app.global = {
                 currentSlid.classList.toggle('slider-down--close');
                 if (currentSlid.classList.contains('slider-down--close')) {
                     currentContent.style.height = 0 + "px";
-                    console.log(currentContentWrapper.offsetHeight);
                 } else {
                     currentContent.style.height = currentContentWrapper.offsetHeight + "px ";
                 }
