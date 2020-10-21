@@ -226,12 +226,12 @@
                     <h3 id="sg-checkbox">
                         checkbox :
                     </h3>
-                    {% include TplInputCheckbox with { addClass: 'type-hiking',label : 'Randonnée' } %}
+                    {% include TplInputCheckbox with { addClass: 'addOption',label : 'Ajouter une option' } %}
                     <span>
                         code en twig  :
                     </span>
                     <code>
-                        { % include TplInputCheckbox with { addClass: 'type-hiking',label : 'Randonnée' } % }
+                        { % include TplInputCheckbox with { addClass: 'addOption',label : 'ajouter cette' } % }
                     </code>
                     <br> pour plus d'info sur le doc, les parametres de cette template twig :
                     <code>
@@ -239,7 +239,7 @@
                     </code>
 
                     <hr>
-                    <h3 id="sg-radio">
+                    <h3 id="sg-radio my-3">
                         button radio
                     </h3>
                     {% include TplInputRadio with { addClass : 'is-inscription d-flex', nameRadio : 'is-inscription', options : [{label : 'oui', value : 'yes' }, {label : 'Non', value :'no' }]} %}

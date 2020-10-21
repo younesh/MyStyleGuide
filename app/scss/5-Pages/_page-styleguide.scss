@@ -29,6 +29,12 @@
         border: $border-default;
         padding: $gutter-half;
         margin-bottom: $gutter-half;
+        &.sg-content {
+            .input-checkbox,
+            .input-radio {
+                margin: $gutter-half 0px;
+            }
+        }
     }
     // icones 
     .doc-icones {

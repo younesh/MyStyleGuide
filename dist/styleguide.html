@@ -296,11 +296,11 @@ rel="stylesheet">
                     </h3>
                     
 
-<div class="input-checkbox type-hiking">
+<div class="input-checkbox addOption">
     
-    <input id="type-hiking" name="type-hiking" type="checkbox" value="">
-    <label class="input-radio_label" for="type-hiking">
-        Randonnée
+    <input id="addOption" name="addOption" type="checkbox" value="">
+    <label class="input-radio_label" for="addOption">
+        Ajouter une option
     </label>
 </div>
 
@@ -308,7 +308,7 @@ rel="stylesheet">
                         code en twig  :
                     </span>
                     <code>
-                        { % include TplInputCheckbox with { addClass: 'type-hiking',label : 'Randonnée' } % }
+                        { % include TplInputCheckbox with { addClass: 'addOption',label : 'ajouter cette' } % }
                     </code>
                     <br> pour plus d'info sur le doc, les parametres de cette template twig :
                     <code>
@@ -316,7 +316,7 @@ rel="stylesheet">
                     </code>
 
                     <hr>
-                    <h3 id="sg-radio">
+                    <h3 id="sg-radio my-3">
                         button radio
                     </h3>
                     
