@@ -1,0 +1,16 @@
+.links-root {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    >* {}
+}
+
+//-----  MEDIA QUERY / RESPONSIVE ----
+@media #{$bp-min-md} {
+    .links-root {
+        width: 80%;
+        margin: 0 auto;
+    }
+}
+
+@media #{$bp-min-xl} {}

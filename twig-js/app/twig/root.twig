@@ -1,0 +1,26 @@
+
+{% extends "includes/layout.base.twig" %}
+{% block pageTitle %}
+   espace book younes.C
+    {{siteName}}
+{% endblock %}
+
+{% block classPage %}
+    root book 
+{% endblock %}
+{#   ... B.Y  Y,O,U,N,E,S  C,H,R,A,K  ... #}
+{% block page %}
+
+ {% include "./includes/header.twig"   with { Titre : 'Root mybBook '} %} 
+  <main class="main">
+    <div class="container">
+            <p> la route .... .</p>
+            <div class="links-root">
+           <a href="./twig-js/"> {% include TplCptFlipCard with {imgPath : 'img/twigJs.png' , name : 'Twig-JS', Funcion : 'From Scrutch !! ' } %} </a>
+            {% include TplCptFlipCard with {imgPath : 'img/vueJs.png' , name : 'Vue Js', Funcion : 'Vue JS' } %}
+            {% include TplCptFlipCard with {imgPath : 'img/reactJs.png' , name : 'React JS', Funcion : 'React JS' } %}
+            </div>
+
+    </div>
+  </main>
+{% endblock %}
