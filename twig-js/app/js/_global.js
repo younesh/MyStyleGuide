@@ -244,10 +244,10 @@ app.global = {
             return;
         }
 
-        BtnsNav[1].classList.add("current");
-        allImg[1].classList.add("current");
-        navCursor.style.left = Number(BtnsNav[1].offsetLeft) + "px";
-        navCursor.style.width = Number(BtnsNav[1].offsetWidth) + "px";
+        BtnsNav[0].classList.add("current");
+        allImg[0].classList.add("current");
+        navCursor.style.left = Number(BtnsNav[0].offsetLeft) + "px";
+        navCursor.style.width = Number(BtnsNav[0].offsetWidth) + "px";
 
         BtnsNav.forEach(function(currentBtnNav) {
             currentBtnNav.addEventListener("click", () => {

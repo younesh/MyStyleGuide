@@ -48,6 +48,11 @@ code {
     background-color: black;
     color: white;
     @include padding(null $gutter-half/2);
+    &.multiLigne {
+        white-space: pre-wrap;
+        //    width: 100%;
+        display: block;
+    }
 }
 
 // pointer : for all clicable element, ith effect hover transtion
