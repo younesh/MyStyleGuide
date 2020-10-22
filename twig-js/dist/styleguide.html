@@ -29,7 +29,7 @@ rel="stylesheet">
 
 <body class="layout page  page-styleguide ">
  
-  
+ 
  <header class="header"> 
     <div class="maintopmenu">
     <div class="container maintopmenu__wrapper">
@@ -72,7 +72,7 @@ rel="stylesheet">
             </div>
         </div>
     </div>
-</header> 
+</header>
 <main class="main">
     <div class="container">
         <div class="row no-gutters">
@@ -137,6 +137,13 @@ rel="stylesheet">
                         </div>
                     </div>
                     <div class="criteria criteria--closed">
+                        <a class="criteria__title" href="#sg-hero-carousel">
+                            <span>
+                              hero carousel 
+                          </span>
+                        </a>
+                    </div>
+                    <div class="criteria criteria--closed">
                         <a class="criteria__title" href="#sg-cards">
                             <span>
                                Cards, bloc-info
@@ -168,14 +175,14 @@ rel="stylesheet">
 
                     
 
-                     <div class="criteria criteria--closed">
+                    <div class="criteria criteria--closed">
                         <a class="criteria__title" href="#sg-jauge">
                             <span>
                                 les jauges de progression
                             </span>
                         </a>
                     </div>
-                     <div class="criteria criteria--closed">
+                    <div class="criteria criteria--closed">
                         <a class="criteria__title" href="#sg-flipCards">
                             <span>
                                 les flip cards
@@ -378,6 +385,30 @@ rel="stylesheet">
 
                 </section>
 
+                <h2 id="sg-hero-carousel"> sg-hero-carousel </h2>
+                <section class="sg-content sg-hero-carousel">
+                   <div class="hero-carousel">
+    <div class="hero-carousel__images">
+        <img data-id="1" src="img/building.jpg" alt="">
+        <img data-id="2" src="img/bg-hero-banner-2.jpg" alt="">
+        <img data-id="3" src="img/bg-header.jpg" alt="">
+    </div>
+    <div class="hero-carousel__nav">
+        <a data-id="1" class="hero-carousel__nav-item"> Building </a>
+        <a data-id="2" class="hero-carousel__nav-item"> fond abstrait </a>
+        <a data-id="3" class="hero-carousel__nav-item"> balcon surneses </a>
+        <div class="hero-carousel__nav-rails">
+            <div class="hero-carousel__nav-cursor"></div>
+        </div>
+    </div>
+</div>
+
+                   <code>
+                   { % include TplHeroCarousel % }
+                   </code>
+                </section>
+
+
                 <h2 id="sg-cards">
                     Cards, bloc-info
                 </h2>
@@ -391,7 +422,8 @@ rel="stylesheet">
     <div class="card__content">
         <h2 class="card__titre"> card title 01  </h2>
         <div class="card__resume">
-             elit. Aperiam nisi, necessitatibus, sit porro cupiditate consequatur repudiandae iure tempora facilis natus mollitia ratione voluptatum alias dignissimos dolore omnis aspernatur labore? Eveniet!
+             elit. Aperiam nisi, necessitatibus, sit porro cupiditate consequatur repudiandae iure tempora facilis natus mollitia ratione voluptatum
+                            alias dignissimos dolore omnis aspernatur labore? Eveniet!
             
         </div>
     </div>
@@ -414,7 +446,8 @@ rel="stylesheet">
     <div class="card__content">
         <h2 class="card__titre"> card title 01  </h2>
         <div class="card__resume">
-             elit. Aperiam nisi, necessitatibus, sit porro cupiditate consequatur repudiandae iure tempora facilis natus mollitia ratione voluptatum alias dignissimos dolore omnis aspernatur labore? Eveniet!
+             elit. Aperiam nisi, necessitatibus, sit porro cupiditate consequatur repudiandae iure tempora facilis natus mollitia ratione voluptatum
+                            alias dignissimos dolore omnis aspernatur labore? Eveniet!
             
         </div>
     </div>
@@ -430,11 +463,11 @@ rel="stylesheet">
     </div>
 </div>  </div>
                         <div class="col-12">
-                         <code> 
+                            <code> 
                              { % include TplCards with {Image : 'img/photo-profil.jpg', Title : 'card title 01 ', Description : 'Description de la carte 01 ...... ', linkGitub : 'https://github.com/younesh/MyStyleGuide', linkDemo : 'https://younesh.github.io/MyStyleGuide/dist/styleguide.html#sg-cards' } % }
                          </code>
                         </div>
-                
+
                     </div>
                     
 
@@ -475,7 +508,7 @@ rel="stylesheet">
                                     <div class="slider-down_content">
                                         <div class="slider-down_contentWrapper">
                                             <p class="py-2 px-2">
-                                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum voluptatem non error, omnis numquam voluptas labore repudiandae illo magnam molestiae, ipsum sed laudantium neque maxime qui dolorem odio asperiores velit?
+                                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum voluptatem non error, omnis numquam voluptas labore repudiandae illo magnam molestiae, ipsum sed laudantium neque maxime qui dolorem odio asperiores velit?
                                             </p>
                                         </div>
                                     </div>
@@ -485,7 +518,7 @@ rel="stylesheet">
                                         <span>
                                             title slide 02
                                         </span>
-                                                     <i class="material-icons fz-30">arrow_drop_down</i>
+                                        <i class="material-icons fz-30">arrow_drop_down</i>
 
                                     </div>
                                     <div class="slider-down_content">
@@ -667,10 +700,7 @@ rel="stylesheet">
 
 
 
-                
- 
-
-                
+                 
                 <h2 id="sg-flipCards"> les flip cards</h2>
                 <section class="sg-content">
                     <div class="flipCard-list">

@@ -1,10 +1,9 @@
 {# index.twig #} 
 {% extends "includes/layout.base.twig" %}
  {% block pageTitle %} StyleGuide - {{siteName}} {% endblock %}
-  {% block classPage %} page-styleguide {% endblock %}
-   {# ... B.Y Y,O,U,N,E,S C,H,R,A,K ... #} 
-   {% block page %} 
- {% include "./includes/header.twig" with { Titre : 'Style Guide'} %} 
+ {% block classPage %} page-styleguide {% endblock %} 
+ {# ... B.Y Y,O,U,N,E,S C,H,R,A,K ... #} {% block page %}
+ {% include "./includes/header.twig" with { Titre : 'Style Guide'} %}
 <main class="main">
     <div class="container">
         <div class="row no-gutters">
@@ -69,6 +68,13 @@
                         </div>
                     </div>
                     <div class="criteria criteria--closed">
+                        <a class="criteria__title" href="#sg-hero-carousel">
+                            <span>
+                              hero carousel 
+                          </span>
+                        </a>
+                    </div>
+                    <div class="criteria criteria--closed">
                         <a class="criteria__title" href="#sg-cards">
                             <span>
                                Cards, bloc-info
@@ -98,16 +104,16 @@
                         </a>
                     </div>
 
-                    {#  sg-jauge  #}
+                    {# sg-jauge #}
 
-                     <div class="criteria criteria--closed">
+                    <div class="criteria criteria--closed">
                         <a class="criteria__title" href="#sg-jauge">
                             <span>
                                 les jauges de progression
                             </span>
                         </a>
                     </div>
-                     <div class="criteria criteria--closed">
+                    <div class="criteria criteria--closed">
                         <a class="criteria__title" href="#sg-flipCards">
                             <span>
                                 les flip cards
@@ -280,19 +286,33 @@
 
                 </section>
 
+                <h2 id="sg-hero-carousel"> sg-hero-carousel </h2>
+                <section class="sg-content sg-hero-carousel">
+                   {% include TplHeroCarousel %}
+
+                   <code>
+                   { % include TplHeroCarousel % }
+                   </code>
+                </section>
+
+
                 <h2 id="sg-cards">
                     Cards, bloc-info
                 </h2>
                 <section class="sg-content sg-buttons">
                     <div class="row">
-                        <div class="col-md-8"> {% include TplCards with {Image : 'img/building.jpg', Title : 'card title 01 ', Description : ' elit. Aperiam nisi, necessitatibus, sit porro cupiditate consequatur repudiandae iure tempora facilis natus mollitia ratione voluptatum alias dignissimos dolore omnis aspernatur labore? Eveniet!', linkGitub : 'https://github.com/younesh/MyStyleGuide', linkDemo : 'https://younesh.github.io/MyStyleGuide/dist/styleguide.html#sg-cards' } %} {# with { addClass : 'is-inscription d-flex' } #} </div>
-                        <div class="col-md-4"> {% include TplCards with {Image : 'img/photo-profil.jpg', Title : 'card title 01 ', Description : ' elit. Aperiam nisi, necessitatibus, sit porro cupiditate consequatur repudiandae iure tempora facilis natus mollitia ratione voluptatum alias dignissimos dolore omnis aspernatur labore? Eveniet!', linkGitub : 'https://github.com/younesh/MyStyleGuide', linkDemo : 'https://younesh.github.io/MyStyleGuide/dist/styleguide.html#sg-cards' } %} {# with { addClass : 'is-inscription d-flex' } #} </div>
+                        <div class="col-md-8"> {% include TplCards with {Image : 'img/building.jpg', Title : 'card title 01 ', Description : ' elit. Aperiam nisi, necessitatibus, sit porro cupiditate consequatur repudiandae iure tempora facilis natus mollitia ratione voluptatum
+                            alias dignissimos dolore omnis aspernatur labore? Eveniet!', linkGitub : 'https://github.com/younesh/MyStyleGuide', linkDemo : 'https://younesh.github.io/MyStyleGuide/dist/styleguide.html#sg-cards' } %} {# with { addClass :
+                            'is-inscription d-flex' } #} </div>
+                        <div class="col-md-4"> {% include TplCards with {Image : 'img/photo-profil.jpg', Title : 'card title 01 ', Description : ' elit. Aperiam nisi, necessitatibus, sit porro cupiditate consequatur repudiandae iure tempora facilis natus mollitia ratione voluptatum
+                            alias dignissimos dolore omnis aspernatur labore? Eveniet!', linkGitub : 'https://github.com/younesh/MyStyleGuide', linkDemo : 'https://younesh.github.io/MyStyleGuide/dist/styleguide.html#sg-cards' } %} {# with { addClass :
+                            'is-inscription d-flex' } #} </div>
                         <div class="col-12">
-                         <code> 
+                            <code> 
                              { % include TplCards with {Image : 'img/photo-profil.jpg', Title : 'card title 01 ', Description : 'Description de la carte 01 ...... ', linkGitub : 'https://github.com/younesh/MyStyleGuide', linkDemo : 'https://younesh.github.io/MyStyleGuide/dist/styleguide.html#sg-cards' } % }
                          </code>
                         </div>
-                
+
                     </div>
                     {# {% include TplCards with { addClass : 'is-inscription d-flex' } %} #}
 
@@ -333,7 +353,7 @@
                                     <div class="slider-down_content">
                                         <div class="slider-down_contentWrapper">
                                             <p class="py-2 px-2">
-                                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum voluptatem non error, omnis numquam voluptas labore repudiandae illo magnam molestiae, ipsum sed laudantium neque maxime qui dolorem odio asperiores velit?
+                                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum voluptatem non error, omnis numquam voluptas labore repudiandae illo magnam molestiae, ipsum sed laudantium neque maxime qui dolorem odio asperiores velit?
                                             </p>
                                         </div>
                                     </div>
@@ -343,7 +363,7 @@
                                         <span>
                                             title slide 02
                                         </span>
-                                                     <i class="material-icons fz-30">arrow_drop_down</i>
+                                        <i class="material-icons fz-30">arrow_drop_down</i>
 
                                     </div>
                                     <div class="slider-down_content">
@@ -494,10 +514,7 @@
                 <h2 id="sg-steps"> steps : les etapes de validation ...999 </h2>
                 <section class="sg-content">
                     {% include TplCptSteps %}
-                </section> #}
- 
-
-                {# les card flip !! #}
+                </section> #} {# les card flip !! #}
                 <h2 id="sg-flipCards"> les flip cards</h2>
                 <section class="sg-content">
                     <div class="flipCard-list">

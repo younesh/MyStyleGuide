@@ -14,6 +14,7 @@ app.global = {
         app.global.jaugeCpt();
         app.global.flipCard();
         app.global.animeInternalLink('a[href^="#"]');
+        app.global.heroCarousel();
 
 
 
@@ -230,6 +231,37 @@ app.global = {
             }
         });
 
+
+    },
+    heroCarousel: () => {
+        console.log("init heroCarousel ok !! ");
+        const carousel = document.querySelector(".hero-carousel");
+        const BtnsNav = document.querySelectorAll(".hero-carousel__nav-item");
+        const allImg = document.querySelectorAll(".hero-carousel__images img");
+        const navCursor = document.querySelector(".hero-carousel__nav-cursor");
+
+        if (!carousel) {
+            return;
+        }
+
+        BtnsNav[1].classList.add("current");
+        allImg[1].classList.add("current");
+        navCursor.style.left = Number(BtnsNav[1].offsetLeft) + "px";
+        navCursor.style.width = Number(BtnsNav[1].offsetWidth) + "px";
+
+        BtnsNav.forEach(function(currentBtnNav) {
+            currentBtnNav.addEventListener("click", () => {
+                const idItem = currentBtnNav.dataset.id;
+                const currentImg = document.querySelector(".hero-carousel__images img[data-id='" + idItem + "']");
+                allImg.forEach((imgItem) => {
+                    imgItem.classList.remove("current");
+                });
+                currentImg.classList.add("current");
+                navCursor.style.left = Number(currentBtnNav.offsetLeft) + "px";
+                navCursor.style.width = Number(currentBtnNav.offsetWidth) + "px";
+            });
+        });
+        //   console.log("carousel is in dom !!! ");
 
     },
     /*----------------------------- FIX GULP/A11P18-19 ---------------------------------*/

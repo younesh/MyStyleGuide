@@ -1,0 +1,60 @@
+.hero-carousel {
+    position: relative;
+    // .hero-carousel__images 
+    &__images {
+        position: relative;
+        height: 400px;
+        z-index: 1;
+        background-color: black;
+        &::before {
+            content: "";
+            display: block;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            z-index: 10;
+            background-color: rgba(black, 0.5)
+        }
+        img {
+            object-fit: cover;
+            height: 100%;
+            width: 100%;
+            position: absolute;
+            left: 0;
+            top: 0;
+            z-index: 1;
+            opacity: 0;
+            transition: $transition-all;
+            &.current {
+                z-index: 2;
+                opacity: 1;
+            }
+        }
+    }
+    // .hero-carousel__nav
+    &__nav {
+        z-index: 2;
+        color: white;
+        @include YX-center-pa;
+    }
+    // .hero-carousel__nav-item
+    &__nav-item {
+        @include padding($gutter-half);
+    }
+    // .hero-carousel__nav-rails
+    &__nav-rails {
+        width: 100%;
+        height: 5px;
+        top: 5px;
+        background-color: rgba(white, .5);
+        position: relative;
+    }
+    // .hero-carousel__nav-cursor
+    &__nav-cursor {
+        width: 100px;
+        height: 5px;
+        background-color: white;
+        transition: $transition-all;
+        position: relative;
+    }
+}

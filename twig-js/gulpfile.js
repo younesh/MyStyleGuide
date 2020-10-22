@@ -123,7 +123,8 @@ function tplTask() {
                     TplCptJauge: "includes/components/jauge/jauge.twig",
                     TplCptSteps: "includes/components/validSteps.twig",
                     TplCptFlipCard: "includes/components/flipCard.twig",
-                    TplCards: "includes/components/card.twig"
+                    TplCards: "includes/components/card.twig",
+                    TplHeroCarousel: "includes/components/heroCarousel/heroCarousel.twig"
                 },
                 errorLogToConsole: true,
                 cache: false
