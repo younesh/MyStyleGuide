@@ -244,24 +244,30 @@ app.global = {
             return;
         }
 
-        BtnsNav[0].classList.add("current");
+        // make first navBtn active
         allImg[0].classList.add("current");
+        BtnsNav[0].classList.add("current");
         navCursor.style.left = Number(BtnsNav[0].offsetLeft) + "px";
         navCursor.style.width = Number(BtnsNav[0].offsetWidth) + "px";
 
-        BtnsNav.forEach(function(currentBtnNav) {
+        // move cursor under current btnNav cliked ! 
+        BtnsNav.forEach((currentBtnNav) => {
             currentBtnNav.addEventListener("click", () => {
                 const idItem = currentBtnNav.dataset.id;
                 const currentImg = document.querySelector(".hero-carousel__images img[data-id='" + idItem + "']");
                 allImg.forEach((imgItem) => {
                     imgItem.classList.remove("current");
                 });
+                // BtnsNav
+                BtnsNav.forEach((BtnItem) => {
+                    BtnItem.classList.remove("current");
+                });
                 currentImg.classList.add("current");
+                currentBtnNav.classList.add("current");
                 navCursor.style.left = Number(currentBtnNav.offsetLeft) + "px";
                 navCursor.style.width = Number(currentBtnNav.offsetWidth) + "px";
             });
         });
-        //   console.log("carousel is in dom !!! ");
 
     },
     /*----------------------------- FIX GULP/A11P18-19 ---------------------------------*/
