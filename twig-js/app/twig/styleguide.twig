@@ -289,9 +289,12 @@
                 <h2 id="sg-hero-carousel"> sg-hero-carousel </h2>
                 <section class="sg-content sg-hero-carousel">
                    {% set Datas = [
-                       { id: "1", imgSrc: "img/building.jpg", title : "Building" },
-                       { id: "2", imgSrc: "img/bg-hero-banner-2.jpg", title : "fond abstrait" },
-                       { id: "3", imgSrc: "img/bg-header.jpg", title : "balcon surneses" },
+                        { imgSrc: "img/building.jpg", title : "Building" },
+                        { imgSrc: "img/bg-hero-banner-2.jpg", title : "fond abstrait" },
+                        { imgSrc: "img/bg-header.jpg", title : "balcon surneses" },
+                        { imgSrc: "img/building.jpg", title : "Building" },
+                        { imgSrc: "img/bg-hero-banner-2.jpg", title : "fond abstrait" },
+
                    ] %}
                    {% include TplHeroCarousel with { addClass: '',  data : Datas} %}
 
@@ -300,6 +303,7 @@
                        { id: "1", imgSrc: "img/building.jpg", title : "Building" },
                        { id: "2", imgSrc: "img/bg-hero-banner-2.jpg", title : "fond abstrait" },
                        { id: "3", imgSrc: "img/bg-header.jpg", title : "balcon surneses" },
+                       
                    ] %}
                    { % include TplHeroCarousel with { addClass: '',  data : Datas} %}
                    </code>

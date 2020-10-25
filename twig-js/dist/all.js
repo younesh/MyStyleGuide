@@ -12319,9 +12319,19 @@ app.global = {
 
     if (!carousel) {
       return;
-    } // make first navBtn active
+    } // ajust width hero-carousel__nav-rails 
 
 
+    var navInner = document.querySelector(".hero-carousel__nav-inner");
+    var navRails = document.querySelector(".hero-carousel__nav-rails"); // recuperer le vraie width du conteneur .hero-carousel__nav-inner apres que tous ses fils soit chargé !! , et le settimeout evite ce petit decalage
+
+    setTimeout(function () {
+      // setTimeout
+      var widthNavInner = navInner.offsetWidth;
+      navInner.style.overflow = "auto";
+      navRails.style.width = widthNavInner + "px";
+      console.log("test setTimeout !! ");
+    }, 100);
     allImg[0].classList.add("current");
     BtnsNav[0].classList.add("current");
     navCursor.style.left = Number(BtnsNav[0].offsetLeft) + "px";
@@ -12330,6 +12340,7 @@ app.global = {
     BtnsNav.forEach(function (currentBtnNav) {
       currentBtnNav.addEventListener("click", function () {
         var idItem = currentBtnNav.dataset.id;
+        console.log("idItem >> ", idItem);
         var currentImg = document.querySelector(".hero-carousel__images img[data-id='" + idItem + "']");
         allImg.forEach(function (imgItem) {
           imgItem.classList.remove("current");

@@ -6,7 +6,7 @@
         <img data-id="3" src="img/bg-header.jpg" alt="">
         -->
           {% for item in data %}
-            <img data-id="{{item.id}}" src="{{item.imgSrc}}" alt="{{item.title}}">
+            <img data-id="{{loop.index}}" src="{{item.imgSrc}}" alt="{{item.title}}">
           {% endfor %}
     </div>
     <div class="hero-carousel__nav">
@@ -15,11 +15,16 @@
         <a data-id="2" class="hero-carousel__nav-item"> fond abstrait </a>
         <a data-id="3" class="hero-carousel__nav-item"> balcon surneses </a>
         -->
-         {% for item in data %}
-            <a data-id="{{item.id}}" title="{{item.title}}" class="hero-carousel__nav-item"> {{item.title}}</a>
-          {% endfor %}
-        <div class="hero-carousel__nav-rails">
-            <div class="hero-carousel__nav-cursor"></div>
+        {#  <a class="material-icons"> fast_rewind  </a> #}
+
+        <div class="hero-carousel__nav-inner">
+            {% for item in data %}
+                <a data-id="{{loop.index}}" title="{{item.title}}" class="hero-carousel__nav-item"> {{item.title}} </a>
+            {% endfor %}
+            <div class="hero-carousel__nav-rails">
+                <div class="hero-carousel__nav-cursor"></div>
+            </div>
         </div>
+               {#  <a class="material-icons"> fast_forward  </a> #}
     </div>
 </div>

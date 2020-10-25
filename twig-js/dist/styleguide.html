@@ -402,6 +402,10 @@ rel="stylesheet">
           
             <img data-id="3" src="img/bg-header.jpg" alt="balcon surneses">
           
+            <img data-id="4" src="img/building.jpg" alt="Building">
+          
+            <img data-id="5" src="img/bg-hero-banner-2.jpg" alt="fond abstrait">
+          
     </div>
     <div class="hero-carousel__nav">
         <!--
@@ -409,24 +413,35 @@ rel="stylesheet">
         <a data-id="2" class="hero-carousel__nav-item"> fond abstrait </a>
         <a data-id="3" class="hero-carousel__nav-item"> balcon surneses </a>
         -->
-         
-            <a data-id="1" title="Building" class="hero-carousel__nav-item"> Building</a>
-          
-            <a data-id="2" title="fond abstrait" class="hero-carousel__nav-item"> fond abstrait</a>
-          
-            <a data-id="3" title="balcon surneses" class="hero-carousel__nav-item"> balcon surneses</a>
-          
-        <div class="hero-carousel__nav-rails">
-            <div class="hero-carousel__nav-cursor"></div>
+        
+
+        <div class="hero-carousel__nav-inner">
+            
+                <a data-id="1" title="Building" class="hero-carousel__nav-item"> Building </a>
+            
+                <a data-id="2" title="fond abstrait" class="hero-carousel__nav-item"> fond abstrait </a>
+            
+                <a data-id="3" title="balcon surneses" class="hero-carousel__nav-item"> balcon surneses </a>
+            
+                <a data-id="4" title="Building" class="hero-carousel__nav-item"> Building </a>
+            
+                <a data-id="5" title="fond abstrait" class="hero-carousel__nav-item"> fond abstrait </a>
+            
+            <div class="hero-carousel__nav-rails">
+                <div class="hero-carousel__nav-cursor"></div>
+            </div>
         </div>
+               
     </div>
 </div>
+
 
                    <code class="multiLigne">
                    { % set Datas = [
                        { id: "1", imgSrc: "img/building.jpg", title : "Building" },
                        { id: "2", imgSrc: "img/bg-hero-banner-2.jpg", title : "fond abstrait" },
                        { id: "3", imgSrc: "img/bg-header.jpg", title : "balcon surneses" },
+                       
                    ] %}
                    { % include TplHeroCarousel with { addClass: '',  data : Datas} %}
                    </code>
