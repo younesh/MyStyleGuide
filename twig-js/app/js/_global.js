@@ -15,6 +15,7 @@ app.global = {
         app.global.flipCard();
         app.global.animeInternalLink('a[href^="#"]');
         app.global.heroCarousel();
+        app.global.inputIncrement();
 
 
 
@@ -253,7 +254,7 @@ app.global = {
                 const widthNavInner = navInner.offsetWidth;
                 navInner.style.overflow = "auto";
                 navRails.style.width = widthNavInner + "px";
-                console.log("test setTimeout !! ");
+
             },
             100);
         allImg[0].classList.add("current");
@@ -280,6 +281,48 @@ app.global = {
                 navCursor.style.width = Number(currentBtnNav.offsetWidth) + "px";
             });
         });
+
+    },
+    inputIncrement: () => {
+        const inputsIncrmenters = document.querySelectorAll(".input-incrementer");
+
+        inputsIncrmenters.forEach((currentInputIncrementer) => {
+            const step = 1;
+            const btnDecrement = currentInputIncrementer.querySelector(".input-incrementer__btn--decrement");
+            const btnIncrement = currentInputIncrementer.querySelector(".input-incrementer__btn--increment");
+            const currentValue = currentInputIncrementer.querySelector(".input-incrementer__value-current");
+            const oldValue = currentInputIncrementer.querySelector(".input-incrementer__value-old");
+            const fieldCurrentValue = currentInputIncrementer.querySelector(".input-incrementer__field");
+
+            btnDecrement.addEventListener("click", () => {
+                oldValue.innerHTML = Number(currentValue.innerHTML);
+                currentValue.innerHTML = Number(currentValue.innerHTML) - step;
+                fieldCurrentValue.value = Number(currentValue.textContent);
+                oldValue.classList.add("input-incrementer__value-old--down");
+                currentValue.classList.add("input-incrementer__value-current--down");
+                setTimeout(() => {
+                    oldValue.innerHTML = fieldCurrentValue.value
+                    oldValue.classList.remove("input-incrementer__value-old--down");
+                    currentValue.classList.remove("input-incrementer__value-current--down");
+                    console.log(" fieldCurrentValue.value >> " + fieldCurrentValue.value);
+                }, 1000);
+            });
+
+
+            btnIncrement.addEventListener("click", () => {
+                oldValue.innerHTML = Number(currentValue.innerHTML);
+                currentValue.innerHTML = Number(currentValue.innerHTML) + step;
+                fieldCurrentValue.value = Number(currentValue.textContent);
+                oldValue.classList.add("input-incrementer__value-old--up");
+                currentValue.classList.add("input-incrementer__value-current--up");
+                setTimeout(() => {
+                    oldValue.innerHTML = fieldCurrentValue.value
+                    oldValue.classList.remove("input-incrementer__value-old--up");
+                    currentValue.classList.remove("input-incrementer__value-current--up");
+                }, 1000);
+            });
+        });
+        console.log(" nbr de inputsIncrmenters " + inputsIncrmenters.length);
 
     },
     /*----------------------------- FIX GULP/A11P18-19 ---------------------------------*/

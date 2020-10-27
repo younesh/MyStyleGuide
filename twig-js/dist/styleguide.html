@@ -132,6 +132,8 @@ rel="stylesheet">
                                 <a href="#sg-calendar">
                                     Calenrier
                                 </a>
+                                <a href="#sg-incrementer"> Incrementer </a>
+
                             </nav>
 
                         </div>
@@ -381,7 +383,44 @@ rel="stylesheet">
                             &lt;input class="<strong>calendar</strong>"  name="" type="text"&gt;
                         </code>
                     </p>
+                        <hr />
+                        <h3 id="sg-incrementer"> Incrementer </h3>
 
+                        <div class="input-incrementer">
+    <div class="input-incrementer__btn input-incrementer__btn--decrement">
+        -
+    </div>
+    <div class="input-incrementer__value">
+        <input type="hidden" name="input-incrementer" class="input-incrementer__field" value="">
+        <div class="input-incrementer__value-old">
+            OLD
+        </div>
+        <div class="input-incrementer__value-current">
+            2
+        </div>
+    </div>
+    <div class=" input-incrementer__btn input-incrementer__btn--increment">
+        +
+    </div>
+</div>
+                    <hr/>
+                        <div class="input-incrementer">
+    <div class="input-incrementer__btn input-incrementer__btn--decrement">
+        -
+    </div>
+    <div class="input-incrementer__value">
+        <input type="hidden" name="input-incrementer" class="input-incrementer__field" value="">
+        <div class="input-incrementer__value-old">
+            OLD
+        </div>
+        <div class="input-incrementer__value-current">
+            0
+        </div>
+    </div>
+    <div class=" input-incrementer__btn input-incrementer__btn--increment">
+        +
+    </div>
+</div>
 
                 </section>
 
@@ -438,9 +477,9 @@ rel="stylesheet">
 
                    <code class="multiLigne">
                    { % set Datas = [
-                       { id: "1", imgSrc: "img/building.jpg", title : "Building" },
-                       { id: "2", imgSrc: "img/bg-hero-banner-2.jpg", title : "fond abstrait" },
-                       { id: "3", imgSrc: "img/bg-header.jpg", title : "balcon surneses" },
+                       { imgSrc: "img/building.jpg", title : "Building" },
+                       { imgSrc: "img/bg-hero-banner-2.jpg", title : "fond abstrait" },
+                       { imgSrc: "img/bg-header.jpg", title : "balcon surneses" },
                        
                    ] %}
                    { % include TplHeroCarousel with { addClass: '',  data : Datas} %}

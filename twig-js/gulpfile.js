@@ -117,6 +117,7 @@ function tplTask() {
                     // config specifique au projet: c'est des variable global dans le twig
                     TplInputCheckbox: "includes/forms/input-checkbox.twig",
                     TplInputRadio: "includes/forms/input-radio.twig",
+                    TplInputIncrementer: "includes/forms/input-incrementer.twig",
                     TplEventLineStay: "includes/event-line-stay.twig",
                     TplEventLineDays: "includes/event-line-days.twig",
                     TplMainTopBtns: "includes/main-top-btns.twig",

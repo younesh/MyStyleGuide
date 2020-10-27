@@ -63,6 +63,8 @@
                                 <a href="#sg-calendar">
                                     Calenrier
                                 </a>
+                                <a href="#sg-incrementer"> Incrementer </a>
+
                             </nav>
 
                         </div>
@@ -282,7 +284,12 @@
                             &lt;input class="<strong>calendar</strong>"  name="" type="text"&gt;
                         </code>
                     </p>
+                        <hr />
+                        <h3 id="sg-incrementer"> Incrementer </h3>
 
+                        {% include TplInputIncrementer with {addClass : '', defaultValue : "2"} %}
+                    <hr/>
+                        {% include TplInputIncrementer with {addClass : ''} %}
 
                 </section>
 
@@ -300,9 +307,9 @@
 
                    <code class="multiLigne">
                    { % set Datas = [
-                       { id: "1", imgSrc: "img/building.jpg", title : "Building" },
-                       { id: "2", imgSrc: "img/bg-hero-banner-2.jpg", title : "fond abstrait" },
-                       { id: "3", imgSrc: "img/bg-header.jpg", title : "balcon surneses" },
+                       { imgSrc: "img/building.jpg", title : "Building" },
+                       { imgSrc: "img/bg-hero-banner-2.jpg", title : "fond abstrait" },
+                       { imgSrc: "img/bg-header.jpg", title : "balcon surneses" },
                        
                    ] %}
                    { % include TplHeroCarousel with { addClass: '',  data : Datas} %}
