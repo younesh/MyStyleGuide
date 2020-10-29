@@ -1,11 +1,11 @@
-<div class="input-incrementer">
+<div class="input-incrementer {{addClass}}" data-config="{animate : true}" data-step="{{step|default(1)}}" data-min="{{min|default(0)}}" data-max="{{max|default(10)}}">
     <div class="input-incrementer__btn input-incrementer__btn--decrement">
         -
     </div>
     <div class="input-incrementer__value">
-        <input type="hidden" name="input-incrementer" class="input-incrementer__field" value="">
+        <input type="hidden" name="input-incrementer" class="input-incrementer__field" value="{{defaultValue|default(0)}}">
         <div class="input-incrementer__value-old">
-            OLD
+           {{defaultValue|default(0)}}
         </div>
         <div class="input-incrementer__value-current">
             {{defaultValue|default(0)}}

@@ -285,41 +285,42 @@ app.global = {
     },
     inputIncrement: () => {
         const inputsIncrmenters = document.querySelectorAll(".input-incrementer");
-
         inputsIncrmenters.forEach((currentInputIncrementer) => {
-            const step = 1;
+            const step = Number(currentInputIncrementer.dataset.step);
+            const min = Number(currentInputIncrementer.dataset.min);
+            const max = Number(currentInputIncrementer.dataset.max);
             const btnDecrement = currentInputIncrementer.querySelector(".input-incrementer__btn--decrement");
             const btnIncrement = currentInputIncrementer.querySelector(".input-incrementer__btn--increment");
             const currentValue = currentInputIncrementer.querySelector(".input-incrementer__value-current");
             const oldValue = currentInputIncrementer.querySelector(".input-incrementer__value-old");
             const fieldCurrentValue = currentInputIncrementer.querySelector(".input-incrementer__field");
-
             btnDecrement.addEventListener("click", () => {
-                oldValue.innerHTML = Number(currentValue.innerHTML);
-                currentValue.innerHTML = Number(currentValue.innerHTML) - step;
-                fieldCurrentValue.value = Number(currentValue.textContent);
-                oldValue.classList.add("input-incrementer__value-old--down");
-                currentValue.classList.add("input-incrementer__value-current--down");
-                setTimeout(() => {
-                    oldValue.innerHTML = fieldCurrentValue.value
-                    oldValue.classList.remove("input-incrementer__value-old--down");
-                    currentValue.classList.remove("input-incrementer__value-current--down");
-                    console.log(" fieldCurrentValue.value >> " + fieldCurrentValue.value);
-                }, 1000);
+                if (Number(fieldCurrentValue.value) > min) {
+                    oldValue.classList.add("input-incrementer__value-old--down");
+                    currentValue.classList.add("input-incrementer__value-current--down");
+                    oldValue.innerHTML = Number(currentValue.innerHTML);
+                    currentValue.innerHTML = Number(currentValue.innerHTML) - step;
+                    fieldCurrentValue.value = Number(currentValue.textContent);
+                    setTimeout(() => {
+                        oldValue.innerHTML = fieldCurrentValue.value
+                        oldValue.classList.remove("input-incrementer__value-old--down");
+                        currentValue.classList.remove("input-incrementer__value-current--down");
+                    }, 1000);
+                }
             });
-
-
             btnIncrement.addEventListener("click", () => {
-                oldValue.innerHTML = Number(currentValue.innerHTML);
-                currentValue.innerHTML = Number(currentValue.innerHTML) + step;
-                fieldCurrentValue.value = Number(currentValue.textContent);
-                oldValue.classList.add("input-incrementer__value-old--up");
-                currentValue.classList.add("input-incrementer__value-current--up");
-                setTimeout(() => {
-                    oldValue.innerHTML = fieldCurrentValue.value
-                    oldValue.classList.remove("input-incrementer__value-old--up");
-                    currentValue.classList.remove("input-incrementer__value-current--up");
-                }, 1000);
+                if (Number(fieldCurrentValue.value) < max) {
+                    oldValue.classList.add("input-incrementer__value-old--up");
+                    currentValue.classList.add("input-incrementer__value-current--up");
+                    oldValue.innerHTML = Number(currentValue.innerHTML);
+                    currentValue.innerHTML = Number(currentValue.innerHTML) + step;
+                    fieldCurrentValue.value = Number(currentValue.textContent);
+                    setTimeout(() => {
+                        oldValue.innerHTML = fieldCurrentValue.value
+                        oldValue.classList.remove("input-incrementer__value-old--up");
+                        currentValue.classList.remove("input-incrementer__value-current--up");
+                    }, 1000);
+                }
             });
         });
         console.log(" nbr de inputsIncrmenters " + inputsIncrmenters.length);

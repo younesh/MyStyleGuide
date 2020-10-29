@@ -1,9 +1,10 @@
 {# index.twig #} 
-{% extends "includes/layout.base.twig" %}
- {% block pageTitle %} StyleGuide - {{siteName}} {% endblock %}
- {% block classPage %} page-styleguide {% endblock %} 
- {# ... B.Y Y,O,U,N,E,S C,H,R,A,K ... #} {% block page %}
- {% include "./includes/header.twig" with { Titre : 'Style Guide'} %}
+{% extends "includes/layout.base.twig" %} 
+{% block pageTitle %} StyleGuide - {{siteName}}
+{% endblock %} 
+{% block classPage %} page-styleguide {% endblock %}
+{# ... B.Y Y,O,U,N,E,S C,H,R,A,K ... #} 
+{% block page %} {% include "./includes/header.twig" with { Titre : 'Style Guide'} %}
 <main class="main">
     <div class="container">
         <div class="row no-gutters">
@@ -284,28 +285,25 @@
                             &lt;input class="<strong>calendar</strong>"  name="" type="text"&gt;
                         </code>
                     </p>
-                        <hr />
-                        <h3 id="sg-incrementer"> Incrementer </h3>
+                    <hr />
+                    <h3 id="sg-incrementer"> Incrementer / Décrementer </h3>
+                    <div class="d-flex">
+                        {% include TplInputIncrementer with {defaultValue : 4 , step : 2, min : -4, max : 8 } %}
+                        {% include TplInputIncrementer with {addClass : 'ml-3', min : -10, max : 10 } %}
+                    </div>
 
-                        {% include TplInputIncrementer with {addClass : '', defaultValue : "2"} %}
-                    <hr/>
-                        {% include TplInputIncrementer with {addClass : ''} %}
-
+<code class="multiLigne mt-5">
+{ % include TplInputIncrementer with {defaultValue : 4 , step : 2, min : -4, max : 8 } %}
+{ % include TplInputIncrementer with {addClass : 'ml-3', min : -10, max : 10 } %}
+</code>
                 </section>
 
                 <h2 id="sg-hero-carousel"> sg-hero-carousel </h2>
                 <section class="sg-content sg-hero-carousel">
-                   {% set Datas = [
-                        { imgSrc: "img/building.jpg", title : "Building" },
-                        { imgSrc: "img/bg-hero-banner-2.jpg", title : "fond abstrait" },
-                        { imgSrc: "img/bg-header.jpg", title : "balcon surneses" },
-                        { imgSrc: "img/building.jpg", title : "Building" },
-                        { imgSrc: "img/bg-hero-banner-2.jpg", title : "fond abstrait" },
+                    {% set Datas = [ { imgSrc: "img/building.jpg", title : "Building" }, { imgSrc: "img/bg-hero-banner-2.jpg", title : "fond abstrait" }, { imgSrc: "img/bg-header.jpg", title : "balcon surneses" }, { imgSrc: "img/building.jpg", title : "Building" }, { imgSrc:
+                    "img/bg-hero-banner-2.jpg", title : "fond abstrait" }, ] %} {% include TplHeroCarousel with { addClass: '', data : Datas} %}
 
-                   ] %}
-                   {% include TplHeroCarousel with { addClass: '',  data : Datas} %}
-
-                   <code class="multiLigne">
+                    <code class="multiLigne">
                    { % set Datas = [
                        { imgSrc: "img/building.jpg", title : "Building" },
                        { imgSrc: "img/bg-hero-banner-2.jpg", title : "fond abstrait" },
@@ -329,7 +327,7 @@
                             alias dignissimos dolore omnis aspernatur labore? Eveniet!', linkGitub : 'https://github.com/younesh/MyStyleGuide', linkDemo : 'https://younesh.github.io/MyStyleGuide/dist/styleguide.html#sg-cards' } %} {# with { addClass :
                             'is-inscription d-flex' } #} </div>
                         <div class="col-12">
-                        <code class="multiLigne">
+                            <code class="multiLigne">
                         { % include TplCards with {
                             Image : 'img/photo-profil.jpg',
                             Title : 'card title 01 ',

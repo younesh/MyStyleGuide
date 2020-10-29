@@ -12,6 +12,9 @@ $hight-value: 30px;
     &__btn {
         border: $border-default;
         cursor: pointer;
+        font-size: 3rem;
+        color: white;
+        background-color: $color-brand-primary;
     }
     // input-incrementer__value
     &__value {
@@ -72,12 +75,14 @@ $hight-value: 30px;
 @keyframes move-down-old {
     0% {
         transform: translateY(0px);
+        z-index: 10;
     }
     99% {
         transform: translateY($hight-value);
     }
     100% {
         transform: translateY(-1* $hight-value);
+        z-index: 1;
     }
 }
 
@@ -88,7 +93,6 @@ $hight-value: 30px;
     }
     99% {
         transform: translateY(0px);
-        z-index: 10;
     }
     100% {
         //  transform: translateY($hight-value);
@@ -103,11 +107,10 @@ $hight-value: 30px;
     }
     99% {
         transform: translateY(-1 * $hight-value);
-        z-index: 10;
     }
     100% {
         transform: translateY($hight-value);
-        z-index: 10;
+        z-index: 1;
     }
 }
 
@@ -118,7 +121,6 @@ $hight-value: 30px;
     }
     99% {
         transform: translateY(0px);
-        z-index: 10;
     }
     100% {
         //  transform: translateY($hight-value);

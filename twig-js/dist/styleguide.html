@@ -7,7 +7,8 @@
     <!-- <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport"/> -->
     <!-- <meta content="ie=edge" http-equiv="X-UA-Compatible"/> -->
     <title>
-         StyleGuide - Kit-starter for web template 201910 v 1.0 
+         StyleGuide - Kit-starter for web template 201910 v 1.0
+
     </title>
     <!-- CSS File -->
     <link href="https://fonts.googleapis.com/css2?family=Material+Icons"
@@ -29,8 +30,7 @@ rel="stylesheet">
 
 <body class="layout page  page-styleguide ">
  
- 
- <header class="header"> 
+  <header class="header"> 
     <div class="maintopmenu">
     <div class="container maintopmenu__wrapper">
         <nav class="maintopmenu__navigation d-none d-md-flex">
@@ -383,35 +383,34 @@ rel="stylesheet">
                             &lt;input class="<strong>calendar</strong>"  name="" type="text"&gt;
                         </code>
                     </p>
-                        <hr />
-                        <h3 id="sg-incrementer"> Incrementer </h3>
-
-                        <div class="input-incrementer">
+                    <hr />
+                    <h3 id="sg-incrementer"> Incrementer / Décrementer </h3>
+                    <div class="d-flex">
+                        <div class="input-incrementer " data-config="{animate : true}" data-step="2" data-min="-4" data-max="8">
     <div class="input-incrementer__btn input-incrementer__btn--decrement">
         -
     </div>
     <div class="input-incrementer__value">
-        <input type="hidden" name="input-incrementer" class="input-incrementer__field" value="">
+        <input type="hidden" name="input-incrementer" class="input-incrementer__field" value="4">
         <div class="input-incrementer__value-old">
-            OLD
+           4
         </div>
         <div class="input-incrementer__value-current">
-            2
+            4
         </div>
     </div>
     <div class=" input-incrementer__btn input-incrementer__btn--increment">
         +
     </div>
 </div>
-                    <hr/>
-                        <div class="input-incrementer">
+                        <div class="input-incrementer ml-3" data-config="{animate : true}" data-step="1" data-min="-10" data-max="10">
     <div class="input-incrementer__btn input-incrementer__btn--decrement">
         -
     </div>
     <div class="input-incrementer__value">
-        <input type="hidden" name="input-incrementer" class="input-incrementer__field" value="">
+        <input type="hidden" name="input-incrementer" class="input-incrementer__field" value="0">
         <div class="input-incrementer__value-old">
-            OLD
+           0
         </div>
         <div class="input-incrementer__value-current">
             0
@@ -421,13 +420,17 @@ rel="stylesheet">
         +
     </div>
 </div>
+                    </div>
 
+<code class="multiLigne mt-5">
+{ % include TplInputIncrementer with {defaultValue : 4 , step : 2, min : -4, max : 8 } %}
+{ % include TplInputIncrementer with {addClass : 'ml-3', min : -10, max : 10 } %}
+</code>
                 </section>
 
                 <h2 id="sg-hero-carousel"> sg-hero-carousel </h2>
                 <section class="sg-content sg-hero-carousel">
-                   
-                   <div class="hero-carousel }">
+                     <div class="hero-carousel }">
     <div class="hero-carousel__images">
        <!--
         <img data-id="1" src="img/building.jpg" alt="">
@@ -475,7 +478,7 @@ rel="stylesheet">
 </div>
 
 
-                   <code class="multiLigne">
+                    <code class="multiLigne">
                    { % set Datas = [
                        { imgSrc: "img/building.jpg", title : "Building" },
                        { imgSrc: "img/bg-hero-banner-2.jpg", title : "fond abstrait" },
@@ -541,7 +544,7 @@ rel="stylesheet">
     </div>
 </div>  </div>
                         <div class="col-12">
-                        <code class="multiLigne">
+                            <code class="multiLigne">
                         { % include TplCards with {
                             Image : 'img/photo-profil.jpg',
                             Title : 'card title 01 ',
