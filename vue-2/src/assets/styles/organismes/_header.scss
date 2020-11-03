@@ -1,0 +1,99 @@
+.header {
+    // goldenrod
+    color: white;
+    position: relative;
+    // .header__hero
+    &__hero {
+        background-color: $color-brand-third;
+        background-image: url("~@/assets/img/bg-hero-banner-2.jpg");
+        padding-top: 46px;
+        min-height: 450px;
+        position: relative;
+        background-color: $color-brand-secondary;
+        padding-bottom: $gutter-half*4;
+        &::after {
+            content: " ";
+            display: block;
+            width: 100%;
+            height: 91px;
+            position: absolute;
+            bottom: -7px;
+            background-image: url("~@/assets/img/header-waves.png");
+            background-repeat: no-repeat;
+            // background-position: 0 -1px;
+            // background-size: cover;
+        }
+    }
+    // .header__hero-content
+    &__hero-content {
+        position: relative;
+        z-index: 1;
+        h1 {
+            text-transform: uppercase;
+            font-size: 4rem;
+            border-left: 15px solid $color-brand-primary;
+            padding-left: $gutter-half;
+            @include Y-center;
+            i {
+                margin-right: $gutter-half;
+            }
+        }
+        p {
+            font-size: 1.5rem;
+            padding: $gutter-half;
+        }
+    }
+    // .header__hero-video-bg
+    &__hero-video-bg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        overflow: hidden;
+        height: 100%;
+        //  z-index: 0;
+        &::before {
+            content: " ";
+            background-color: blue;
+            width: 100%;
+            height: 100%;
+            display: block;
+            opacity: 0.3;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+    }
+}
+
+//-----  MEDIA QUERY / RESPONSIVE ----
+// ONLY ON MOBILE
+@media #{$bp-max-sm} {}
+
+@media #{$bp-min-sm} {}
+
+@media #{$bp-only-tablet} {}
+
+@media #{$bp-min-md} {
+    .header {
+        &__hero {}
+        &__hero-content {}
+        &__hero-video-bg {}
+    }
+}
+
+@media #{$bp-min-lg} {
+    .header {
+        &__hero {}
+        &__hero-content {}
+        &__hero-video-bg {}
+    }
+}
+
+@media #{$bp-min-xl} {
+    .header {
+        &__hero {}
+        &__hero-content {}
+        &__hero-video-bg {}
+    }
+}
