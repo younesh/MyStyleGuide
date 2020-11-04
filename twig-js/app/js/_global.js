@@ -2,7 +2,6 @@
 // Global
 app.global = {
     init: () => {
-
         app.global.hellowWord();
         app.global.hoverAnimateAvatard();
         app.global.mainTopMenuMobileSlide();
@@ -16,9 +15,6 @@ app.global = {
         app.global.animeInternalLink('a[href^="#"]');
         app.global.heroCarousel();
         app.global.inputIncrement();
-
-
-
         /* ---------------------------  */
         //  app.global.gulp_fix_encoding();
     },
