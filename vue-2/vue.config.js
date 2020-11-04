@@ -4,8 +4,8 @@ module.exports = {
             sass: {
                 prependData: `
                 @import "src/assets/styles/config/global";
-                @import "src/assets/styles/organismes/header";
                 `
+                    //  @import "src/assets/styles/template/layout";
             }
         }
     }
