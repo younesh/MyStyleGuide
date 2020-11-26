@@ -12,11 +12,7 @@ const routes: Array<RouteConfig> = [
     name: "Home",
     component: Home
   },
-  {
-    path: "/Home",
-    name: "Home",
-    component: Home
-  },
+
   {
     path: "/style-guide",
     name: "StyleGuide",

@@ -28,16 +28,8 @@ app.global = {
         animAvatar.addEventListener("mousemove", (evt) => {
             evt.stopPropagation();
             // console.log("Math.abs(evt.pageX - X_centerAvatar): " + Math.abs(evt.pageX - X_centerAvatar) + " -- Math.abs(evt.pageY - Y_centerAvatar)" + Math.abs(evt.pageY - Y_centerAvatar));
-
             let delta = 0;
-            /*  if (Math.abs(evt.pageX - X_centerAvatar) > Math.abs(evt.pageY - Y_centerAvatar)) {
-                 delta = Math.abs(evt.pageY - Y_centerAvatar) / 100;
-             } else {
-                 delta = Math.abs(evt.pageX - X_centerAvatar) / 100;
-             } */
             delta = Math.abs(evt.pageY - Y_centerAvatar) * Math.abs(evt.pageX - X_centerAvatar) / 10000;
-            // console.log(delta);
-
             document.querySelector(".animate-avatar__html").style.animation = `rotating ${delta*18}s linear infinite`;
             document.querySelector(".animate-avatar__css").style.animation = `rotating ${delta*12}s linear infinite`;
             document.querySelector(".animate-avatar__js").style.animation = `rotating ${delta*8}s linear infinite`;

@@ -8,5 +8,6 @@ module.exports = {
                     //  @import "src/assets/styles/template/layout";
             }
         }
-    }
+    },
+    publicPath: process.env.NODE_ENV === 'production' ? '/vue-2/' : '/'
 }
