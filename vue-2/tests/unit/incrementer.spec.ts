@@ -31,6 +31,18 @@ describe("incrementer.vue", () => {
         expect(Number(val)).toBe(1);
      }); 
 
+     it(" Should decrement a data-value by one step when we click on (-) button ! ", async  () => {
+        const wrapper = shallowMount(Incrementer, {
+         propsData: {startCompte : 2, step : 2 }
+        }); 
+       await wrapper.find('.input-incrementer__btn--decrement').trigger('click');
+       const val = wrapper.find('input.input-incrementer__field').attributes("data-val");
+       expect(Number(val)).toBe(0);
+     });
+
+     // max 
+
+
     //    expect(wrapper.find('.message').text()).toEqual('Hello World')
 
 

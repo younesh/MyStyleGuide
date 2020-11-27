@@ -24,6 +24,7 @@ export default class Incrementer extends Vue {
 
     @Prop({required: false, default: 0 }) readonly startCompte!: number;
     @Prop({required: false, default: 1 }) readonly step!: number;
+    @Prop({required: false, default: Infinity }) readonly max!: number;
 
   /* --- DATA VARIABLES ---*/
     private  currentValue = this.startCompte;
@@ -34,10 +35,10 @@ export default class Incrementer extends Vue {
         this.currentValue += step;
     }
 
-    public  decrement ()  {
-        const step = Number(this.step) > 1 ?  Number(this.step) : 1;
-        this.currentValue -= step;
-    }
+ public  decrement ()  {
+      const step = Number(this.step) > 1 ?  Number(this.step) : 1;
+       this.currentValue -= step;
+ }
 }
 
 </script>
