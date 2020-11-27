@@ -7,7 +7,7 @@
         -
     </div>
     <div class="input-incrementer__value">
-        <input type="text" name="input-incrementer" class="input-incrementer__field"  :value="currentValue">
+        <input type="text" name="input-incrementer" class="input-incrementer__field" :data-val="currentValue"  :value="currentValue">
     </div>
     <div class=" input-incrementer__btn input-incrementer__btn--increment" @click="increment">
         +
@@ -19,17 +19,24 @@
 import { Component, Prop, Vue } from "vue-property-decorator";
 @Component({})
 export default class Incrementer extends Vue {
+
+   /* ---  PROPOS  ---*/
+
+    @Prop({required: false, default: 0 }) readonly startCompte!: number;
+    @Prop({required: false, default: 1 }) readonly step!: number;
+
   /* --- DATA VARIABLES ---*/
-    private  currentValue = 0;
+    private  currentValue = this.startCompte;
 
    /* --- METHODES ---*/
     public  increment ()  {
-      //  console.log('increment ...' + this.currentValue);
-        this.currentValue++;
+        const step = Number(this.step) > 1 ?  Number(this.step) : 1;
+        this.currentValue += step;
     }
 
     public  decrement ()  {
-        this.currentValue--;
+        const step = Number(this.step) > 1 ?  Number(this.step) : 1;
+        this.currentValue -= step;
     }
 }
 

@@ -10,7 +10,7 @@
 
        <section class="sg-content">
           <h2> increpenter ... </h2>
-          <Incrmenter />
+          <Incrmenter step=0 />
        </section>
 
              <section class="sg-content">
